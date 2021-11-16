@@ -1,0 +1,43 @@
+{
+  "name": "readmode",
+  "version": "1.0.0",
+  "description": "TamperMonkey userScript for novel",
+  "author": "gausszhou <gausszhou@qq.com>",
+  "private": false,
+  "main": "/lib/app.bundle.js",
+  "keywords": [
+    "webpack",
+    "tampermonkey",
+    "userscript"
+  ],
+  "scripts": {
+    "dev": "webpack-dev-server --config build/webpack.dev.js",
+    "webpack": "webpack --config build/webpack.prod.js && node build/webpack.extra.js",
+    "rollup": "rollup --config build/rollup.config.prod.js && node build/rollup.extra.js",
+    "esbuild": "node build/esbuild.config.js && node build/esbuild.extra.js "
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.16.0",
+    "cache-loader": "^4.1.0",
+    "clean-webpack-plugin": "^4.0.0",
+    "css-loader": "^6.5.1",
+    "esbuild": "^0.13.13",
+    "esbuild-sass-plugin": "^1.7.0",
+    "file-loader": "^6.0.0",
+    "html-webpack-plugin": "^5.5.0",
+    "node-sass": "^6.0.1",
+    "postcss": "^8.3.11",
+    "rollup": "^2.60.0",
+    "rollup-plugin-scss": "^3.0.0",
+    "sass-loader": "^12.3.0",
+    "style-loader": "^3.3.1",
+    "webpack": "^5.64.1",
+    "webpack-cli": "^4.9.1",
+    "webpack-dev-server": "^4.5.0",
+    "webpack-merge": "^5.8.0"
+  },
+  "dependencies": {
+    "@deanc/esbuild-plugin-postcss": "^1.0.2"
+  }
+}
