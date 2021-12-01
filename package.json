@@ -1,7 +1,18 @@
 {
   "name": "root",
   "private": true,
+<<<<<<< HEAD
   "workspaces": [ 
+=======
+  "scripts": {
+    "format": "prettier --write **/packages/**/src/**/**.{js,json,scss,md} ",
+    "remove": "npm run remove:log && npm run remove:dist && npm run remove:module",
+    "remove:log": "rm -rf packages/**/*.log",
+    "remove:dist": "rm -rf packages/**/dist",
+    "remove:module": "rm -rf packages/**/node_modules"
+  },
+  "workspaces": [
+>>>>>>> 5f58092 (chore:  代码格式化)
     "packages/*"
   ],
   "devDependencies": {
