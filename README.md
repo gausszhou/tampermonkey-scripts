@@ -15,7 +15,7 @@
 目前仅仅只适配Xbox手柄
 =======
 |使用前|使用后|
-|---|---|
+|:---:|:---:|
 |![](https://static.gausszhou.top/data/image/github/csdn_1.png)|![](https://static.gausszhou.top/data/image/github/csdn_2.png)|
 
 
@@ -31,5 +31,5 @@
 >>>>>>> 016539f (feat: 博客整治名单增加juejin.cn)
 
 |使用前|使用后|
-|---|---|
+|:---:|:---:|
 |![](https://static.gausszhou.top/data/image/github/uukanshu_1.png)|![](https://static.gausszhou.top/data/image/github/uukanshu_2.png)|
