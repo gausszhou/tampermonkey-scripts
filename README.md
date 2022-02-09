@@ -8,7 +8,6 @@
 
 支持的网站：
 `blog.csdn.net`
-`www.cnblogs.com`
 `juejin.cn`
 
 <<<<<<< HEAD
