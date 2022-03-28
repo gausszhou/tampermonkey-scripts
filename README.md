@@ -1,9 +1,14 @@
 # user-scripts
 
+<<<<<<< HEAD
 这里是我编写和改写的一些油猴脚本
+=======
+Hi~ o(*￣▽￣*)ブ，这里是我编写的一些油猴脚本。
+>>>>>>> a13ab4b (docs: update README.md)
 
-## readblog 博客整治插件
+> 开箱即用，不支持自定义配置，也无需自定义配置
 
+<<<<<<< HEAD
 [安装地址](https://greasyfork.org/zh-CN/scripts/436382-%E5%8D%9A%E5%AE%A2%E6%95%B4%E6%B2%BB)
 
 支持的网站：
@@ -43,3 +48,9 @@
 |使用前|使用后|
 |:---:|:---:|
 |![](https://static.gausszhou.top/data/image/github/uukanshu_1.png)|![](https://static.gausszhou.top/data/image/github/uukanshu_2.png)|
+=======
+|插件名称|使用前|使用后|
+|:---:|:---:|:---:|
+|博客整治|![](https://static.gausszhou.top/data/image/github/csdn_1.png)|![](https://static.gausszhou.top/data/image/github/csdn_2.png)|
+|小说整治|![](https://static.gausszhou.top/data/image/github/uukanshu_1.png)|![](https://static.gausszhou.top/data/image/github/uukanshu_2.png)|
+>>>>>>> a13ab4b (docs: update README.md)
