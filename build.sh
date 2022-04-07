@@ -1,10 +1,7 @@
+# 
 set -e 
 # rm  ./lib/*
 # rm  ./packages/**/lib/*
-
-cd ./packages/autoindex/ 
-npm run build 
-cd ../../
 
 cd ./packages/readblog/ 
 npm run build 
@@ -14,9 +11,8 @@ cd ./packages/readnovel/
 npm run build 
 cd ../../
 
-cd ./packages/spacingjs/ 
+cd ./packages/readvideo/ 
 npm run build 
-npm run ext
 cd ../../
 
 cd - 
