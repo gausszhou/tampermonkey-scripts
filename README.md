@@ -4,6 +4,7 @@
 这里是我编写和改写的一些油猴脚本
 =======
 Hi~ o(*￣▽￣*)ブ，这里是我编写的一些油猴脚本。
+<<<<<<< HEAD
 >>>>>>> a13ab4b (docs: update README.md)
 
 > 开箱即用，不支持自定义配置，也无需自定义配置
@@ -54,3 +55,5 @@ Hi~ o(*￣▽￣*)ブ，这里是我编写的一些油猴脚本。
 |博客整治|![](https://static.gausszhou.top/data/image/github/csdn_1.png)|![](https://static.gausszhou.top/data/image/github/csdn_2.png)|
 |小说整治|![](https://static.gausszhou.top/data/image/github/uukanshu_1.png)|![](https://static.gausszhou.top/data/image/github/uukanshu_2.png)|
 >>>>>>> a13ab4b (docs: update README.md)
+=======
+>>>>>>> a2f1181 (docs: update README.md)
