@@ -1,4 +1,3 @@
-# 
 set -e 
 # rm  ./lib/*
 # rm  ./packages/**/lib/*
@@ -15,4 +14,7 @@ cd ./packages/readvideo/
 npm run build 
 cd ../../
 
+mv ./packages/**/lib/**.js  ./lib/
+
 cd - 
+
