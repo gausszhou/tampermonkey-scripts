@@ -1,20 +1,27 @@
 // ==UserScript==
-// @name         视频整治
-// @version      0.0.1
-// @description  视频整治
+// @name         CSDN Greener
+// @version      0.0.8
+// @description  CSDN 专杀，广告统统滚开，内容样式统一，我就要我觉得
 // @author       gausszhou@qq.com
 // @namespace    gausszhou
 // @grant        none
 // @run-at       document-start
+<<<<<<< HEAD
+// @icon         https://www.gausszhou.top/favicon.ico
+// @license      MIT
+=======
 // @license      MIT
 // @icon         https://www.gausszhou.top/favicon.ico
-// @include      *://www.bilibili.com/video/*
+>>>>>>> 463e2e0 (feat(小说整治): 添加科幻小说网)
+// @include      *://*.csdn.net/*
+// @include      *://csdn.net/*
 // ==/UserScript==
+
 /******/ (() => { // webpackBootstrap
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 265:
+/***/ 737:
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -29,7 +36,7 @@
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "body.bilibili .video-page-special-card{display:none}body.bilibili .cur-list,body.bilibili .multi-page .cur-list .list-box,body.bilibili .base-video-sections-v1 .video-sections-content-list,body.bilibili .base-video-sections .video-sections-content-list{height:500px !important;max-height:500px}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "body{display:none}.csdn .blog-footer-bottom{display:none !important}.csdn .user-profile-head .user-profile-head-banner{height:2rem !important}.csdn .toolbar-menus.csdn-toolbar-fl,.csdn .toolbar-container-middle,.csdn .toolbar-container-right{display:none}.csdn .toolbar-container .title-article{font-size:1.25rem;width:100%}.csdn.menu .csdn-side-toolbar,.csdn.menu .user-spm-list,.csdn.menu .user-influence-list,.csdn.menu .user-achievement,.csdn.menu #asideProfile,.csdn.menu #asideNewComments{display:none !important}.csdn.article #asideProfile,.csdn.article #asideCategory,.csdn.article #asideNewComments,.csdn.article #asideNewNps,.csdn.article #asideArchive,.csdn.article #asideHotArticle,.csdn.article #asideSearchArticle,.csdn.article #asideCustom,.csdn.article #asidedirectory,.csdn.article #btnMoreComment,.csdn.article .recommend-box,.csdn.article .recommend-right_aside .toolbar-advert{display:none !important}.csdn.article .main_father{max-width:800px;margin:0 auto}.csdn.article .blog-content-box{margin-top:0}.csdn.article .template-box{margin-bottom:1em}.csdn.article blockquote{margin:0.5em !important;padding:1em !important;border-left:5px solid #005282 !important;background-color:#f4f4f4 !important;color:#1b1b1b !important}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -522,9 +529,9 @@ var insertStyleElement_default = /*#__PURE__*/__webpack_require__.n(insertStyleE
 // EXTERNAL MODULE: ../../node_modules/style-loader/dist/runtime/styleTagTransform.js
 var styleTagTransform = __webpack_require__(464);
 var styleTagTransform_default = /*#__PURE__*/__webpack_require__.n(styleTagTransform);
-// EXTERNAL MODULE: ../../node_modules/css-loader/dist/cjs.js!../../node_modules/sass-loader/dist/cjs.js!./src/assets/styles/index.scss
-var styles = __webpack_require__(265);
-;// CONCATENATED MODULE: ./src/assets/styles/index.scss
+// EXTERNAL MODULE: ../../node_modules/css-loader/dist/cjs.js!../../node_modules/sass-loader/dist/cjs.js!./src/styles/index.scss
+var styles = __webpack_require__(737);
+;// CONCATENATED MODULE: ./src/styles/index.scss
 
       
       
@@ -551,58 +558,123 @@ var update = injectStylesIntoStyleTag_default()(styles/* default */.Z, options);
 
 
 
-       /* harmony default export */ const assets_styles = (styles/* default */.Z && styles/* default.locals */.Z.locals ? styles/* default.locals */.Z.locals : undefined);
+       /* harmony default export */ const src_styles = (styles/* default */.Z && styles/* default.locals */.Z.locals ? styles/* default.locals */.Z.locals : undefined);
 
 ;// CONCATENATED MODULE: ./src/components/ui.js
-let dq = document.querySelector.bind(document);
-let dqa = document.querySelectorAll.bind(document);
+var dq = document.querySelector.bind(document);
 
 function UI() {
   this.init();
 }
 
 UI.prototype.init = function () {
-  console.log("欢迎使用视频整治");
+  console.log("[info] 欢迎使用 [CSDN 绿化] 插件");
 };
 
 UI.prototype.mounted = function () {
   this.body = document.body;
+};
+
+UI.prototype.csdn = function () {
+  this.body.classList.add("csdn");
+
+  if (window.location.href.includes("category")) {
+    this.body.classList.add("category");
+  }
+
+  this.blog_content = dq("#article_content");
+
+  if (this.blog_content) {
+    this.blog_content.classList.add("markdown-body");
+  }
+
+  this.ads = [".csdn-side-toolbar", "#asideHotArticle", "#asideArchive"];
+  this.process();
+  this.processCSDN();
+};
+
+UI.prototype.process = function () {
+  this.processRemoveAD();
+  this.mode = "home";
+
+  if (this.blog_content) {
+    this.mode = "article";
+  } else {
+    this.mode = "menu";
+  }
+
+  this.body.classList.add(this.mode);
+};
+
+UI.prototype.processRemoveAD = function () {
+  if (this.ads && this.ads.length) {
+    this.ads.forEach(function (selector) {
+      var ad = dq(selector);
+      console.log("[info] 去除广告", selector);
+      if (ad) ad.parentElement.removeChild(ad);
+    });
+  }
+};
+
 <<<<<<< HEAD
 
 =======
 >>>>>>> 463e2e0 (feat(小说整治): 添加科幻小说网)
+UI.prototype.processCSDN = function () {
+  window.onload = function () {
+    // 去除剪贴板劫持
+    csdn.copyright && (csdn.copyright.textData = "");
+
+    try {
+      Object.defineProperty(window, "articleType", {
+        value: 0,
+        writable: false,
+        configurable: false
+      });
+      $("#csdn-toolbar").css("border-bottom", "2px solid #409eff");
+    } catch (err) {} // 修复无法复制
+
+
+    $("pre").css("user-select", "auto");
+    $("code").css("user-select", "auto");
+    $("blockquote").css("user-select", "auto"); // 免登录复制
+
+    $(".hljs-button").removeClass("signin");
+    $(".hljs-button").addClass("copy-button");
+    $(".hljs-button").attr("onclick", "hljs.copyCode(event)");
+    $(".hljs-button").attr("data-title", "免登录复制");
+    setInterval(function () {
+      $(".hljs-button").attr("data-title", "免登录复制");
+      $(".passport-login-container").remove();
+    }, 1000 / 60);
+  };
 };
 
-UI.prototype.bilibili = function () {
-  this.body.classList.add("bilibili");
-};
-
-<<<<<<< HEAD
-
-
-=======
->>>>>>> 463e2e0 (feat(小说整治): 添加科幻小说网)
 /* harmony default export */ const ui = (UI);
-
 ;// CONCATENATED MODULE: ./src/main.js
 
 
+var main_ui = new ui();
 
-let main_ui = new ui();
 (function () {
+  window.addEventListener("load", function () {
+    init();
+  });
   window.addEventListener("DOMContentLoaded", function () {
-    main_ui.mounted();
-    let hostname = location.hostname;
-    switch (hostname) {
-      case "www.bilibili.com":
-        main_ui.bilibili();
-      default:
-        main_ui.bilibili();
-        break;
-    }
+    init();
   });
 })();
 
+var isInit = false;
+
+function init() {
+  if (isInit) return;
+  isInit = true;
+  main_ui.mounted();
+  main_ui.csdn();
+  document.body.style.display = "block";
+  console.log("[info] Finshed");
+}
 })();
 
 /******/ })()

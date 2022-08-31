@@ -1,25 +1,25 @@
 // ==UserScript==
-// @name         小说整治
+// @name         Novel Reader
 // @version      0.0.10
-// @description  帮助你获得一致的小说阅读体验：支持UU看书，笔趣阁，书趣阁，81中文网
+// @description  小说阅读器，特点是仿起点风格的网站样式，支持UU看书，笔趣阁，书趣阁，81中文网
 // @author       gausszhou@qq.com
 // @namespace    gausszhou
+// @license      MIT
 // @grant        none
 // @run-at       document-start
-// @license      MIT
 // @icon         https://www.gausszhou.top/favicon.ico
-// @include      *://www.uukanshu.com/*.html
-// @include      *://www.shuquge.com/txt/*/*.html
-// @include      *://www.biquge.lu/book/*/*.html
-// @include      *://www.biqugeu.net/*/*.html
-// @include      *://www.ibiquge.net/*/*.html
-// @include      *://www.230book.net/book/*/*.html
-// @include      *://www.69shu.com/txt/*/*
-// @include      *://www.81zw.cc/book/*/*.html
-// @include      *://www.81zw.com/book/*/*.html
-// @include      *://www.81zw.me/book/*/*.html
-// @include      *://www.81zw.net/book/*/*.html
-// @include      *://www.kehuan.net.cn/book/*/*.html
+// @match      *://www.uukanshu.com/*.html
+// @match      *://www.shuquge.com/txt/*/*.html
+// @match      *://www.biquge.lu/book/*/*.html
+// @match      *://www.biqugeu.net/*/*.html
+// @match      *://www.ibiquge.net/*/*.html
+// @match      *://www.230book.net/book/*/*.html
+// @match      *://www.69shu.com/txt/*/*
+// @match      *://www.81zw.cc/book/*/*.html
+// @match      *://www.81zw.com/book/*/*.html
+// @match      *://www.81zw.me/book/*/*.html
+// @match      *://www.81zw.net/book/*/*.html
+// @match      *://www.kehuan.net.cn/book/*/*.html
 // ==/UserScript==
 
 /******/ (() => { // webpackBootstrap
@@ -660,7 +660,7 @@ var update = injectStylesIntoStyleTag_default()(styles/* default */.Z, options);
        /* harmony default export */ const assets_styles = (styles/* default */.Z && styles/* default.locals */.Z.locals ? styles/* default.locals */.Z.locals : undefined);
 
 ;// CONCATENATED MODULE: ./src/components/ui.js
-let dq = document.querySelector.bind(document);
+var dq = document.querySelector.bind(document);
 
 function UI() {
   this.init();
@@ -680,9 +680,9 @@ UI.prototype.mounted = function () {
   this.new_title_el.className = "_content_title";
   this.new_nav_el = document.createElement("div");
   this.new_nav_el.className = "_nav";
-};
+}; // 网站策略判定
 
-// 网站策略判定
+
 UI.prototype.judge = function () {
   try {
     if (dq(".bread_728x90")) {
@@ -709,9 +709,8 @@ UI.prototype.judge = function () {
   } catch (error) {
     alert(error);
   }
-};
+}; // 各个网站的策略
 
-// 各个网站的策略
 
 UI.prototype.kehuanNet = function () {
   this.body.classList.add("kehuan");
@@ -743,8 +742,10 @@ UI.prototype.shuquge = function () {
   this.body.classList.add("shuquge");
   this.old_bread_el = dq(".path .p");
   this.old_title_el = dq(".content h1"); // title
+
   this.old_content_el = dq("#content");
   this.old_nav_el = dq(".page_chapter ul"); // btns
+
   this.nav_prev = dq(".page_chapter li:nth-child(1) a");
   this.nav_menu = dq(".page_chapter li:nth-child(2) a");
   this.nav_next = dq(".page_chapter li:nth-child(3) a");
@@ -756,8 +757,10 @@ UI.prototype.shuquge = function () {
 UI.prototype.biquge = function () {
   this.body.classList.add("biquge");
   this.old_title_el = dq(".content_read .bookname h1"); // title
+
   this.old_content_el = dq(".content_read #content");
   this.old_nav_el = dq(".page_chapter ul"); // btns
+
   this.nav_prev = dq(".bottem2 a:nth-child(1)");
   this.nav_menu = dq(".bottem2 a:nth-child(2)");
   this.nav_next = dq(".bottem2 a:nth-child(3)");
@@ -770,26 +773,28 @@ UI.prototype.shuba = function () {
   this.body.classList.add("shuba");
   this.old_bread_el = dq(".bread");
   this.old_title_el = dq("h1.hide720"); // title
+
   this.old_content_el = dq(".txtnav");
   this.old_nav_el = dq(".page1"); // btns
+
   this.nav_prev = dq(".page1 a:nth-child(1)");
   this.nav_menu = dq(".page1 a:nth-child(3)");
   this.nav_next = dq(".page1 a:nth-child(4)");
   this.ads = [".hide720"];
   this.process();
-};
+}; // 开始处理
 
-// 开始处理
+
 UI.prototype.process = function () {
   if (this.old_content_el) {
     this.mode = "read";
     this.processRead();
     this.body.classList.add("read");
   }
-  this.processRemoveAD();
-};
 
-// 处理页面
+  this.processRemoveAD();
+}; // 处理页面
+
 
 UI.prototype.processRead = function () {
   this.processReadBread();
@@ -799,72 +804,72 @@ UI.prototype.processRead = function () {
   this.body.appendChild(this.new_bread_el);
   this.body.appendChild(this.new_content_el);
   this.body.appendChild(this.new_nav_el);
-  let p_list = document.querySelectorAll("._content > p");
-  p_list.forEach((p) => {
+  var p_list = document.querySelectorAll("._content > p");
+  p_list.forEach(function (p) {
     p.innerHTML = p.innerHTML.trim();
   });
-};
+}; // 去除广告
 
-// 去除广告
+
 UI.prototype.processRemoveAD = function () {
   if (this.ads.length) {
     console.log(this.ads.length);
-    this.ads.forEach((selector) => {
-      let ad = dq(selector);
+    this.ads.forEach(function (selector) {
+      var ad = dq(selector);
       console.log(ad);
       if (ad) ad.parentElement.removeChild(ad);
     });
   }
-};
+}; // 处理面包屑
 
-// 处理面包屑
+
 UI.prototype.processReadBread = function () {
+  var _this = this;
+
   this.breadCrumbs = this.old_bread_el && this.old_bread_el.getElementsByTagName("a");
+
   if (this.breadCrumbs && this.breadCrumbs.length) {
-    Array.from(this.breadCrumbs).forEach((item, index) => {
-      if (index < 3) this.new_bread_el.appendChild(item);
+    Array.from(this.breadCrumbs).forEach(function (item, index) {
+      if (index < 3) _this.new_bread_el.appendChild(item);
+
       if (index < 2) {
-        let separate = document.createElement("span");
+        var separate = document.createElement("span");
         separate.className += "separate";
         separate.innerText = ">";
-        this.new_bread_el.appendChild(separate);
+
+        _this.new_bread_el.appendChild(separate);
       }
     });
   }
-};
+}; // 处理正文
 
-// 处理正文
 
 UI.prototype.processReadContent = function () {
   this.new_title_el.innerHTML = this.old_title_el.innerHTML;
-  let txt = this.new_title_el.outerHTML + this.old_content_el.innerHTML;
+  var txt = this.new_title_el.outerHTML + this.old_content_el.innerHTML;
   this.new_content_el.innerHTML = removeTextADS(txt);
-  let mark = document.createElement("div");
+  var mark = document.createElement("div");
   mark.className += "book-mark";
   this.new_content_el.appendChild(mark);
-};
+}; // 去除正文中的广告
 
-// 去除正文中的广告
+
 function removeTextADS(txt) {
-  let ads = [
-    /(八一中文网).*com/,
-    "请退出转码页面，请下载爱阅小说app 阅读最新章节。",
-    "txt下载地址： ",
-    "手机阅读："
-  ];
-  ads.forEach((item) => {
+  var ads = [/(八一中文网).*com/, "请退出转码页面，请下载爱阅小说app 阅读最新章节。", "txt下载地址： ", "手机阅读："];
+  ads.forEach(function (item) {
     txt = txt.replace(item, "");
   });
   return txt;
-}
+} // 处理底部导航
 
-// 处理底部导航
+
 UI.prototype.processReadNav = function () {
   if (this.nav_prev) {
     this.new_nav_el.appendChild(this.nav_prev);
   } else {
     this.new_nav_el.innerHTML += "<span>上一章</span>";
   }
+
   this.processReadNavSeparate();
 
   if (this.nav_menu) {
@@ -872,41 +877,53 @@ UI.prototype.processReadNav = function () {
   } else {
     this.new_nav_el.innerHTML += "<span>目录</span>";
   }
+
   this.processReadNavSeparate();
+
   if (this.nav_next) {
     this.new_nav_el.appendChild(this.nav_next);
   } else {
     this.new_nav_el.innerHTML += "<span>下一章</span>";
   }
+
   this.processReadNavSeparate();
+
   if (this.nav_space) {
     this.new_nav_el.appendChild(this.nav_space);
   }
-};
+}; // 处理底部分割线
 
-// 处理底部分割线
+
 UI.prototype.processReadNavSeparate = function () {
-  let separate = document.createElement("div");
+  var separate = document.createElement("div");
   separate.className += "separate";
   this.new_nav_el.appendChild(separate);
 };
 
 /* harmony default export */ const ui = (UI);
-
 ;// CONCATENATED MODULE: ./src/main.js
 
 
-
-let main_ui = new ui();
+var main_ui = new ui();
 
 (function () {
+  window.addEventListener("load", function () {
+    init();
+  });
   window.addEventListener("DOMContentLoaded", function () {
-    main_ui.mounted();
-    main_ui.judge();
-    document.body.style.display = "block";
+    init();
   });
 })();
 
+var isInit = false;
+
+function init() {
+  if (isInit) return;
+  isInit = true;
+  main_ui.mounted();
+  main_ui.judge();
+  document.body.style.display = "block";
+}
 })();
 
 /******/ })()

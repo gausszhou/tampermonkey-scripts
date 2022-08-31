@@ -1,0 +1,16 @@
+body {
+  display: none;
+}
+
+body.read {
+  iframe,
+  .weizhi,
+  .weizhi + div,
+  .at-share-btn,
+  .sao_mobile_box,
+  .addthis-animated,
+  .addthis-smartlayers,
+  .addthis-smartlayers-desktop {
+    display: none !important;
+  }
+}

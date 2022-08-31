@@ -1,0 +1,28 @@
+body.bilibili {
+
+  #activity_vote,
+  // 活动
+  .ad-report.ad-floor-exp,
+  // 广告
+  #live_recommand_report,
+  // 直播
+  .left-entry .v-popover-wrap:nth-child(n + 2),
+  // .left-entry .v-popover-wrap:nth-child(2), // 番剧
+  // .left-entry .v-popover-wrap:nth-child(3),// 直播
+  // .left-entry .v-popover-wrap:nth-child(4),  // 游戏中心
+  // .left-entry .v-popover-wrap:nth-child(5),  // 会员购
+  .video-page-special-card-small,
+  // 广告
+  .video-page-special-card {
+    display: none !important;
+  }
+
+  .cur-list,
+  .multi-page .cur-list .list-box,
+  .base-video-sections-v1 .video-sections-content-list,
+  .base-video-sections .video-sections-content-list {
+    height: calc(40vw - 200px) !important;
+    min-height: 300px;
+    max-height: 40vw;
+  }
+}

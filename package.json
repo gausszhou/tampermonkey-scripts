@@ -5,6 +5,7 @@
   "workspaces": [ 
 =======
   "scripts": {
+    "build":"sh build.sh",
     "format": "prettier --write **/packages/**/src/**/**.{js,json,scss,md} ",
     "remove": "npm run remove:log && npm run remove:dist && npm run remove:module",
     "remove:log": "rm -rf packages/**/*.log",
