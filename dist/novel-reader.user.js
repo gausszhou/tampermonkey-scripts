@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Novel Reader
-// @version      0.0.10
+// @version      0.0.11
 // @description  小说阅读器，特点是仿起点风格的网站样式，支持UU看书，笔趣阁，书趣阁，81中文网
 // @author       gausszhou@qq.com
 // @namespace    gausszhou

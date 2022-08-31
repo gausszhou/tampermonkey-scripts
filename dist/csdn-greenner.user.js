@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         CSDN Greener
-// @version      0.0.8
-// @description  CSDN 专杀，广告统统滚开，内容样式统一，我就要我觉得
+// @version      0.0.10
+// @description  CSDN 专杀，广告统统滚开，内容样式统一，我不要你觉得，我就要我觉得
 // @author       gausszhou@qq.com
 // @namespace    gausszhou
 // @grant        none
