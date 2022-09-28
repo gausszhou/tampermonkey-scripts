@@ -13,6 +13,8 @@
 // @match      *://www.biquge.lu/book/*/*.html
 // @match      *://www.biqugeu.net/*/*.html
 // @match      *://www.ibiquge.net/*/*.html
+// @match      *://www.qbiqu.com/*/*.html
+// @match      *://www.ptwxz.com/html/*/*/*.html
 // @match      *://www.230book.net/book/*/*.html
 // @match      *://www.69shu.com/txt/*/*
 // @match      *://www.81zw.cc/book/*/*.html
@@ -50,7 +52,7 @@ var ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_css_loader_dist_runtime_g
 var ___CSS_LOADER_URL_REPLACEMENT_1___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_1___);
 var ___CSS_LOADER_URL_REPLACEMENT_2___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_2___);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "body{display:none}body.read iframe,body.read .weizhi,body.read .weizhi+div,body.read .at-share-btn,body.read .sao_mobile_box,body.read .addthis-animated,body.read .addthis-smartlayers,body.read .addthis-smartlayers-desktop{display:none !important}body.read{background:url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ") repeat;font-size:18px;font-family:\"Microsoft YaHei\", PingFangSC-Regular, HelveticaNeue-Light, \"Helvetica Neue Light\", sans-serif}body.read ._bread{box-sizing:border-box;width:800px;margin:1em auto 1em;display:flex;align-items:center;font:12px/22px PingFangSC-Regular, \"-apple-system\", Simsun}body.read ._bread .separate{color:rgba(0,0,0,0.4)}body.read ._bread a{margin:0 0.5em !important;padding:0 !important;background-color:transparent !important}body.read ._bread a,body.read ._bread b{padding:0;font-weight:400;font-size:12px;color:#1a1a1a !important}body.read ._content{box-sizing:border-box;background:url(" + ___CSS_LOADER_URL_REPLACEMENT_1___ + ") repeat;width:800px;margin:0 auto 1em;padding:2em;color:#262626;font-weight:500;text-indent:2em;text-align:left;border:1px solid #d8d8d8;position:relative}body.read ._content .book-mark{position:absolute;top:0px;right:48px;width:24px;height:40px;background-image:url(" + ___CSS_LOADER_URL_REPLACEMENT_2___ + ");background-repeat:no-repeat;background-position:-228px -143.5px;background-size:340px}body.read ._content br{content:\"\";margin:0.5em 0;display:block;font-size:150%}body.read ._content p{word-wrap:wrap;word-break:break-all;margin-top:0.5em;line-height:1.8;text-align:justify}body.read ._content ._content_title{display:flex;align-items:center;text-indent:0;padding:0 0 0.5em;margin:0 0 0.5em;font:24px/32px PingFangSC-Regular, HelveticaNeue-Light, \"Helvetica Neue Light\", \"Microsoft YaHei\", sans-serif}body.read ._content ._content_title span{font-size:12px;padding:0 1em;margin:0}body.read ._nav{box-sizing:border-box;background:url(" + ___CSS_LOADER_URL_REPLACEMENT_1___ + ") repeat;width:800px;margin:1em auto 1em;height:70px;display:flex;align-items:center;border:1px solid #d8d8d8}body.read ._nav a,body.read ._nav span{flex:1;height:100%;display:flex;align-items:center;justify-content:center;text-decoration:none;color:#333;font:18px/70px PingFangSC-Regular, HelveticaNeue-Light, \"Helvetica Neue Light\", \"Microsoft YaHei\", sans-serif}body.read ._nav span{color:#ccc}body.read ._nav .separate{width:1px;height:32px;border-right:1px solid #d8d8d8}body.read ._nav a:hover{background:rgba(0,0,0,0.03)}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "body{display:none}body.read iframe,body.read .weizhi,body.read .weizhi+div,body.read .at-share-btn,body.read .sao_mobile_box,body.read .addthis-animated,body.read .addthis-smartlayers,body.read .addthis-smartlayers-desktop{display:none !important}body.read{background:url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ") repeat;font-size:18px;font-family:\"Microsoft YaHei\", PingFangSC-Regular, HelveticaNeue-Light, \"Helvetica Neue Light\", sans-serif}body.read ._bread{box-sizing:border-box;width:800px;margin:1em auto 1em;display:flex;align-items:center;font:12px/22px PingFangSC-Regular, \"-apple-system\", Simsun}body.read ._bread .separate{color:rgba(0,0,0,0.4)}body.read ._bread a{margin:0 0.5em !important;padding:0 !important;background-color:transparent !important}body.read ._bread a,body.read ._bread b{padding:0;font-weight:400;font-size:12px;color:#1a1a1a !important}body.read ._content{box-sizing:border-box;background:url(" + ___CSS_LOADER_URL_REPLACEMENT_1___ + ") repeat;width:800px;margin:0 auto 1em;padding:2em;color:#262626;font-weight:500;text-indent:2em;text-align:left;border:1px solid #d8d8d8;position:relative}body.read ._content .book-mark{position:absolute;top:0px;right:48px;width:24px;height:40px;background-image:url(" + ___CSS_LOADER_URL_REPLACEMENT_2___ + ");background-repeat:no-repeat;background-position:-228px -143.5px;background-size:340px}body.read ._content br{content:\"\";margin:0.5em 0;display:block;font-size:150%}body.read ._content p{word-wrap:wrap;word-break:break-all;margin-top:0.5em;line-height:1.8;text-align:justify}body.read ._content ._content_title{display:flex;align-items:center;text-indent:0;padding:0 0 0.5em;margin:0 0 0.5em;font:24px/32px PingFangSC-Regular, HelveticaNeue-Light, \"Helvetica Neue Light\", \"Microsoft YaHei\", sans-serif}body.read ._content ._content_title span{font-size:12px;padding:0 1em;margin:0}body.read ._nav{box-sizing:border-box;background:url(" + ___CSS_LOADER_URL_REPLACEMENT_1___ + ") repeat;width:800px;margin:1em auto 1em;height:70px;display:flex;align-items:center;border:1px solid #d8d8d8;white-space:nowrap}body.read ._nav a,body.read ._nav span{flex:1;height:100%;display:flex;align-items:center;justify-content:center;text-decoration:none;color:#333 !important;font:18px/70px PingFangSC-Regular, HelveticaNeue-Light, \"Helvetica Neue Light\", \"Microsoft YaHei\", sans-serif}body.read ._nav span{color:#ccc !important}body.read ._nav .separate{width:1px;height:32px;border-right:1px solid #d8d8d8}body.read ._nav a:hover{background:rgba(0,0,0,0.03)}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -671,7 +673,8 @@ UI.prototype.init = function () {
 };
 
 UI.prototype.mounted = function () {
-  this.body = document.body;
+  this.body = document.body; // create Element
+
   this.new_bread_el = document.createElement("div");
   this.new_bread_el.className = "_bread";
   this.new_content_el = document.createElement("div");
@@ -680,7 +683,7 @@ UI.prototype.mounted = function () {
   this.new_title_el.className = "_content_title";
   this.new_nav_el = document.createElement("div");
   this.new_nav_el.className = "_nav";
-}; // 网站策略判定
+}; // 网站策略判定 判定入口
 
 
 UI.prototype.judge = function () {
@@ -702,6 +705,11 @@ UI.prototype.judge = function () {
 
     if (dq(".modbg")) {
       this.shuba();
+      return false;
+    }
+
+    if (dq("#content.fonts_mesne")) {
+      this.ptwxz();
       return false;
     }
 
@@ -744,28 +752,11 @@ UI.prototype.shuquge = function () {
   this.old_title_el = dq(".content h1"); // title
 
   this.old_content_el = dq("#content");
-  this.old_nav_el = dq(".page_chapter ul"); // btns
-
   this.nav_prev = dq(".page_chapter li:nth-child(1) a");
   this.nav_menu = dq(".page_chapter li:nth-child(2) a");
   this.nav_next = dq(".page_chapter li:nth-child(3) a");
   this.nav_space = dq(".page_chapter li:nth-child(4) a");
   this.ads = [".header", "div.box_con > div.bookname div.lm", ".info > .link", ".footer"];
-  this.process();
-};
-
-UI.prototype.biquge = function () {
-  this.body.classList.add("biquge");
-  this.old_title_el = dq(".content_read .bookname h1"); // title
-
-  this.old_content_el = dq(".content_read #content");
-  this.old_nav_el = dq(".page_chapter ul"); // btns
-
-  this.nav_prev = dq(".bottem2 a:nth-child(1)");
-  this.nav_menu = dq(".bottem2 a:nth-child(2)");
-  this.nav_next = dq(".bottem2 a:nth-child(3)");
-  this.nav_space = dq(".bottem2 a:nth-child(4)");
-  this.ads = ["#footer", ".header", "#listtj", ".box_con + script + div"];
   this.process();
 };
 
@@ -775,14 +766,43 @@ UI.prototype.shuba = function () {
   this.old_title_el = dq("h1.hide720"); // title
 
   this.old_content_el = dq(".txtnav");
-  this.old_nav_el = dq(".page1"); // btns
-
   this.nav_prev = dq(".page1 a:nth-child(1)");
   this.nav_menu = dq(".page1 a:nth-child(3)");
   this.nav_next = dq(".page1 a:nth-child(4)");
+  this.nav_space_1 = dq(".page1 a:nth-child(5)");
   this.ads = [".hide720"];
   this.process();
-}; // 开始处理
+};
+
+UI.prototype.ptwxz = function () {
+  this.body.classList.add("ptwxz");
+  this.old_bread_el = null;
+  this.old_title_el = dq("#main #content h1"); // title
+
+  this.old_content_el = dq("#main #content");
+  this.nav_prev = dq(".toplink a:nth-child(1)");
+  this.nav_menu = dq(".toplink a:nth-child(2)");
+  this.nav_next = dq(".toplink a:nth-child(3)");
+  this.nav_space_1 = dq(".toplink a:nth-child(4)");
+  this.nav_space_2 = dq(".toplink a:nth-child(5)");
+  this.ads = ["#footer", ".header", "#listtj", ".box_con + script + div"];
+  this.process();
+};
+
+UI.prototype.biquge = function () {
+  this.body.classList.add("biquge");
+  this.old_bread_el = dq(".con_top");
+  this.old_title_el = dq(".content_read .bookname h1"); // title
+
+  this.old_content_el = dq(".content_read #content");
+  this.nav_prev = dq(".bottem2 a:nth-child(1)");
+  this.nav_menu = dq(".bottem2 a:nth-child(2)");
+  this.nav_next = dq(".bottem2 a:nth-child(3)");
+  this.nav_space_1 = dq(".bottem2 a:nth-child(4)");
+  this.nav_space_2 = dq(".bottem2 a:nth-child(5)");
+  this.ads = ["#footer", ".header", "#listtj", ".box_con + script + div"];
+  this.process();
+}; // 开始处理 入口
 
 
 UI.prototype.process = function () {
@@ -848,6 +868,12 @@ UI.prototype.processReadContent = function () {
   this.new_title_el.innerHTML = this.old_title_el.innerHTML;
   var txt = this.new_title_el.outerHTML + this.old_content_el.innerHTML;
   this.new_content_el.innerHTML = removeTextADS(txt);
+  this.new_content_el.querySelector("h1").remove();
+  this.new_content_el.querySelector("table").remove();
+  Array.from(this.new_content_el.querySelectorAll("a")).forEach(function (el) {
+    return el.remove();
+  }); // 
+
   var mark = document.createElement("div");
   mark.className += "book-mark";
   this.new_content_el.appendChild(mark);
@@ -855,7 +881,7 @@ UI.prototype.processReadContent = function () {
 
 
 function removeTextADS(txt) {
-  var ads = [/(八一中文网).*com/, "请退出转码页面，请下载爱阅小说app 阅读最新章节。", "txt下载地址： ", "手机阅读："];
+  var ads = [/https?(.+)html/g, /wa?(.+)com/g, /八一中文网(.+)com/g, /请记住(.+)域名：/g, /<h1>.+<h1>/g];
   ads.forEach(function (item) {
     txt = txt.replace(item, "");
   });
@@ -867,7 +893,7 @@ UI.prototype.processReadNav = function () {
   if (this.nav_prev) {
     this.new_nav_el.appendChild(this.nav_prev);
   } else {
-    this.new_nav_el.innerHTML += "<span>上一章</span>";
+    this.new_nav_el.innerHTML += "<span>上一张</span>";
   }
 
   this.processReadNavSeparate();
@@ -888,8 +914,12 @@ UI.prototype.processReadNav = function () {
 
   this.processReadNavSeparate();
 
-  if (this.nav_space) {
-    this.new_nav_el.appendChild(this.nav_space);
+  if (this.nav_space_1) {
+    this.new_nav_el.appendChild(this.nav_space_1);
+  }
+
+  if (this.nav_space_2) {
+    this.new_nav_el.appendChild(this.nav_space_2);
   }
 }; // 处理底部分割线
 

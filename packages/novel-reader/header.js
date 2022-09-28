@@ -13,6 +13,8 @@
 // @match      *://www.biquge.lu/book/*/*.html
 // @match      *://www.biqugeu.net/*/*.html
 // @match      *://www.ibiquge.net/*/*.html
+// @match      *://www.qbiqu.com/*/*.html
+// @match      *://www.ptwxz.com/html/*/*/*.html
 // @match      *://www.230book.net/book/*/*.html
 // @match      *://www.69shu.com/txt/*/*
 // @match      *://www.81zw.cc/book/*/*.html

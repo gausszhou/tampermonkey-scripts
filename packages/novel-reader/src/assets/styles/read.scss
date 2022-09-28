@@ -93,6 +93,7 @@ body.read ._nav {
   display: flex;
   align-items: center;
   border: 1px solid #d8d8d8;
+  white-space: nowrap;
   a,
   span {
     flex: 1;
@@ -101,12 +102,12 @@ body.read ._nav {
     align-items: center;
     justify-content: center;
     text-decoration: none;
-    color: #333;
+    color: #333 !important;
     font: 18px/70px PingFangSC-Regular, HelveticaNeue-Light, "Helvetica Neue Light",
       "Microsoft YaHei", sans-serif;
   }
   span {
-    color: #ccc;
+    color: #ccc !important;
   }
   .separate {
     width: 1px;
