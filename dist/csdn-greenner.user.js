@@ -6,13 +6,8 @@
 // @namespace    gausszhou
 // @grant        none
 // @run-at       document-start
-<<<<<<< HEAD
-// @icon         https://www.gausszhou.top/favicon.ico
-// @license      MIT
-=======
 // @license      MIT
 // @icon         https://www.gausszhou.top/favicon.ico
->>>>>>> 463e2e0 (feat(小说整治): 添加科幻小说网)
 // @include      *://*.csdn.net/*
 // @include      *://csdn.net/*
 // ==/UserScript==
@@ -616,10 +611,6 @@ UI.prototype.processRemoveAD = function () {
   }
 };
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 463e2e0 (feat(小说整治): 添加科幻小说网)
 UI.prototype.processCSDN = function () {
   window.onload = function () {
     // 去除剪贴板劫持

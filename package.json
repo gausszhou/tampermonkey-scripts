@@ -1,9 +1,6 @@
 {
   "name": "user-scripts",
   "private": true,
-<<<<<<< HEAD
-  "workspaces": [ 
-=======
   "scripts": {
     "build":"sh build.sh",
     "format": "prettier --write **/packages/**/src/**/**.{js,json,scss,md} ",
@@ -13,7 +10,6 @@
     "remove:module": "rm -rf packages/**/node_modules"
   },
   "workspaces": [
->>>>>>> 5f58092 (chore:  代码格式化)
     "packages/*"
   ],
   "devDependencies": {
