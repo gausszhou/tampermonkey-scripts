@@ -172,6 +172,7 @@ UI.prototype.processRead = function () {
   let p_list = document.querySelectorAll("._content > p");
   p_list.forEach((p) => {
     p.innerHTML = p.innerHTML.trim();
+    p.innerHTML = p.innerHTML.replace(/\s/g,"")
   });
 };
 
@@ -209,8 +210,8 @@ UI.prototype.processReadContent = function () {
   this.new_title_el.innerHTML = this.old_title_el.innerHTML;
   let txt = this.new_title_el.outerHTML + this.old_content_el.innerHTML;
   this.new_content_el.innerHTML = removeTextADS(txt);
-  this.new_content_el.querySelector("h1").remove()
-  this.new_content_el.querySelector("table").remove()
+  this.new_content_el.querySelector("h1")?.remove()
+  this.new_content_el.querySelector("table")?.remove()
   Array.from(this.new_content_el.querySelectorAll("a")).forEach(el=>el.remove())
   // 
   let mark = document.createElement("div");
