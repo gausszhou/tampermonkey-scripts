@@ -1,11 +1,6 @@
 module.exports = {
-<<<<<<< HEAD
-  printWidth: 100,
+  printWidth: 120,
   semi: false,
-=======
-  printWidth: 80,
-  semi: true,
->>>>>>> eddb1a2 (chore: 结构大调整)
   tabWidth: 2,
   useTabs: false,
   singleQuote: false,

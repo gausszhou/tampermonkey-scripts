@@ -1,14 +1,13 @@
 let dq = document.querySelector.bind(document);
-
-function UI() {
+function Reader() {
   this.init();
 }
 
-UI.prototype.init = function () {
+Reader.prototype.init = function () {
   console.log("欢迎使用小说整治插件");
 };
 
-UI.prototype.mounted = function () {
+Reader.prototype.mounted = function () {
   this.body = document.body;
 
   // create Element
@@ -24,7 +23,7 @@ UI.prototype.mounted = function () {
 };
 
 // 网站策略判定 判定入口
-UI.prototype.judge = function () {
+Reader.prototype.judge = function () {
   try {
 
     if (dq(".bread_728x90")) {
@@ -60,7 +59,7 @@ UI.prototype.judge = function () {
 
 // 各个网站的策略
 
-UI.prototype.kehuanNet = function () {
+Reader.prototype.kehuanNet = function () {
   this.body.classList.add("kehuan");
   this.old_bread_el = dq("#container .topnav h2");
   this.old_title_el = dq("#container > h1");
@@ -73,7 +72,7 @@ UI.prototype.kehuanNet = function () {
   this.process();
 };
 
-UI.prototype.uukanshu = function () {
+Reader.prototype.uukanshu = function () {
   this.body.classList.add("uukanshu");
   this.old_bread_el = dq(".srcbox");
   this.old_title_el = dq(".h1title #timu");
@@ -86,7 +85,7 @@ UI.prototype.uukanshu = function () {
   this.process();
 };
 
-UI.prototype.shuquge = function () {
+Reader.prototype.shuquge = function () {
   this.body.classList.add("shuquge");
   this.old_bread_el = dq(".path .p");
   this.old_title_el = dq(".content h1"); // title
@@ -102,7 +101,7 @@ UI.prototype.shuquge = function () {
 
 
 
-UI.prototype.shuba = function () {
+Reader.prototype.shuba = function () {
   this.body.classList.add("shuba");
   this.old_bread_el = dq(".bread");
   this.old_title_el = dq("h1.hide720"); // title
@@ -116,7 +115,7 @@ UI.prototype.shuba = function () {
   this.process();
 };
 
-UI.prototype.ptwxz = function () {
+Reader.prototype.ptwxz = function () {
   this.body.classList.add("ptwxz");
   this.old_bread_el = null;
   this.old_title_el = dq("#main #content h1"); // title
@@ -133,7 +132,7 @@ UI.prototype.ptwxz = function () {
 };
 
 
-UI.prototype.biquge = function () {
+Reader.prototype.biquge = function () {
   this.body.classList.add("biquge");
   this.old_bread_el = dq(".con_top");
   this.old_title_el = dq(".content_read .bookname h1"); // title
@@ -148,10 +147,8 @@ UI.prototype.biquge = function () {
   this.process();
 };
 
-
-
 // 开始处理 入口
-UI.prototype.process = function () {
+Reader.prototype.process = function () {
   if (this.old_content_el) {
     this.mode = "read";
     this.processRead();
@@ -161,7 +158,7 @@ UI.prototype.process = function () {
 };
 
 // 处理页面
-UI.prototype.processRead = function () {
+Reader.prototype.processRead = function () {
   this.processReadBread();
   this.processReadContent();
   this.processReadNav();
@@ -177,7 +174,7 @@ UI.prototype.processRead = function () {
 };
 
 // 去除广告
-UI.prototype.processRemoveAD = function () {
+Reader.prototype.processRemoveAD = function () {
   if (this.ads.length) {
     console.log(this.ads.length);
     this.ads.forEach((selector) => {
@@ -189,7 +186,7 @@ UI.prototype.processRemoveAD = function () {
 };
 
 // 处理面包屑
-UI.prototype.processReadBread = function () {
+Reader.prototype.processReadBread = function () {
   this.breadCrumbs = this.old_bread_el && this.old_bread_el.getElementsByTagName("a");
   if (this.breadCrumbs && this.breadCrumbs.length) {
     Array.from(this.breadCrumbs).forEach((item, index) => {
@@ -206,7 +203,7 @@ UI.prototype.processReadBread = function () {
 
 // 处理正文
 
-UI.prototype.processReadContent = function () {
+Reader.prototype.processReadContent = function () {
   this.new_title_el.innerHTML = this.old_title_el.innerHTML;
   let txt = this.new_title_el.outerHTML + this.old_content_el.innerHTML;
   this.new_content_el.innerHTML = removeTextADS(txt);
@@ -235,7 +232,7 @@ function removeTextADS(txt) {
 }
 
 // 处理底部导航
-UI.prototype.processReadNav = function () {
+Reader.prototype.processReadNav = function () {
   if (this.nav_prev) {
     this.new_nav_el.appendChild(this.nav_prev);
   } else {
@@ -267,10 +264,10 @@ UI.prototype.processReadNav = function () {
 };
 
 // 处理底部分割线
-UI.prototype.processReadNavSeparate = function () {
+Reader.prototype.processReadNavSeparate = function () {
   let separate = document.createElement("div");
   separate.className += "separate";
   this.new_nav_el.appendChild(separate);
 };
 
-export default UI;
+export default Reader;
