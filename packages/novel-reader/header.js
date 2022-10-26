@@ -8,6 +8,8 @@
 // @grant        none
 // @run-at       document-start
 // @icon         https://www.gausszhou.top/favicon.ico
+// @match      *://read.qidian.com/chapter/*/*
+// @match      *://book.qidian.com/info/*
 // @match      *://www.uukanshu.com/*.html
 // @match      *://www.shuquge.com/txt/*/*.html
 // @match      *://www.biquge.lu/book/*/*.html
