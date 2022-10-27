@@ -21,7 +21,6 @@ UI.prototype.csdn = function () {
   if (this.blog_content) {
     this.blog_content.classList.add("markdown-body");
   }
-
   this.ads = [".csdn-side-toolbar", "#asideHotArticle", "#asideArchive"];
   this.process();
   this.processCSDN();
