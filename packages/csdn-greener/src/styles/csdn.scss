@@ -42,24 +42,28 @@
   #asideHotArticle,
   #asideSearchArticle,
   #asideCustom,
-  #asidedirectory,
   #btnMoreComment,
+  .kind_person,
   .recommend-box,
   .recommend-right_aside .toolbar-advert {
     display: none !important;
   }
 }
-
 .csdn.article {
-  .main_father {
-    max-width: 800px;
-    margin: 0 auto;
-  }
   .blog-content-box {
     margin-top: 0;
   }
   .template-box {
     margin-bottom: 1em;
+  }
+  #asidedirectory{
+    position: fixed;
+    top: 3.5rem;
+  }
+  #asidedirectory #directory .group_item ,
+  #recommend-right #groupfile ,
+  #recommend-right #groupfile .groupfile-div {
+    max-height: calc(100vh - 8rem) !important;
   }
   blockquote {
     margin: 0.5em !important;
