@@ -1,25 +1,32 @@
 // ==UserScript==
 // @name         Novel Reader
-// @version      0.0.14
-// @description  小说阅读器，特点是仿起点风格的网站样式，支持UU看书，笔趣阁，书趣阁，81中文网
+// @version      0.0.15
+// @description  小说阅读器，特点是仿起点风格的网站样式，支持UU看书，笔趣阁，书趣阁，81中文网等
 // @author       gausszhou@qq.com
 // @namespace    gausszhou
 // @license      MIT
 // @grant        none
 // @run-at       document-start
 // @icon         https://www.gausszhou.top/favicon.ico
-// @match      *://read.qidian.com/chapter/*/*
 // @match      *://book.qidian.com/info/*
+
 // @match      *://www.uukanshu.com/*.html
-// @match      *://www.shuquge.com/txt/*/*.html
-// @match      *://www.biquge.lu/book/*/*.html
+// @match      *://www.biqule8.com/*/*.html
 // @match      *://www.biqugeu.net/*/*.html
 // @match      *://www.ibiquge.net/*/*.html
 // @match      *://www.qbiqu.com/*/*.html
-// @match      *://www.ptwxz.com/html/*/*/*.html
 // @match      *://www.b520.cc/*/*.html
-// @match      *://www.230book.net/book/*/*.html
+
+// @match      *://www.shuquge.com/txt/*/*.html
 // @match      *://www.69shu.com/txt/*/*
+// @match      *://www.ptwxz.com/html/*/*/*.html
+// @match      *://www.bqwxg.com/wenzhang/*/*/*.html
+
+// @match      *://www.86ebook.com/book/*/*.html
+// @match      *://www.xbiquge.so/book/*/*.html
+// @match      *://www.xxdingdian.com/book/*/*.html
+// @match      *://www.biquge.lu/book/*/*.html
+// @match      *://www.230book.net/book/*/*.html
 // @match      *://www.81zw.cc/book/*/*.html
 // @match      *://www.81zw.com/book/*/*.html
 // @match      *://www.81zw.me/book/*/*.html
@@ -692,7 +699,7 @@ QiDian.prototype.processContent = function () {
 // 添加搜索
 QiDian.prototype.processButton = function () {
   var button = dq(".book-info h1 em");
-  var href = "https://www.google.com/search?q=" + encodeURIComponent(this.novelName) + " site:uukanshu.com";
+  var href = "https://www.google.com/search?q=" + encodeURIComponent(this.novelName);
   button.addEventListener("click", function () {
     window.open(href);
   });
@@ -741,6 +748,10 @@ Reader.prototype.judge = function () {
     }
     if (reader_dq("#content.fonts_mesne")) {
       this.ptwxz();
+      return false;
+    }
+    if (reader_dq("#center_tip")) {
+      this.e86book();
       return false;
     }
     this.biquge();
@@ -812,6 +823,19 @@ Reader.prototype.ptwxz = function () {
   this.ads = ["#footer", ".header", "#listtj", ".box_con + script + div"];
   this.process();
 };
+Reader.prototype.e86book = function () {
+  this.body.classList.add("e86book");
+  this.old_bread_el = reader_dq(".layout-tit");
+  this.old_title_el = reader_dq(".reader-main .title"); // title
+  this.old_content_el = reader_dq(".reader-main #content");
+  this.nav_prev = reader_dq(".section-opt a:nth-child(1)");
+  this.nav_menu = reader_dq(".section-opt a:nth-child(2)");
+  this.nav_next = reader_dq(".section-opt a:nth-child(3)");
+  this.nav_space_1 = reader_dq(".section-opt a:nth-child(4)");
+  this.nav_space_2 = reader_dq(".section-opt a:nth-child(5)");
+  this.ads = ["#footer", ".header", "#listtj", ".box_con + script + div"];
+  this.process();
+};
 Reader.prototype.biquge = function () {
   this.body.classList.add("biquge");
   this.old_bread_el = reader_dq(".con_top");
@@ -832,6 +856,8 @@ Reader.prototype.process = function () {
     this.mode = "read";
     this.processRead();
     this.body.classList.add("read");
+  } else {
+    console.log("未获取到内容");
   }
   this.processRemoveAD();
 };

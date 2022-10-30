@@ -33,7 +33,7 @@ QiDian.prototype.processContent = function () {
 // 添加搜索
 QiDian.prototype.processButton = function () {
   const button = dq(".book-info h1 em")
-  const href = "https://www.google.com/search?q=" + encodeURIComponent(this.novelName) + " site:uukanshu.com"
+  const href = "https://www.google.com/search?q=" + encodeURIComponent(this.novelName)
   button.addEventListener("click", () => {
     window.open(href)
   })

@@ -50,6 +50,10 @@ Reader.prototype.judge = function () {
       this.ptwxz();
       return false;
     }
+    if(dq("#center_tip")){
+      this.e86book()
+      return false;
+    }
 
     this.biquge();
   } catch (error) {
@@ -132,6 +136,21 @@ Reader.prototype.ptwxz = function () {
 };
 
 
+Reader.prototype.e86book = function () {
+  this.body.classList.add("e86book");
+  this.old_bread_el = dq(".layout-tit");
+  this.old_title_el = dq(".reader-main .title"); // title
+  this.old_content_el = dq(".reader-main #content");
+  
+  this.nav_prev = dq(".section-opt a:nth-child(1)");
+  this.nav_menu = dq(".section-opt a:nth-child(2)");
+  this.nav_next = dq(".section-opt a:nth-child(3)");
+  this.nav_space_1 = dq(".section-opt a:nth-child(4)");
+  this.nav_space_2 = dq(".section-opt a:nth-child(5)");
+  this.ads = ["#footer", ".header", "#listtj", ".box_con + script + div"];
+  this.process();
+};
+
 Reader.prototype.biquge = function () {
   this.body.classList.add("biquge");
   this.old_bread_el = dq(".con_top");
@@ -153,6 +172,8 @@ Reader.prototype.process = function () {
     this.mode = "read";
     this.processRead();
     this.body.classList.add("read");
+  }else {
+    console.log("未获取到内容");
   }
   this.processRemoveAD();
 };

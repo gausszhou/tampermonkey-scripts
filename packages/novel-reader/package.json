@@ -1,10 +1,10 @@
 {
   "name": "novel-reader",
-  "version": "0.0.14",
+  "version": "0.0.15",
   "description": "TamperMonkey userScript",
   "author": "gausszhou <gausszhou@qq.com>",
   "private": false,
-  "main": "/lib/app.bundle.js",
+  "main": "/dist/app.bundle.js",
   "license": "MIT",
   "scripts": {
     "dev": "webpack-dev-server --config build/webpack.dev.js",
