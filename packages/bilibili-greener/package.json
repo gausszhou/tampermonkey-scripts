@@ -4,7 +4,6 @@
   "description": "TamperMonkey userScript",
   "author": "gausszhou <gausszhou@qq.com>",
   "private": false,
-  "main": "/lib/app.bundle.js",
   "license": "MIT",
   "scripts": {
     "dev": "webpack-dev-server --config build/webpack.dev.js",

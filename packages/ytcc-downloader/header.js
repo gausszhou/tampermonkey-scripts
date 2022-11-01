@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         Youtube CC Downloader
+// @name         Youtube CC Downloader For Chinese
 // @version      0.0.1
 // @description  下载Youtube的英文/英文自动生成以及对应的机翻中文字幕
 // @author       gausszhou
