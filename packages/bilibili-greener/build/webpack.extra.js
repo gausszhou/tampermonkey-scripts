@@ -8,5 +8,5 @@ const packageJSON = require("../package.json")
 const versionReg = /(\d+\.\d+\.\d+)/g;
 const currentVersion = packageJSON.version;
 header = header.replace(versionReg, currentVersion);
-fs.writeFileSync(`./dist/${packageJSON.name}.user.js`, header + "\n" + app);
+fs.writeFileSync(`./dist/${packageJSON.name}.${currentVersion}.user.js`, header + "\n" + app);
 console.log("build complete!");
