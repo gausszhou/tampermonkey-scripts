@@ -15,4 +15,8 @@ set -e
 cd packages/ytcc-downloader
 npm run build
 cd - 
+set -e 
+cd packages/util-spacingjs
+npm run build
+cd - 
 mv ./packages/**/dist/**.user.js  ./dist/
