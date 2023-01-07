@@ -1,6 +1,6 @@
 {
   "name": "novel-reader",
-  "version": "0.0.15",
+  "version": "0.0.16",
   "description": "TamperMonkey userScript",
   "author": "gausszhou <gausszhou@qq.com>",
   "private": false,
