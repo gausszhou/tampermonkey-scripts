@@ -36,6 +36,11 @@ Reader.prototype.judge = function () {
       return false;
     }
 
+    if (dq("#tbox")) {
+      this.ddxs();
+      return false;
+    }
+
     if (dq(".page_chapter")) {
       this.shuquge();
       return false;
@@ -71,6 +76,19 @@ Reader.prototype.kehuanNet = function () {
   this.nav_prev = dq(".next a:nth-child(1)");
   this.nav_menu = dq(".next a:nth-child(2)");
   this.nav_next = dq(".next a:nth-child(3)");
+  this.nav_space = "";
+  this.ads = [".ad_content"];
+  this.process();
+};
+
+Reader.prototype.ddxs = function () {
+  this.body.classList.add("ddxs");
+  this.old_bread_el = dq("#amain dl dt");
+  this.old_title_el = dq("#amain dl dd");
+  this.old_content_el = dq("#contents");
+  this.nav_prev = dq("#footlink a:nth-child(1)");
+  this.nav_menu = dq("#footlink a:nth-child(2)");
+  this.nav_next = dq("#footlink a:nth-child(3)");
   this.nav_space = "";
   this.ads = [".ad_content"];
   this.process();

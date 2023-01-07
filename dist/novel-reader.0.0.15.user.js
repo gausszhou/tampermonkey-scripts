@@ -11,6 +11,7 @@
 // @match      *://book.qidian.com/info/*
 
 // @match      *://www.uukanshu.com/*.html
+// @match      *://www.ddxs.com/*.html
 // @match      *://www.biqule8.com/*/*.html
 // @match      *://www.biqugeu.net/*/*.html
 // @match      *://www.ibiquge.net/*/*.html
@@ -738,6 +739,10 @@ Reader.prototype.judge = function () {
       this.uukanshu();
       return false;
     }
+    if (reader_dq("#tbox")) {
+      this.ddxs();
+      return false;
+    }
     if (reader_dq(".page_chapter")) {
       this.shuquge();
       return false;
@@ -770,6 +775,18 @@ Reader.prototype.kehuanNet = function () {
   this.nav_prev = reader_dq(".next a:nth-child(1)");
   this.nav_menu = reader_dq(".next a:nth-child(2)");
   this.nav_next = reader_dq(".next a:nth-child(3)");
+  this.nav_space = "";
+  this.ads = [".ad_content"];
+  this.process();
+};
+Reader.prototype.ddxs = function () {
+  this.body.classList.add("ddxs");
+  this.old_bread_el = reader_dq("#amain dl dt");
+  this.old_title_el = reader_dq("#amain dl dd");
+  this.old_content_el = reader_dq("#contents");
+  this.nav_prev = reader_dq("#footlink a:nth-child(1)");
+  this.nav_menu = reader_dq("#footlink a:nth-child(2)");
+  this.nav_next = reader_dq("#footlink a:nth-child(3)");
   this.nav_space = "";
   this.ads = [".ad_content"];
   this.process();
