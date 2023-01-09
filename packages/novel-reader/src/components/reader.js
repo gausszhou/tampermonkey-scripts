@@ -84,7 +84,7 @@ Reader.prototype.kehuanNet = function () {
 Reader.prototype.ddxs = function () {
   this.body.classList.add("ddxs");
   this.old_bread_el = dq("#amain dl dt");
-  this.old_title_el = dq("#amain dl dd");
+  this.old_title_el = dq("#amain dl dd h1");
   this.old_content_el = dq("#contents");
   this.nav_prev = dq("#footlink a:nth-child(1)");
   this.nav_menu = dq("#footlink a:nth-child(2)");
@@ -261,8 +261,12 @@ function removeTextADS(txt) {
     /https?(.+)html/g,
     /wa?(.+)com/g,
     /八一中文网(.+)com/g,
-    /请记住(.+)域名：/g,
     /<h1>.+<h1>/g,
+    /请记住(.+)域名：/g,
+    "【推荐下，换源app追书真的好用，这里下载大家去快可以试试吧。】",
+    "【认识十年的老书友给我推荐的追书app，换源app！真特么好用，开车、睡前都靠这个朗读听书打发时间，这里可以下载】",
+    "【讲真，最近一直用换源app看书追更，换源切换，朗读音色多，安卓苹果均可。】",
+    "【话说，目前朗读听书最好用的app，换源app，安装最新版。】"
   ];
   ads.forEach((item) => {
     txt = txt.replace(item, "");

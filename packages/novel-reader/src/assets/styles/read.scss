@@ -1,7 +1,7 @@
 @import "./variables.scss";
 
 body.read {
-  background: $bg-body repeat;
+  background: $bg-body repeat !important;
   font-size: 18px;
   font-family: "Microsoft YaHei", PingFangSC-Regular, HelveticaNeue-Light, "Helvetica Neue Light",
     sans-serif;

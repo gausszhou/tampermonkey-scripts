@@ -5,9 +5,9 @@ import Reader from "./components/reader"
 let isInit = false
 
 ;(function () {
-  window.addEventListener("DOMContentLoaded", () => {
-    init()
-  })
+  // window.addEventListener("DOMContentLoaded", () => {
+  //   init()
+  // })
   window.addEventListener("load", () => {
     init()
   })
