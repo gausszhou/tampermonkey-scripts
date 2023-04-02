@@ -12,6 +12,7 @@
 
 // @match      *://www.uukanshu.com/*.html
 // @match      *://www.ddxs.com/*.html
+// @match      *://www.8dushu.net/ml/*/*.html
 // @match      *://www.biqule8.com/*/*.html
 // @match      *://www.biqugeu.net/*/*.html
 // @match      *://www.ibiquge.net/*/*.html
