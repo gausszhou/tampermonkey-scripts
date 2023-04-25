@@ -10,7 +10,8 @@ body.novel-reader-body {
 body.novel-reader-body .novel-reader-bread {
   box-sizing: border-box;
   width: 800px;
-  margin: 1em auto 1em;
+  margin: 0 auto;
+  padding: 1em 0;
   display: flex;
   align-items: center;
   font: 12px/22px PingFangSC-Regular, "-apple-system", Simsun;

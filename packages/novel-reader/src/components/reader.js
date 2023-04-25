@@ -1,4 +1,6 @@
+import { simplify } from "./translate";
 const dq = document.querySelector.bind(document);
+const dqs = document.querySelectorAll.bind(document);
 
 const CLASSNAME_BODY = "novel-reader-body";
 const CLASSNAME_BREAD = "novel-reader-bread";
@@ -72,6 +74,10 @@ Reader.prototype.judge = function () {
 
     if (dq(".header_wap.pc_none")) {
       this.taccx();
+      return false;
+    }
+    if (dq("#chapterWarp")) {
+      this.novel543();
       return false;
     }
 
@@ -196,6 +202,21 @@ Reader.prototype.taccx = function () {
   this.process();
 };
 
+Reader.prototype.novel543 = function () {
+  this.body.classList.add("novel543");
+  this.$breadOld = dq("#chapterWarp > nav > ul");
+  this.$titleOld = dq("#chapterWarp > div > h1"); // title
+  this.$contentOld = dq("#chapterWarp > div > div");
+
+  this.$prev = dq("#read > div > div.warp.my-3.foot-nav > a:nth-child(1)");
+  this.$menu = dq("#read > div > div.warp.my-3.foot-nav > a:nth-child(3)");
+  this.$next = dq("#read > div > div.warp.my-3.foot-nav > a:nth-child(5)");
+  this.$space1 = null;
+  this.$space2 = null;
+  this.ads = ["#read > div.novel-reader-content > .gadBlock", "#read > div.novel-reader-content > .gadBlock"];
+  this.process();
+};
+
 Reader.prototype.biquge = function () {
   this.body.classList.add("biquge");
   this.$breadOld = dq(".con_top");
@@ -246,9 +267,13 @@ Reader.prototype.processRemoveAD = function () {
   if (this.ads.length) {
     console.log("[Novel Reader]", "开始去除广告");
     this.ads.forEach((selector) => {
-      let ad = dq(selector);
+      let ads = dqs(selector);
       console.log("[Novel Reader] remove ad", ad);
-      if (ad) ad.parentElement.removeChild(ad);
+      if (ads && ads.length) {
+        ads.forEach((ad) => {
+          ad.parentElement.removeChild(ad);
+        });
+      }
     });
   }
 };
@@ -274,7 +299,9 @@ Reader.prototype.processReadBread = function () {
 Reader.prototype.processReadContent = function () {
   this.$titleNew.innerHTML = this.$titleOld.innerHTML;
   let txt = this.$titleNew.outerHTML + this.$contentOld.innerHTML;
-  this.$contentNew.innerHTML = removeTextADS(txt);
+  const txtWithAds = removeTextADS(txt);
+  const txtSimplify = simplify(txtWithAds);
+  this.$contentNew.innerHTML = txtSimplify;
   this.$contentNew.querySelector("h1")?.remove();
   this.$contentNew.querySelector("table")?.remove();
   Array.from(this.$contentNew.querySelectorAll("a")).forEach((el) => el.remove());
