@@ -268,9 +268,9 @@ Reader.prototype.processRemoveAD = function () {
     console.log("[Novel Reader]", "开始去除广告");
     this.ads.forEach((selector) => {
       let ads = dqs(selector);
-      console.log("[Novel Reader] remove ad", ad);
       if (ads && ads.length) {
         ads.forEach((ad) => {
+          console.log("[Novel Reader] remove ad", ad);
           ad.parentElement.removeChild(ad);
         });
       }
