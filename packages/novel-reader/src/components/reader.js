@@ -1,9 +1,15 @@
 const dq = document.querySelector.bind(document);
 
+const CLASSNAME_BODY = "novel-reader-body";
 const CLASSNAME_BREAD = "novel-reader-bread";
+const CLASSNAME_BREAD_SEPARATE = "novel-reader-bread-separate";
+
 const CLASSNAME_CONTENT = "novel-reader-content";
 const CLASSNAME_TITLE = "novel-reader-content-title";
-const CLASSNAME_NAV = "novel-reader-bottom-nav";
+const CLASSNAME_BOOK_MARK = "novel-reader-book-mark";
+
+const CLASSNAME_BOTTOM_NAV = "novel-reader-bottom-nav";
+const CLASSNAME_BOTTOM_SEPARATE = "novel-reader-bottom-separate";
 
 function Reader() {
   this.init();
@@ -24,7 +30,7 @@ Reader.prototype.mounted = function () {
   this.$titleNew = document.createElement("div");
   this.$titleNew.className = CLASSNAME_TITLE;
   this.$navNew = document.createElement("div");
-  this.$navNew.className = CLASSNAME_NAV;
+  this.$navNew.className = CLASSNAME_BOTTOM_NAV;
 };
 
 // 网站策略判定 判定入口
@@ -69,11 +75,9 @@ Reader.prototype.judge = function () {
       return false;
     }
 
-    
-
     this.biquge();
   } catch (error) {
-    alert("[Novel Reader] error:", error);
+    console.error("[Novel Reader] error:", error);
   }
 };
 
@@ -188,7 +192,7 @@ Reader.prototype.taccx = function () {
   this.$next = dq("#pb_next");
   this.$space1 = null;
   this.$space2 = null;
-  // this.ads = ["#footer", ".header", "#listtj", ".box_con + script + div"];
+  this.ads = [];
   this.process();
 };
 
@@ -211,16 +215,13 @@ Reader.prototype.biquge = function () {
 Reader.prototype.process = function () {
   if (this.$contentOld) {
     console.log("[Novel Reader]", "获取内容成功");
-    this.mode = "read";
     this.processRead();
-    this.body.classList.add("read");
+    this.body.classList.add(CLASSNAME_BODY);
   } else {
     console.log("[Novel Reader]", "未获取到内容");
   }
-  setTimeout(() => {
-    console.log("[Novel Reader]", "开始去除广告");
-    this.processRemoveAD();
-  }, 16);
+
+  this.processRemoveAD();
 };
 
 // 处理页面
@@ -232,6 +233,7 @@ Reader.prototype.processRead = function () {
   this.body.appendChild(this.$breadNew);
   this.body.appendChild(this.$contentNew);
   this.body.appendChild(this.$navNew);
+  // 内容后处理
   const $pList = document.querySelectorAll(`.${CLASSNAME_CONTENT} > p`);
   $pList.forEach((p) => {
     p.innerHTML = p.innerHTML.trim();
@@ -242,6 +244,7 @@ Reader.prototype.processRead = function () {
 // 去除广告
 Reader.prototype.processRemoveAD = function () {
   if (this.ads.length) {
+    console.log("[Novel Reader]", "开始去除广告");
     this.ads.forEach((selector) => {
       let ad = dq(selector);
       console.log("[Novel Reader] remove ad", ad);
@@ -258,7 +261,7 @@ Reader.prototype.processReadBread = function () {
       if (index < 3) this.$breadNew.appendChild(item);
       if (index < 2) {
         let separate = document.createElement("span");
-        separate.className += "separate";
+        separate.classList.add(CLASSNAME_BREAD_SEPARATE);
         separate.innerText = ">";
         this.$breadNew.appendChild(separate);
       }
@@ -277,7 +280,7 @@ Reader.prototype.processReadContent = function () {
   Array.from(this.$contentNew.querySelectorAll("a")).forEach((el) => el.remove());
   //
   const $mark = document.createElement("div");
-  $mark.className += "book-mark";
+  $mark.classList.add(CLASSNAME_BOOK_MARK);
   this.$contentNew.appendChild($mark);
 };
 
@@ -335,7 +338,7 @@ Reader.prototype.processReadNav = function () {
 // 处理底部分割线
 Reader.prototype.processReadNavSeparate = function () {
   let separate = document.createElement("div");
-  separate.className += "separate";
+  separate.classList.add(CLASSNAME_BOTTOM_SEPARATE);
   this.$navNew.appendChild(separate);
 };
 

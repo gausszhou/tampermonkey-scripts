@@ -36,6 +36,7 @@
 // @match      *://www.kehuan.net.cn/book/*/*.html
 
 // @match      *://www.taccx.com/html/*/*.html
+// @match      *://www.shushuwuxs.com/*/*.html
 // ==/UserScript==
 
 /******/ (() => { // webpackBootstrap
@@ -64,7 +65,7 @@ var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBP
 var ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_0___);
 var ___CSS_LOADER_URL_REPLACEMENT_1___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_1___);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "body{display:none}body.read iframe,body.read .weizhi,body.read .weizhi+div,body.read .at-share-btn,body.read .sao_mobile_box,body.read .addthis-animated,body.read .addthis-smartlayers,body.read .addthis-smartlayers-desktop{display:none !important}body.read{background:url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ") repeat !important;font-size:18px;font-family:\"Microsoft YaHei\", PingFangSC-Regular, HelveticaNeue-Light, \"Helvetica Neue Light\",\r sans-serif}body.read .novel-reader-bread{box-sizing:border-box;width:800px;margin:1em auto 1em;display:flex;align-items:center;font:12px/22px PingFangSC-Regular, \"-apple-system\", Simsun}body.read .novel-reader-bread .separate{color:rgba(0,0,0,0.4)}body.read .novel-reader-bread a{margin:0 0.5em !important;padding:0 !important;background-color:transparent !important}body.read .novel-reader-bread a,body.read .novel-reader-bread b{padding:0;font-weight:400;font-size:12px;color:#1a1a1a !important}body.read .novel-reader-content{box-sizing:border-box;background:url(" + ___CSS_LOADER_URL_REPLACEMENT_1___ + ") repeat;width:800px;margin:0 auto 1em;padding:2em;color:#262626;font-weight:500;text-indent:2em;text-align:left;border:1px solid #d8d8d8;position:relative}body.read .novel-reader-content .book-mark{position:absolute;top:0px;right:48px;width:24px;height:40px;background-repeat:no-repeat;background-position:-228px -143.5px;background-size:340px}body.read .novel-reader-content br{content:\"\";margin:0.5em 0;display:block;font-size:150%}body.read .novel-reader-content p{word-wrap:wrap;word-break:break-all;margin-top:0.5em;line-height:1.8;text-align:justify}body.read .novel-reader-content .novel-reader-content-title{display:flex;align-items:center;text-indent:0;padding:0 0 0.5em;margin:0 0 0.5em;font:24px/32px PingFangSC-Regular, HelveticaNeue-Light, \"Helvetica Neue Light\", \"Microsoft YaHei\",\r sans-serif}body.read .novel-reader-content .novel-reader-content-title span{font-size:12px;padding:0 1em;margin:0}body.read .novel-reader-bottom-nav{box-sizing:border-box;background:url(" + ___CSS_LOADER_URL_REPLACEMENT_1___ + ") repeat;width:800px;margin:1em auto 1em;height:70px;display:flex;align-items:center;border:1px solid #d8d8d8;white-space:nowrap}body.read .novel-reader-bottom-nav a,body.read .novel-reader-bottom-nav span{flex:1;height:100%;display:flex;align-items:center;justify-content:center;text-decoration:none;color:#333 !important;font:18px/70px PingFangSC-Regular, HelveticaNeue-Light, \"Helvetica Neue Light\",\r \"Microsoft YaHei\", sans-serif}body.read .novel-reader-bottom-nav span{color:#ccc !important}body.read .novel-reader-bottom-nav .separate{width:1px;height:32px;border-right:1px solid #d8d8d8}body.read .novel-reader-bottom-nav a:hover{background:rgba(0,0,0,0.03)}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "body{display:none}body.novel-reader-body iframe,body.novel-reader-body .weizhi,body.novel-reader-body .weizhi+div,body.novel-reader-body .at-share-btn,body.novel-reader-body .sao_mobile_box,body.novel-reader-body .addthis-animated,body.novel-reader-body .addthis-smartlayers,body.novel-reader-body .addthis-smartlayers-desktop{display:none !important}body.novel-reader-body{background:url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ") repeat !important;font-size:18px;font-family:\"Microsoft YaHei\", PingFangSC-Regular, HelveticaNeue-Light, \"Helvetica Neue Light\",\r sans-serif}body.novel-reader-body .novel-reader-bread{box-sizing:border-box;width:800px;margin:1em auto 1em;display:flex;align-items:center;font:12px/22px PingFangSC-Regular, \"-apple-system\", Simsun}body.novel-reader-body .novel-reader-bread .novel-reader-bread-separate{color:rgba(0,0,0,0.4)}body.novel-reader-body .novel-reader-bread a{margin:0 0.5em !important;padding:0 !important;background-color:transparent !important}body.novel-reader-body .novel-reader-bread a,body.novel-reader-body .novel-reader-bread b{padding:0;font-weight:400;font-size:12px;color:#1a1a1a !important}body.novel-reader-body .novel-reader-content{box-sizing:border-box;background:url(" + ___CSS_LOADER_URL_REPLACEMENT_1___ + ") repeat;width:800px;margin:0 auto 1em;padding:2em;color:#262626;font-weight:500;text-indent:2em;text-align:left;border:1px solid #d8d8d8;position:relative}body.novel-reader-body .novel-reader-content .novel-reader-book-mark{position:absolute;top:0px;right:48px;width:24px;height:40px;background-repeat:no-repeat;background-position:-228px -143.5px;background-size:340px}body.novel-reader-body .novel-reader-content br{content:\"\";margin:0.5em 0;display:block;font-size:150%}body.novel-reader-body .novel-reader-content p{word-wrap:wrap;word-break:break-all;margin-top:0.5em;line-height:1.8;text-align:justify}body.novel-reader-body .novel-reader-content .novel-reader-content-title{display:flex;align-items:center;text-indent:0;padding:0 0 0.5em;margin:0 0 0.5em;font:24px/32px PingFangSC-Regular, HelveticaNeue-Light, \"Helvetica Neue Light\", \"Microsoft YaHei\",\r sans-serif}body.novel-reader-body .novel-reader-content .novel-reader-content-title span{font-size:12px;padding:0 1em;margin:0}body.novel-reader-body .novel-reader-bottom-nav{box-sizing:border-box;background:url(" + ___CSS_LOADER_URL_REPLACEMENT_1___ + ") repeat;width:800px;margin:1em auto 1em;height:70px;display:flex;align-items:center;border:1px solid #d8d8d8;white-space:nowrap}body.novel-reader-body .novel-reader-bottom-nav a,body.novel-reader-body .novel-reader-bottom-nav span{flex:1;height:100%;display:flex;align-items:center;justify-content:center;text-decoration:none;color:#333 !important;font:18px/70px PingFangSC-Regular, HelveticaNeue-Light, \"Helvetica Neue Light\",\r \"Microsoft YaHei\", sans-serif}body.novel-reader-body .novel-reader-bottom-nav span{color:#ccc !important}body.novel-reader-body .novel-reader-bottom-nav .novel-reader-bottom-separate{width:1px;height:32px;border-right:1px solid #d8d8d8}body.novel-reader-body .novel-reader-bottom-nav a:hover{background:rgba(0,0,0,0.03)}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -711,10 +712,14 @@ QiDian.prototype.processButton = function () {
 /* harmony default export */ const components_qidian = (QiDian);
 ;// CONCATENATED MODULE: ./src/components/reader.js
 var reader_dq = document.querySelector.bind(document);
+var CLASSNAME_BODY = "novel-reader-body";
 var CLASSNAME_BREAD = "novel-reader-bread";
+var CLASSNAME_BREAD_SEPARATE = "novel-reader-bread-separate";
 var CLASSNAME_CONTENT = "novel-reader-content";
 var CLASSNAME_TITLE = "novel-reader-content-title";
-var CLASSNAME_NAV = "novel-reader-bottom-nav";
+var CLASSNAME_BOOK_MARK = "novel-reader-book-mark";
+var CLASSNAME_BOTTOM_NAV = "novel-reader-bottom-nav";
+var CLASSNAME_BOTTOM_SEPARATE = "novel-reader-bottom-separate";
 function Reader() {
   this.init();
 }
@@ -732,7 +737,7 @@ Reader.prototype.mounted = function () {
   this.$titleNew = document.createElement("div");
   this.$titleNew.className = CLASSNAME_TITLE;
   this.$navNew = document.createElement("div");
-  this.$navNew.className = CLASSNAME_NAV;
+  this.$navNew.className = CLASSNAME_BOTTOM_NAV;
 };
 
 // 网站策略判定 判定入口
@@ -772,7 +777,7 @@ Reader.prototype.judge = function () {
     }
     this.biquge();
   } catch (error) {
-    alert("[Novel Reader] error:", error);
+    console.error("[Novel Reader] error:", error);
   }
 };
 
@@ -874,7 +879,7 @@ Reader.prototype.taccx = function () {
   this.$next = reader_dq("#pb_next");
   this.$space1 = null;
   this.$space2 = null;
-  // this.ads = ["#footer", ".header", "#listtj", ".box_con + script + div"];
+  this.ads = [];
   this.process();
 };
 Reader.prototype.biquge = function () {
@@ -893,19 +898,14 @@ Reader.prototype.biquge = function () {
 
 // 开始处理 入口
 Reader.prototype.process = function () {
-  var _this = this;
   if (this.$contentOld) {
     console.log("[Novel Reader]", "获取内容成功");
-    this.mode = "read";
     this.processRead();
-    this.body.classList.add("read");
+    this.body.classList.add(CLASSNAME_BODY);
   } else {
     console.log("[Novel Reader]", "未获取到内容");
   }
-  setTimeout(function () {
-    console.log("[Novel Reader]", "开始去除广告");
-    _this.processRemoveAD();
-  }, 16);
+  this.processRemoveAD();
 };
 
 // 处理页面
@@ -917,6 +917,7 @@ Reader.prototype.processRead = function () {
   this.body.appendChild(this.$breadNew);
   this.body.appendChild(this.$contentNew);
   this.body.appendChild(this.$navNew);
+  // 内容后处理
   var $pList = document.querySelectorAll(".".concat(CLASSNAME_CONTENT, " > p"));
   $pList.forEach(function (p) {
     p.innerHTML = p.innerHTML.trim();
@@ -927,6 +928,7 @@ Reader.prototype.processRead = function () {
 // 去除广告
 Reader.prototype.processRemoveAD = function () {
   if (this.ads.length) {
+    console.log("[Novel Reader]", "开始去除广告");
     this.ads.forEach(function (selector) {
       var ad = reader_dq(selector);
       console.log("[Novel Reader] remove ad", ad);
@@ -937,16 +939,16 @@ Reader.prototype.processRemoveAD = function () {
 
 // 处理面包屑
 Reader.prototype.processReadBread = function () {
-  var _this2 = this;
+  var _this = this;
   this.breadCrumbs = this.$breadOld && this.$breadOld.getElementsByTagName("a");
   if (this.breadCrumbs && this.breadCrumbs.length) {
     Array.from(this.breadCrumbs).forEach(function (item, index) {
-      if (index < 3) _this2.$breadNew.appendChild(item);
+      if (index < 3) _this.$breadNew.appendChild(item);
       if (index < 2) {
         var separate = document.createElement("span");
-        separate.className += "separate";
+        separate.classList.add(CLASSNAME_BREAD_SEPARATE);
         separate.innerText = ">";
-        _this2.$breadNew.appendChild(separate);
+        _this.$breadNew.appendChild(separate);
       }
     });
   }
@@ -966,7 +968,7 @@ Reader.prototype.processReadContent = function () {
   });
   //
   var $mark = document.createElement("div");
-  $mark.className += "book-mark";
+  $mark.classList.add(CLASSNAME_BOOK_MARK);
   this.$contentNew.appendChild($mark);
 };
 
@@ -1010,7 +1012,7 @@ Reader.prototype.processReadNav = function () {
 // 处理底部分割线
 Reader.prototype.processReadNavSeparate = function () {
   var separate = document.createElement("div");
-  separate.className += "separate";
+  separate.classList.add(CLASSNAME_BOTTOM_SEPARATE);
   this.$navNew.appendChild(separate);
 };
 /* harmony default export */ const components_reader = (Reader);

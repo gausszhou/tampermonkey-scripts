@@ -36,4 +36,5 @@
 // @match      *://www.kehuan.net.cn/book/*/*.html
 
 // @match      *://www.taccx.com/html/*/*.html
+// @match      *://www.shushuwuxs.com/*/*.html
 // ==/UserScript==
