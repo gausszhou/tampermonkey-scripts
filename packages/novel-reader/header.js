@@ -34,4 +34,6 @@
 // @match      *://www.81zw.me/book/*/*.html
 // @match      *://www.81zw.net/book/*/*.html
 // @match      *://www.kehuan.net.cn/book/*/*.html
+
+// @match      *://www.taccx.com/html/*/*.html
 // ==/UserScript==

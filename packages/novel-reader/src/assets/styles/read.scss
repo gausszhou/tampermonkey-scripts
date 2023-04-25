@@ -7,7 +7,7 @@ body.read {
     sans-serif;
 }
 
-body.read ._bread {
+body.read .novel-reader-bread {
   box-sizing: border-box;
   width: 800px;
   margin: 1em auto 1em;
@@ -31,7 +31,7 @@ body.read ._bread {
   }
 }
 
-body.read ._content {
+body.read .novel-reader-content {
   box-sizing: border-box;
   background: $bg-content repeat;
   width: 800px;
@@ -68,7 +68,7 @@ body.read ._content {
   }
 }
 
-body.read ._content ._content_title {
+body.read .novel-reader-content .novel-reader-content-title {
   display: flex;
   align-items: center;
   text-indent: 0;
@@ -83,7 +83,7 @@ body.read ._content ._content_title {
   }
 }
 
-body.read ._nav {
+body.read .novel-reader-bottom-nav {
   box-sizing: border-box;
   background: $bg-content repeat;
   width: 800px;

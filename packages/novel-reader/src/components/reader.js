@@ -1,31 +1,35 @@
-let dq = document.querySelector.bind(document);
+const dq = document.querySelector.bind(document);
+
+const CLASSNAME_BREAD = "novel-reader-bread";
+const CLASSNAME_CONTENT = "novel-reader-content";
+const CLASSNAME_TITLE = "novel-reader-content-title";
+const CLASSNAME_NAV = "novel-reader-bottom-nav";
+
 function Reader() {
   this.init();
 }
 
 Reader.prototype.init = function () {
-  console.log("欢迎使用小说整治插件");
+  console.log("[Novel Reader]", "欢迎使用小说整治插件");
 };
 
 Reader.prototype.mounted = function () {
   this.body = document.body;
 
   // create Element
-  this.new_bread_el = document.createElement("div");
-  this.new_bread_el.className = "_bread";
-  this.new_content_el = document.createElement("div");
-  this.new_content_el.className = "_content";
-  this.new_title_el = document.createElement("div");
-  this.new_title_el.className = "_content_title";
-  this.new_nav_el = document.createElement("div");
-  this.new_nav_el.className = "_nav";
-
+  this.$breadNew = document.createElement("div");
+  this.$breadNew.className = CLASSNAME_BREAD;
+  this.$contentNew = document.createElement("div");
+  this.$contentNew.className = CLASSNAME_CONTENT;
+  this.$titleNew = document.createElement("div");
+  this.$titleNew.className = CLASSNAME_TITLE;
+  this.$navNew = document.createElement("div");
+  this.$navNew.className = CLASSNAME_NAV;
 };
 
 // 网站策略判定 判定入口
 Reader.prototype.judge = function () {
   try {
-
     if (dq(".bread_728x90")) {
       this.kehuanNet();
       return false;
@@ -55,14 +59,21 @@ Reader.prototype.judge = function () {
       this.ptwxz();
       return false;
     }
-    if(dq("#center_tip")){
-      this.e86book()
+    if (dq("#center_tip")) {
+      this.e86book();
       return false;
     }
 
+    if (dq(".header_wap.pc_none")) {
+      this.taccx();
+      return false;
+    }
+
+    
+
     this.biquge();
   } catch (error) {
-    alert(error);
+    alert("[Novel Reader] error:", error);
   }
 };
 
@@ -70,12 +81,12 @@ Reader.prototype.judge = function () {
 
 Reader.prototype.kehuanNet = function () {
   this.body.classList.add("kehuan");
-  this.old_bread_el = dq("#container .topnav h2");
-  this.old_title_el = dq("#container > h1");
-  this.old_content_el = dq("#container .text");
-  this.nav_prev = dq(".next a:nth-child(1)");
-  this.nav_menu = dq(".next a:nth-child(2)");
-  this.nav_next = dq(".next a:nth-child(3)");
+  this.$breadOld = dq("#container .topnav h2");
+  this.$titleOld = dq("#container > h1");
+  this.$contentOld = dq("#container .text");
+  this.$prev = dq(".next a:nth-child(1)");
+  this.$menu = dq(".next a:nth-child(2)");
+  this.$next = dq(".next a:nth-child(3)");
   this.nav_space = "";
   this.ads = [".ad_content"];
   this.process();
@@ -83,12 +94,12 @@ Reader.prototype.kehuanNet = function () {
 
 Reader.prototype.ddxs = function () {
   this.body.classList.add("ddxs");
-  this.old_bread_el = dq("#amain dl dt");
-  this.old_title_el = dq("#amain dl dd h1");
-  this.old_content_el = dq("#contents");
-  this.nav_prev = dq("#footlink a:nth-child(1)");
-  this.nav_menu = dq("#footlink a:nth-child(2)");
-  this.nav_next = dq("#footlink a:nth-child(3)");
+  this.$breadOld = dq("#amain dl dt");
+  this.$titleOld = dq("#amain dl dd h1");
+  this.$contentOld = dq("#contents");
+  this.$prev = dq("#footlink a:nth-child(1)");
+  this.$menu = dq("#footlink a:nth-child(2)");
+  this.$next = dq("#footlink a:nth-child(3)");
   this.nav_space = "";
   this.ads = [".ad_content"];
   this.process();
@@ -96,12 +107,12 @@ Reader.prototype.ddxs = function () {
 
 Reader.prototype.uukanshu = function () {
   this.body.classList.add("uukanshu");
-  this.old_bread_el = dq(".srcbox");
-  this.old_title_el = dq(".h1title #timu");
-  this.old_content_el = dq("#contentbox");
-  this.nav_prev = dq(".fanye #prev");
-  this.nav_menu = dq(".fanye #htmlmulu");
-  this.nav_next = dq(".fanye #next");
+  this.$breadOld = dq(".srcbox");
+  this.$titleOld = dq(".h1title #timu");
+  this.$contentOld = dq("#contentbox");
+  this.$prev = dq(".fanye #prev");
+  this.$menu = dq(".fanye #htmlmulu");
+  this.$next = dq(".fanye #next");
   this.nav_space = "";
   this.ads = [".ad_content"];
   this.process();
@@ -109,91 +120,107 @@ Reader.prototype.uukanshu = function () {
 
 Reader.prototype.shuquge = function () {
   this.body.classList.add("shuquge");
-  this.old_bread_el = dq(".path .p");
-  this.old_title_el = dq(".content h1"); // title
-  this.old_content_el = dq("#content");
+  this.$breadOld = dq(".path .p");
+  this.$titleOld = dq(".content h1"); // title
+  this.$contentOld = dq("#content");
 
-  this.nav_prev = dq(".page_chapter li:nth-child(1) a");
-  this.nav_menu = dq(".page_chapter li:nth-child(2) a");
-  this.nav_next = dq(".page_chapter li:nth-child(3) a");
+  this.$prev = dq(".page_chapter li:nth-child(1) a");
+  this.$menu = dq(".page_chapter li:nth-child(2) a");
+  this.$next = dq(".page_chapter li:nth-child(3) a");
   this.nav_space = dq(".page_chapter li:nth-child(4) a");
   this.ads = [".header", "div.box_con > div.bookname div.lm", ".info > .link", ".footer"];
   this.process();
 };
 
-
-
 Reader.prototype.shuba = function () {
   this.body.classList.add("shuba");
-  this.old_bread_el = dq(".bread");
-  this.old_title_el = dq("h1.hide720"); // title
-  this.old_content_el = dq(".txtnav");
-  
-  this.nav_prev = dq(".page1 a:nth-child(1)");
-  this.nav_menu = dq(".page1 a:nth-child(3)");
-  this.nav_next = dq(".page1 a:nth-child(4)");
-  this.nav_space_1 = dq(".page1 a:nth-child(5)");
+  this.$breadOld = dq(".bread");
+  this.$titleOld = dq("h1.hide720"); // title
+  this.$contentOld = dq(".txtnav");
+
+  this.$prev = dq(".page1 a:nth-child(1)");
+  this.$menu = dq(".page1 a:nth-child(3)");
+  this.$next = dq(".page1 a:nth-child(4)");
+  this.$space1 = dq(".page1 a:nth-child(5)");
   this.ads = [".hide720"];
   this.process();
 };
 
 Reader.prototype.ptwxz = function () {
   this.body.classList.add("ptwxz");
-  this.old_bread_el = null;
-  this.old_title_el = dq("#main #content h1"); // title
-  this.old_content_el = dq("#main #content");
+  this.$breadOld = null;
+  this.$titleOld = dq("#main #content h1"); // title
+  this.$contentOld = dq("#main #content");
 
-  this.nav_prev = dq(".toplink a:nth-child(1)");
-  this.nav_menu = dq(".toplink a:nth-child(2)");
-  this.nav_next = dq(".toplink a:nth-child(3)");  
-  this.nav_space_1 = dq(".toplink a:nth-child(4)");
-  this.nav_space_2 = dq(".toplink a:nth-child(5)");
+  this.$prev = dq(".toplink a:nth-child(1)");
+  this.$menu = dq(".toplink a:nth-child(2)");
+  this.$next = dq(".toplink a:nth-child(3)");
+  this.$space1 = dq(".toplink a:nth-child(4)");
+  this.$space2 = dq(".toplink a:nth-child(5)");
 
   this.ads = ["#footer", ".header", "#listtj", ".box_con + script + div"];
   this.process();
 };
 
-
 Reader.prototype.e86book = function () {
   this.body.classList.add("e86book");
-  this.old_bread_el = dq(".layout-tit");
-  this.old_title_el = dq(".reader-main .title"); // title
-  this.old_content_el = dq(".reader-main #content");
-  
-  this.nav_prev = dq(".section-opt a:nth-child(1)");
-  this.nav_menu = dq(".section-opt a:nth-child(2)");
-  this.nav_next = dq(".section-opt a:nth-child(3)");
-  this.nav_space_1 = dq(".section-opt a:nth-child(4)");
-  this.nav_space_2 = dq(".section-opt a:nth-child(5)");
+  this.$breadOld = dq(".layout-tit");
+  this.$titleOld = dq(".reader-main .title"); // title
+  this.$contentOld = dq(".reader-main #content");
+
+  this.$prev = dq(".section-opt a:nth-child(1)");
+  this.$menu = dq(".section-opt a:nth-child(2)");
+  this.$next = dq(".section-opt a:nth-child(3)");
+  this.$space1 = dq(".section-opt a:nth-child(4)");
+  this.$space2 = dq(".section-opt a:nth-child(5)");
   this.ads = ["#footer", ".header", "#listtj", ".box_con + script + div"];
+  this.process();
+};
+
+Reader.prototype.taccx = function () {
+  this.body.classList.add("taccx");
+  this.$breadOld = dq("#read > div.book.reader > div.path.wap_none");
+  this.$titleOld = dq("#read > div.book.reader > div.content > h1"); // title
+  this.$contentOld = dq("#chaptercontent");
+
+  this.$prev = dq("#pb_prev");
+  this.$menu = dq("#pb_mulu");
+  this.$next = dq("#pb_next");
+  this.$space1 = null;
+  this.$space2 = null;
+  // this.ads = ["#footer", ".header", "#listtj", ".box_con + script + div"];
   this.process();
 };
 
 Reader.prototype.biquge = function () {
   this.body.classList.add("biquge");
-  this.old_bread_el = dq(".con_top");
-  this.old_title_el = dq(".content_read .bookname h1"); // title
-  this.old_content_el = dq(".content_read #content");
-  
-  this.nav_prev = dq(".bottem2 a:nth-child(1)");
-  this.nav_menu = dq(".bottem2 a:nth-child(2)");
-  this.nav_next = dq(".bottem2 a:nth-child(3)");
-  this.nav_space_1 = dq(".bottem2 a:nth-child(4)");
-  this.nav_space_2 = dq(".bottem2 a:nth-child(5)");
+  this.$breadOld = dq(".con_top");
+  this.$titleOld = dq(".content_read .bookname h1"); // title
+  this.$contentOld = dq(".content_read #content");
+
+  this.$prev = dq(".bottem2 a:nth-child(1)");
+  this.$menu = dq(".bottem2 a:nth-child(2)");
+  this.$next = dq(".bottem2 a:nth-child(3)");
+  this.$space1 = dq(".bottem2 a:nth-child(4)");
+  this.$space2 = dq(".bottem2 a:nth-child(5)");
   this.ads = ["#footer", ".header", "#listtj", ".box_con + script + div"];
   this.process();
 };
 
 // 开始处理 入口
 Reader.prototype.process = function () {
-  if (this.old_content_el) {
+  if (this.$contentOld) {
+    console.log("[Novel Reader]", "获取内容成功");
     this.mode = "read";
     this.processRead();
     this.body.classList.add("read");
-  }else {
-    console.log("未获取到内容");
+  } else {
+    console.log("[Novel Reader]", "未获取到内容");
   }
-  this.processRemoveAD();
+  setTimeout(() => {
+    console.log("[Novel Reader]", "开始去除广告");
+    this.processRemoveAD();
+  }, 16);
 };
 
 // 处理页面
@@ -202,23 +229,22 @@ Reader.prototype.processRead = function () {
   this.processReadContent();
   this.processReadNav();
   this.body.innerHTML = "";
-  this.body.appendChild(this.new_bread_el);
-  this.body.appendChild(this.new_content_el);
-  this.body.appendChild(this.new_nav_el);
-  let p_list = document.querySelectorAll("._content > p");
-  p_list.forEach((p) => {
+  this.body.appendChild(this.$breadNew);
+  this.body.appendChild(this.$contentNew);
+  this.body.appendChild(this.$navNew);
+  const $pList = document.querySelectorAll(`.${CLASSNAME_CONTENT} > p`);
+  $pList.forEach((p) => {
     p.innerHTML = p.innerHTML.trim();
-    p.innerHTML = p.innerHTML.replace(/\s/g,"")
+    p.innerHTML = p.innerHTML.replace(/\s/g, "");
   });
 };
 
 // 去除广告
 Reader.prototype.processRemoveAD = function () {
   if (this.ads.length) {
-    console.log(this.ads.length);
     this.ads.forEach((selector) => {
       let ad = dq(selector);
-      console.log(ad);
+      console.log("[Novel Reader] remove ad", ad);
       if (ad) ad.parentElement.removeChild(ad);
     });
   }
@@ -226,15 +252,15 @@ Reader.prototype.processRemoveAD = function () {
 
 // 处理面包屑
 Reader.prototype.processReadBread = function () {
-  this.breadCrumbs = this.old_bread_el && this.old_bread_el.getElementsByTagName("a");
+  this.breadCrumbs = this.$breadOld && this.$breadOld.getElementsByTagName("a");
   if (this.breadCrumbs && this.breadCrumbs.length) {
     Array.from(this.breadCrumbs).forEach((item, index) => {
-      if (index < 3) this.new_bread_el.appendChild(item);
+      if (index < 3) this.$breadNew.appendChild(item);
       if (index < 2) {
         let separate = document.createElement("span");
         separate.className += "separate";
         separate.innerText = ">";
-        this.new_bread_el.appendChild(separate);
+        this.$breadNew.appendChild(separate);
       }
     });
   }
@@ -243,16 +269,16 @@ Reader.prototype.processReadBread = function () {
 // 处理正文
 
 Reader.prototype.processReadContent = function () {
-  this.new_title_el.innerHTML = this.old_title_el.innerHTML;
-  let txt = this.new_title_el.outerHTML + this.old_content_el.innerHTML;
-  this.new_content_el.innerHTML = removeTextADS(txt);
-  this.new_content_el.querySelector("h1")?.remove()
-  this.new_content_el.querySelector("table")?.remove()
-  Array.from(this.new_content_el.querySelectorAll("a")).forEach(el=>el.remove())
-  // 
-  let mark = document.createElement("div");
-  mark.className += "book-mark";
-  this.new_content_el.appendChild(mark);
+  this.$titleNew.innerHTML = this.$titleOld.innerHTML;
+  let txt = this.$titleNew.outerHTML + this.$contentOld.innerHTML;
+  this.$contentNew.innerHTML = removeTextADS(txt);
+  this.$contentNew.querySelector("h1")?.remove();
+  this.$contentNew.querySelector("table")?.remove();
+  Array.from(this.$contentNew.querySelectorAll("a")).forEach((el) => el.remove());
+  //
+  const $mark = document.createElement("div");
+  $mark.className += "book-mark";
+  this.$contentNew.appendChild($mark);
 };
 
 // 去除正文中的广告
@@ -276,33 +302,33 @@ function removeTextADS(txt) {
 
 // 处理底部导航
 Reader.prototype.processReadNav = function () {
-  if (this.nav_prev) {
-    this.new_nav_el.appendChild(this.nav_prev);
+  if (this.$prev) {
+    this.$navNew.appendChild(this.$prev);
   } else {
-    this.new_nav_el.innerHTML += "<span>上一张</span>";
+    this.$navNew.innerHTML += "<span>上一张</span>";
   }
 
   this.processReadNavSeparate();
 
-  if (this.nav_menu) {
-    this.new_nav_el.appendChild(this.nav_menu);
+  if (this.$menu) {
+    this.$navNew.appendChild(this.$menu);
   } else {
-    this.new_nav_el.innerHTML += "<span>目录</span>";
+    this.$navNew.innerHTML += "<span>目录</span>";
   }
   this.processReadNavSeparate();
-  if (this.nav_next) {
-    this.new_nav_el.appendChild(this.nav_next);
+  if (this.$next) {
+    this.$navNew.appendChild(this.$next);
   } else {
-    this.new_nav_el.innerHTML += "<span>下一章</span>";
+    this.$navNew.innerHTML += "<span>下一章</span>";
   }
   this.processReadNavSeparate();
 
-  if (this.nav_space_1) {
-    this.new_nav_el.appendChild(this.nav_space_1);
+  if (this.$space1) {
+    this.$navNew.appendChild(this.$space1);
   }
 
-  if (this.nav_space_2) {
-    this.new_nav_el.appendChild(this.nav_space_2);
+  if (this.$space2) {
+    this.$navNew.appendChild(this.$space2);
   }
 };
 
@@ -310,7 +336,7 @@ Reader.prototype.processReadNav = function () {
 Reader.prototype.processReadNavSeparate = function () {
   let separate = document.createElement("div");
   separate.className += "separate";
-  this.new_nav_el.appendChild(separate);
+  this.$navNew.appendChild(separate);
 };
 
 export default Reader;
