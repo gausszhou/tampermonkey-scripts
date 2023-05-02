@@ -39,4 +39,5 @@
 // @match      *://www.taccx.com/html/*/*.html
 // @match      *://www.shushuwuxs.com/*/*.html
 // @match      *://www.novel543.com/*/*.html
+// @match      *://www.xindingdianxsw.com/*/*/*.html
 // ==/UserScript==
