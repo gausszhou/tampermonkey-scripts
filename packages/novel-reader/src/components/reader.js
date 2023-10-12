@@ -80,6 +80,10 @@ Reader.prototype.judge = function () {
       this.novel543();
       return false;
     }
+    if (dq("#htmlContent")) {
+      this.mc93();
+      return false;
+    }
 
     this.biquge();
   } catch (error) {
@@ -216,6 +220,24 @@ Reader.prototype.novel543 = function () {
   this.ads = ["#read > div.novel-reader-content > .gadBlock", "#read > div.novel-reader-content > .gadBlock"];
   this.process();
 };
+
+Reader.prototype.mc93 = function () {
+  this.body.classList.add("93mc");
+  this.$breadOld = dq("body > div.container.body-content.read-container > ol");
+  this.$titleOld = dq("#content > div.page-header.text-center > h1"); // title
+
+  this.$contentOld = dq("#htmlContent");
+
+  this.$prev = dq("#linkPrev");
+  this.$menu = dq("#linkIndex");
+  this.$next = dq("#linkNext");
+  this.$space1 = null;
+  this.$space2 = null;
+
+  this.ads = ["#read > div.novel-reader-content > .gadBlock", "#read > div.novel-reader-content > .gadBlock"];
+  this.process();
+};
+
 
 Reader.prototype.biquge = function () {
   this.body.classList.add("biquge");

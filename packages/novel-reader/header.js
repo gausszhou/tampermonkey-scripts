@@ -10,6 +10,8 @@
 // @icon         https://www.gausszhou.top/favicon.ico
 // @match      *://book.qidian.com/info/*
 
+// @match      *://www.ibiquges.com/*/*/*.html
+
 // @match      *://www.uukanshu.com/*.html
 // @match      *://tw.uukanshu.com/b/*/*.html
 // @match      *://www.ddxs.com/*.html
@@ -40,4 +42,8 @@
 // @match      *://www.shushuwuxs.com/*/*.html
 // @match      *://www.novel543.com/*/*.html
 // @match      *://www.xindingdianxsw.com/*/*/*.html
+// @match      *://www.2kxsw.com/*/*.html
+// @match      *://www.tasim.net/book/*/*.html
+// @match      *://www.93mc.com/book/*/*.html
+
 // ==/UserScript==

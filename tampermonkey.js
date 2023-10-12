@@ -20,8 +20,8 @@
 // @match      *://www.81zw.me/book/*/*.html
 // @match      *://www.81zw.net/book/*/*.html
 // @match      *://www.kehuan.net.cn/book/*/*.html
-// @match        *://www.youtube.com/watch?v=*
-// @match        *://www.youtube.com/*
+// @match      *://www.youtube.com/watch?v=*
+// @match      *://www.youtube.com/*
 // ==/UserScript==
 
 (function () {

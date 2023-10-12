@@ -1,6 +1,9 @@
 node_modules
 packages/**/dist
 
+# lock
+pnpm-lock.yaml
+
 # editor
 .vscode
 
