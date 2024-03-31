@@ -1,19 +1,15 @@
 import "./styles/index.scss";
 import UI from "./components/ui";
 
-let ui = new UI();
+let isInit = false;
+const ui = new UI();
 
-(function () {
+(function(){
   window.addEventListener("load", () => {
     init();
-  });
-  window.addEventListener("DOMContentLoaded", () => {
-    init();
-  });
-})();
+  }); 
+})()
 
-
-let isInit = false;
 function init(){
   if(isInit) return
   isInit = true

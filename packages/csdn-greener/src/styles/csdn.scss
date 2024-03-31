@@ -4,6 +4,10 @@
     height: 0 !important;
     min-height: 0 !important;
   }
+  .passport-login-container {
+    display: none !important;
+  }
+
   #recommendAdBox,
   #mainBox > aside > div.box-shadow.mb8 > div,
   .toolbar-menus.csdn-toolbar-fl,
@@ -43,6 +47,7 @@
   }
 }
 
+// 屏蔽文章页面的广告
 .csdn.article {
   #asideProfile,
   #asideCategory,
@@ -56,6 +61,8 @@
   #footerRightAds,
   #asideWriteGuide,
   #asideSearchArticle,
+  #blogHuaweiyunAdvert,
+  #blogColumnPayAdvert,
   .programmer1Box,
   .adsbygoogle iframe,
   .kind_person,
@@ -65,22 +72,69 @@
   }
 }
 
+
+/**
+ * 响应式布局
+ */
+
+
 .csdn.article {
-  .blog-content-box {
-    margin-top: 0;
+  min-width: 900px;
+  .main_father.clearfix.d-flex.justify-content-center {
+    gap: 16px;
   }
+
+  #mainBox {
+    margin-right:  0 !important;
+    .blog-content-box {
+      margin-top: 0;
+    }
+  }
+
+  #rightAside {
+    margin-left: 0 !important;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .main_father.clearfix.d-flex.justify-content-center { 
+    display: flex;
+    justify-content: center;
+  }
+  #mainBox {
+    width: auto;
+  }
+  #mainBox main {
+    float: none !important;
+  }
+  .csdn.article #asidedirectory {
+    display: none !important
+  }
+}
+
+.csdn.article {
+  
   .template-box {
     margin-bottom: 1em;
   }
   #asidedirectory{
     position: fixed;
-    top: 3.6rem;
+    top: 0.5rem;
   }
-  #asidedirectory #directory .group_item ,
-  #recommend-right #groupfile ,
-  #recommend-right #groupfile .groupfile-div {
-    max-height: calc(100vh - 8rem) !important;
+
+  aside div.aside-box h3.aside-title{
+    background-color: #fff;
   }
+
+  #groupfile.flex-column,
+  #groupfile.flex-column .groupfile-div {
+    max-height: calc(100vh - 1rem) !important;
+  }
+
+  #asidedirectory #directory .group_item {
+    max-height: calc(100vh - 5rem) !important;
+  }
+  
   // mdn style blockquote
   blockquote {
     margin: 0.5em !important;
@@ -89,4 +143,7 @@
     background-color: #f4f4f4 !important;
     color: #1b1b1b !important;
   }
+}
+.hljs-ln.hundred {
+  width: 800px !important;
 }
