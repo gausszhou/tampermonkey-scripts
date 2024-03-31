@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Novel Reader
-// @version      0.0.17
+// @version      0.0.18
 // @description  小说阅读器，特点是仿起点风格的网站样式，支持UU看书，笔趣阁，书趣阁，81中文网等
 // @author       gausszhou@qq.com
 // @namespace    gausszhou
@@ -13,6 +13,7 @@
 // @match      *://www.ibiquges.com/*/*/*.html
 
 // @match      *://www.uukanshu.com/*.html
+// @match      *://www.uukanshu.net/*/*/*.html
 // @match      *://tw.uukanshu.com/b/*/*.html
 // @match      *://www.ddxs.com/*.html
 // @match      *://www.8dushu.net/ml/*/*.html
@@ -45,6 +46,10 @@
 // @match      *://www.2kxsw.com/*/*.html
 // @match      *://www.tasim.net/book/*/*.html
 // @match      *://www.93mc.com/book/*/*.html
+// @match      *://www.lwxs.com/*/*/*.html
+// @match      *://www.biquxs.com/book/*/*.html
+// @match      *://www.piaotia.com/html/*/*/*.html
+
 
 // ==/UserScript==
 
@@ -731,10 +736,12 @@ Reader.prototype.judge = function () {
       this.uukanshu();
       return false;
     }
-    if (reader_dq("#tbox")) {
-      this.ddxs();
-      return false;
-    }
+
+    // if (dq("#tbox")) {
+    //   this.ddxs();
+    //   return false;
+    // }
+
     if (reader_dq(".page_chapter")) {
       this.shuquge();
       return false;
@@ -763,6 +770,10 @@ Reader.prototype.judge = function () {
       this.mc93();
       return false;
     }
+    if (reader_dq('.fiction-content')) {
+      this.crxs();
+      return false;
+    }
     this.biquge();
   } catch (error) {
     console.error("[Novel Reader] error:", error);
@@ -773,9 +784,9 @@ Reader.prototype.judge = function () {
 
 Reader.prototype.kehuanNet = function () {
   this.body.classList.add("kehuan");
-  this.$breadOld = reader_dq("#container .topnav h2");
-  this.$titleOld = reader_dq("#container > h1");
-  this.$contentOld = reader_dq("#container .text");
+  this.$breadOld = reader_dq("#container .topnav h2") || document.createElement('div');
+  this.$titleOld = reader_dq("#container > h1") || document.createElement('div');
+  this.$contentOld = reader_dq("#container .text") || document.createElement('div');
   this.$prev = reader_dq(".next a:nth-child(1)");
   this.$menu = reader_dq(".next a:nth-child(2)");
   this.$next = reader_dq(".next a:nth-child(3)");
@@ -809,7 +820,7 @@ Reader.prototype.uukanshu = function () {
 };
 Reader.prototype.shuquge = function () {
   this.body.classList.add("shuquge");
-  this.$breadOld = reader_dq(".path .p");
+  this.$breadOld = reader_dq(".wrap .path .p");
   this.$titleOld = reader_dq(".content h1"); // title
   this.$contentOld = reader_dq("#content");
   this.$prev = reader_dq(".page_chapter li:nth-child(1) a");
@@ -899,14 +910,14 @@ Reader.prototype.mc93 = function () {
 };
 Reader.prototype.biquge = function () {
   this.body.classList.add("biquge");
-  this.$breadOld = reader_dq(".con_top");
-  this.$titleOld = reader_dq(".content_read .bookname h1"); // title
-  this.$contentOld = reader_dq(".content_read #content");
-  this.$prev = reader_dq(".bottem2 a:nth-child(1)");
-  this.$menu = reader_dq(".bottem2 a:nth-child(2)");
-  this.$next = reader_dq(".bottem2 a:nth-child(3)");
-  this.$space1 = reader_dq(".bottem2 a:nth-child(4)");
-  this.$space2 = reader_dq(".bottem2 a:nth-child(5)");
+  this.$breadOld = reader_dq(".con_top") || document.createElement('div');
+  this.$titleOld = reader_dq(".content_read .bookname h1") || reader_dq(".content_read .zhangjieming h1") || document.createElement('div');
+  this.$contentOld = reader_dq(".content_read #content") || document.createElement('div');
+  this.$prev = reader_dq(".bottem2 a:nth-child(1)") || reader_dq("#content > div > a:nth-child(2)");
+  this.$menu = reader_dq(".bottem2 a:nth-child(2)") || reader_dq("#content > div > a:nth-child(3)");
+  this.$next = reader_dq(".bottem2 a:nth-child(3)") || reader_dq("#content > div > a:nth-child(4)");
+  this.$space1 = null;
+  this.$space2 = null;
   this.ads = ["#footer", ".header", "#listtj", ".box_con + script + div"];
   this.process();
 };
@@ -953,6 +964,7 @@ Reader.prototype.processRemoveAD = function () {
         });
       }
     });
+    console.log("[Novel Reader]", "成功去除广告");
   }
 };
 
@@ -976,8 +988,8 @@ Reader.prototype.processReadBread = function () {
 // 处理正文
 
 Reader.prototype.processReadContent = function () {
-  var _this$$contentNew$que, _this$$contentNew$que2;
-  this.$titleNew.innerHTML = this.$titleOld.innerHTML;
+  var _this$$titleOld, _this$$contentNew$que, _this$$contentNew$que2;
+  this.$titleNew.innerHTML = (_this$$titleOld = this.$titleOld) === null || _this$$titleOld === void 0 ? void 0 : _this$$titleOld.innerHTML;
   var txt = this.$titleNew.outerHTML + this.$contentOld.innerHTML;
   var txtWithAds = removeTextADS(txt);
   var txtSimplify = simplify(txtWithAds);
@@ -995,7 +1007,7 @@ Reader.prototype.processReadContent = function () {
 
 // 去除正文中的广告
 function removeTextADS(txt) {
-  var ads = [/https?(.+)html/g, /wa?(.+)com/g, /八一中文网(.+)com/g, /<h1>.+<h1>/g, /请记住(.+)域名：/g, "【推荐下，换源app追书真的好用，这里下载大家去快可以试试吧。】", "【认识十年的老书友给我推荐的追书app，换源app！真特么好用，开车、睡前都靠这个朗读听书打发时间，这里可以下载】", "【讲真，最近一直用换源app看书追更，换源切换，朗读音色多，安卓苹果均可。】", "【话说，目前朗读听书最好用的app，换源app，安装最新版。】"];
+  var ads = [/&nbsp;/g, /https?(.+)html/g, /wa?(.+)com/g, /八一中文网(.+)com/g, /<h1>.+<h1>/g, /请记住(.+)域名：/g, "【推荐下，换源app追书真的好用，这里下载大家去快可以试试吧。】", "【认识十年的老书友给我推荐的追书app，换源app！真特么好用，开车、睡前都靠这个朗读听书打发时间，这里可以下载】", "【讲真，最近一直用换源app看书追更，换源切换，朗读音色多，安卓苹果均可。】", "【话说，目前朗读听书最好用的app，换源app，安装最新版。】"];
   ads.forEach(function (item) {
     txt = txt.replace(item, "");
   });
@@ -1015,6 +1027,7 @@ Reader.prototype.processReadNav = function () {
   } else {
     this.$navNew.innerHTML += "<span>目录</span>";
   }
+  this.$navNew.textContent;
   this.processReadNavSeparate();
   if (this.$next) {
     this.$navNew.appendChild(this.$next);

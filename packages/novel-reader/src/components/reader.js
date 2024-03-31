@@ -48,10 +48,10 @@ Reader.prototype.judge = function () {
       return false;
     }
 
-    if (dq("#tbox")) {
-      this.ddxs();
-      return false;
-    }
+    // if (dq("#tbox")) {
+    //   this.ddxs();
+    //   return false;
+    // }
 
     if (dq(".page_chapter")) {
       this.shuquge();
@@ -85,6 +85,11 @@ Reader.prototype.judge = function () {
       return false;
     }
 
+    if (dq('.fiction-content')) {
+      this.crxs();
+      return false;
+    }
+
     this.biquge();
   } catch (error) {
     console.error("[Novel Reader] error:", error);
@@ -95,9 +100,9 @@ Reader.prototype.judge = function () {
 
 Reader.prototype.kehuanNet = function () {
   this.body.classList.add("kehuan");
-  this.$breadOld = dq("#container .topnav h2");
-  this.$titleOld = dq("#container > h1");
-  this.$contentOld = dq("#container .text");
+  this.$breadOld = dq("#container .topnav h2") || document.createElement('div');
+  this.$titleOld = dq("#container > h1") || document.createElement('div');
+  this.$contentOld = dq("#container .text") || document.createElement('div');
   this.$prev = dq(".next a:nth-child(1)");
   this.$menu = dq(".next a:nth-child(2)");
   this.$next = dq(".next a:nth-child(3)");
@@ -134,7 +139,7 @@ Reader.prototype.uukanshu = function () {
 
 Reader.prototype.shuquge = function () {
   this.body.classList.add("shuquge");
-  this.$breadOld = dq(".path .p");
+  this.$breadOld = dq(".wrap .path .p");
   this.$titleOld = dq(".content h1"); // title
   this.$contentOld = dq("#content");
 
@@ -142,6 +147,7 @@ Reader.prototype.shuquge = function () {
   this.$menu = dq(".page_chapter li:nth-child(2) a");
   this.$next = dq(".page_chapter li:nth-child(3) a");
   this.nav_space = dq(".page_chapter li:nth-child(4) a");
+
   this.ads = [".header", "div.box_con > div.bookname div.lm", ".info > .link", ".footer"];
   this.process();
 };
@@ -156,6 +162,7 @@ Reader.prototype.shuba = function () {
   this.$menu = dq(".page1 a:nth-child(3)");
   this.$next = dq(".page1 a:nth-child(4)");
   this.$space1 = dq(".page1 a:nth-child(5)");
+
   this.ads = [".hide720"];
   this.process();
 };
@@ -187,6 +194,7 @@ Reader.prototype.e86book = function () {
   this.$next = dq(".section-opt a:nth-child(3)");
   this.$space1 = dq(".section-opt a:nth-child(4)");
   this.$space2 = dq(".section-opt a:nth-child(5)");
+
   this.ads = ["#footer", ".header", "#listtj", ".box_con + script + div"];
   this.process();
 };
@@ -202,6 +210,7 @@ Reader.prototype.taccx = function () {
   this.$next = dq("#pb_next");
   this.$space1 = null;
   this.$space2 = null;
+
   this.ads = [];
   this.process();
 };
@@ -217,6 +226,7 @@ Reader.prototype.novel543 = function () {
   this.$next = dq("#read > div > div.warp.my-3.foot-nav > a:nth-child(5)");
   this.$space1 = null;
   this.$space2 = null;
+
   this.ads = ["#read > div.novel-reader-content > .gadBlock", "#read > div.novel-reader-content > .gadBlock"];
   this.process();
 };
@@ -241,15 +251,16 @@ Reader.prototype.mc93 = function () {
 
 Reader.prototype.biquge = function () {
   this.body.classList.add("biquge");
-  this.$breadOld = dq(".con_top");
-  this.$titleOld = dq(".content_read .bookname h1"); // title
-  this.$contentOld = dq(".content_read #content");
+  this.$breadOld = dq(".con_top") || document.createElement('div');
+  this.$titleOld = dq(".content_read .bookname h1")  ||  dq(".content_read .zhangjieming h1") || document.createElement('div');
+  this.$contentOld = dq(".content_read #content") || document.createElement('div');
 
-  this.$prev = dq(".bottem2 a:nth-child(1)");
-  this.$menu = dq(".bottem2 a:nth-child(2)");
-  this.$next = dq(".bottem2 a:nth-child(3)");
-  this.$space1 = dq(".bottem2 a:nth-child(4)");
-  this.$space2 = dq(".bottem2 a:nth-child(5)");
+  this.$prev = dq(".bottem2 a:nth-child(1)") || dq("#content > div > a:nth-child(2)");
+  this.$menu = dq(".bottem2 a:nth-child(2)") || dq("#content > div > a:nth-child(3)");
+  this.$next = dq(".bottem2 a:nth-child(3)") || dq("#content > div > a:nth-child(4)");
+  this.$space1 = null;
+  this.$space2 = null;
+
   this.ads = ["#footer", ".header", "#listtj", ".box_con + script + div"];
   this.process();
 };
@@ -297,6 +308,7 @@ Reader.prototype.processRemoveAD = function () {
         });
       }
     });
+    console.log("[Novel Reader]", "成功去除广告");
   }
 };
 
@@ -319,7 +331,7 @@ Reader.prototype.processReadBread = function () {
 // 处理正文
 
 Reader.prototype.processReadContent = function () {
-  this.$titleNew.innerHTML = this.$titleOld.innerHTML;
+  this.$titleNew.innerHTML = this.$titleOld?.innerHTML;
   let txt = this.$titleNew.outerHTML + this.$contentOld.innerHTML;
   const txtWithAds = removeTextADS(txt);
   const txtSimplify = simplify(txtWithAds);
@@ -336,6 +348,7 @@ Reader.prototype.processReadContent = function () {
 // 去除正文中的广告
 function removeTextADS(txt) {
   let ads = [
+    /&nbsp;/g,
     /https?(.+)html/g,
     /wa?(.+)com/g,
     /八一中文网(.+)com/g,
@@ -367,6 +380,7 @@ Reader.prototype.processReadNav = function () {
   } else {
     this.$navNew.innerHTML += "<span>目录</span>";
   }
+  this.$navNew.textContent 
   this.processReadNavSeparate();
   if (this.$next) {
     this.$navNew.appendChild(this.$next);

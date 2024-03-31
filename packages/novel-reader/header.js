@@ -13,6 +13,7 @@
 // @match      *://www.ibiquges.com/*/*/*.html
 
 // @match      *://www.uukanshu.com/*.html
+// @match      *://www.uukanshu.net/*/*/*.html
 // @match      *://tw.uukanshu.com/b/*/*.html
 // @match      *://www.ddxs.com/*.html
 // @match      *://www.8dushu.net/ml/*/*.html
@@ -45,5 +46,9 @@
 // @match      *://www.2kxsw.com/*/*.html
 // @match      *://www.tasim.net/book/*/*.html
 // @match      *://www.93mc.com/book/*/*.html
+// @match      *://www.lwxs.com/*/*/*.html
+// @match      *://www.biquxs.com/book/*/*.html
+// @match      *://www.piaotia.com/html/*/*/*.html
+
 
 // ==/UserScript==
