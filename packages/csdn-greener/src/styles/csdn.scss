@@ -1,14 +1,30 @@
 .csdn {
+  #toolbarBox,
+  #csdn-toolbar {
+    height: 0 !important;
+    min-height: 0 !important;
+  }
+  #recommendAdBox,
+  #mainBox > aside > div.box-shadow.mb8 > div,
   .toolbar-menus.csdn-toolbar-fl,
-  // .toolbar-container-middle,
-  .toolbar-container-right,
-  .blog-footer-bottom {
+  .toolbar-container-left,
+  .toolbar-container-middle,
+  .toolbar-container-right {
     display: none !important;
   }
+
+  .blog-footer-bottom
+  .passport-login-tip-container {
+    display: none !important;
+  }
+  
   .user-profile-head .user-profile-head-banner {
     height: 2rem !important;
   }
+
+  
   .toolbar-container{
+    height: 0 !important;
     .title-article{
       font-size: 1.25rem;
       width: 100%;
@@ -38,6 +54,9 @@
   #asideCustom,
   #btnMoreComment,
   #footerRightAds,
+  #asideWriteGuide,
+  #asideSearchArticle,
+  .programmer1Box,
   .adsbygoogle iframe,
   .kind_person,
   .recommend-box,

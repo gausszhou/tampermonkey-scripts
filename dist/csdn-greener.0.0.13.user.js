@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         CSDN Greener
-// @version      0.0.12
+// @version      0.0.13
 // @description  CSDN 专杀，广告统统滚开，内容样式统一，我不要你觉得，我就要我觉得
 // @author       gausszhou@qq.com
 // @namespace    gausszhou
@@ -31,7 +31,7 @@
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_pnpm_css_loader_6_8_1_webpack_5_88_2_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_pnpm_css_loader_6_8_1_webpack_5_88_2_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, `body{display:none}.csdn .toolbar-menus.csdn-toolbar-fl,.csdn .toolbar-container-right,.csdn .blog-footer-bottom{display:none !important}.csdn .user-profile-head .user-profile-head-banner{height:2rem !important}.csdn .toolbar-container .title-article{font-size:1.25rem;width:100%}.csdn.menu .csdn-side-toolbar,.csdn.menu .user-spm-list,.csdn.menu .user-influence-list,.csdn.menu .user-achievement,.csdn.menu #asideProfile,.csdn.menu #asideNewComments{display:none !important}.csdn.article #asideProfile,.csdn.article #asideCategory,.csdn.article #asideNewComments,.csdn.article #asideNewNps,.csdn.article #asideArchive,.csdn.article #asideHotArticle,.csdn.article #asideSearchArticle,.csdn.article #asideCustom,.csdn.article #btnMoreComment,.csdn.article #footerRightAds,.csdn.article .adsbygoogle iframe,.csdn.article .kind_person,.csdn.article .recommend-box,.csdn.article .recommend-right_aside .toolbar-advert{display:none !important}.csdn.article .blog-content-box{margin-top:0}.csdn.article .template-box{margin-bottom:1em}.csdn.article #asidedirectory{position:fixed;top:3.6rem}.csdn.article #asidedirectory #directory .group_item,.csdn.article #recommend-right #groupfile,.csdn.article #recommend-right #groupfile .groupfile-div{max-height:calc(100vh - 8rem) !important}.csdn.article blockquote{margin:.5em !important;padding:1em !important;border-left:5px solid #005282 !important;background-color:#f4f4f4 !important;color:#1b1b1b !important}@page{margin:0}body{margin:0}.sheet{margin:0;overflow:hidden;position:relative;box-sizing:border-box;page-break-after:always}body.A3 .sheet{width:297mm;height:419mm}body.A3.landscape .sheet{width:420mm;height:296mm}body.A4 .sheet{width:210mm;height:296mm}body.A4.landscape .sheet{width:297mm;height:209mm}body.A5 .sheet{width:148mm;height:209mm}body.A5.landscape .sheet{width:210mm;height:147mm}body.letter .sheet{width:216mm;height:279mm}body.letter.landscape .sheet{width:280mm;height:215mm}body.legal .sheet{width:216mm;height:356mm}body.legal.landscape .sheet{width:357mm;height:215mm}.sheet.padding-10mm{padding:10mm}.sheet.padding-15mm{padding:15mm}.sheet.padding-20mm{padding:20mm}.sheet.padding-25mm{padding:25mm}@media screen{body{background:#e0e0e0}.sheet{background:#fff;box-shadow:0 .5mm 2mm rgba(0,0,0,.3);margin:5mm auto}}@media print{body.A3.landscape{width:420mm}body.A3,body.A4.landscape{width:297mm}body.A4,body.A5.landscape{width:210mm}body.A5{width:148mm}body.letter,body.legal{width:216mm}body.letter.landscape{width:280mm}body.legal.landscape{width:357mm}}`, ""]);
+___CSS_LOADER_EXPORT___.push([module.id, `body{display:none}.csdn #toolbarBox,.csdn #csdn-toolbar{height:0 !important;min-height:0 !important}.csdn #recommendAdBox,.csdn #mainBox>aside>div.box-shadow.mb8>div,.csdn .toolbar-menus.csdn-toolbar-fl,.csdn .toolbar-container-left,.csdn .toolbar-container-middle,.csdn .toolbar-container-right{display:none !important}.csdn .blog-footer-bottom .passport-login-tip-container{display:none !important}.csdn .user-profile-head .user-profile-head-banner{height:2rem !important}.csdn .toolbar-container{height:0 !important}.csdn .toolbar-container .title-article{font-size:1.25rem;width:100%}.csdn.menu .csdn-side-toolbar,.csdn.menu .user-spm-list,.csdn.menu .user-influence-list,.csdn.menu .user-achievement,.csdn.menu #asideProfile,.csdn.menu #asideNewComments{display:none !important}.csdn.article #asideProfile,.csdn.article #asideCategory,.csdn.article #asideNewComments,.csdn.article #asideNewNps,.csdn.article #asideArchive,.csdn.article #asideHotArticle,.csdn.article #asideSearchArticle,.csdn.article #asideCustom,.csdn.article #btnMoreComment,.csdn.article #footerRightAds,.csdn.article #asideWriteGuide,.csdn.article #asideSearchArticle,.csdn.article .programmer1Box,.csdn.article .adsbygoogle iframe,.csdn.article .kind_person,.csdn.article .recommend-box,.csdn.article .recommend-right_aside .toolbar-advert{display:none !important}.csdn.article .blog-content-box{margin-top:0}.csdn.article .template-box{margin-bottom:1em}.csdn.article #asidedirectory{position:fixed;top:3.6rem}.csdn.article #asidedirectory #directory .group_item,.csdn.article #recommend-right #groupfile,.csdn.article #recommend-right #groupfile .groupfile-div{max-height:calc(100vh - 8rem) !important}.csdn.article blockquote{margin:.5em !important;padding:1em !important;border-left:5px solid #005282 !important;background-color:#f4f4f4 !important;color:#1b1b1b !important}@page{margin:0}body{margin:0}.sheet{margin:0;overflow:hidden;position:relative;box-sizing:border-box;page-break-after:always}body.A3 .sheet{width:297mm;height:419mm}body.A3.landscape .sheet{width:420mm;height:296mm}body.A4 .sheet{width:210mm;height:296mm}body.A4.landscape .sheet{width:297mm;height:209mm}body.A5 .sheet{width:148mm;height:209mm}body.A5.landscape .sheet{width:210mm;height:147mm}body.letter .sheet{width:216mm;height:279mm}body.letter.landscape .sheet{width:280mm;height:215mm}body.legal .sheet{width:216mm;height:356mm}body.legal.landscape .sheet{width:357mm;height:215mm}.sheet.padding-10mm{padding:10mm}.sheet.padding-15mm{padding:15mm}.sheet.padding-20mm{padding:20mm}.sheet.padding-25mm{padding:25mm}@media screen{body{background:#e0e0e0}.sheet{background:#fff;box-shadow:0 .5mm 2mm rgba(0,0,0,.3);margin:5mm auto}}@media print{body.A3.landscape{width:420mm}body.A3,body.A4.landscape{width:297mm}body.A4,body.A5.landscape{width:210mm}body.A5{width:148mm}body.letter,body.legal{width:216mm}body.letter.landscape{width:280mm}body.legal.landscape{width:357mm}}`, ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -526,10 +526,13 @@ UI.prototype.csdn = function () {
   }
   this.ads = [".csdn-side-toolbar", "#asideHotArticle", "#asideArchive"];
   this.process();
-  this.processCSDN();
 };
 UI.prototype.process = function () {
+  this.processTag();
   this.processRemoveAD();
+  this.processClipboard();
+};
+UI.prototype.processTag = function () {
   this.mode = "home";
   if (this.blog_content) {
     this.mode = "article";
@@ -547,7 +550,21 @@ UI.prototype.processRemoveAD = function () {
     });
   }
 };
-UI.prototype.processCSDN = function () {
+UI.prototype.processClipboard = function () {
+  var timer = null;
+  var copySuccess = false;
+  window.copyCodeGreen = function (event) {
+    try {
+      hljs.copyCode(event);
+      copySuccess = true;
+    } catch (error) {
+      copySuccess = false;
+    }
+    clearTimeout(timer);
+    timer = setTimeout(function () {
+      copySuccess = false;
+    }, 3000);
+  };
   window.onload = function () {
     // 去除剪贴板劫持
     csdn.copyright && (csdn.copyright.textData = "");
@@ -557,8 +574,10 @@ UI.prototype.processCSDN = function () {
         writable: false,
         configurable: false
       });
-      $("#csdn-toolbar").css("border-bottom", "2px solid #409eff");
-    } catch (err) {}
+      $("#csdn-toolbar").css("border-bottom", "2px solid #4abf8a");
+    } catch (err) {
+      $("#csdn-toolbar").css("border-bottom", "2px solid #f56c6c");
+    }
     // 修复无法复制
     $("pre").css("user-select", "auto");
     $("code").css("user-select", "auto");
@@ -566,12 +585,17 @@ UI.prototype.processCSDN = function () {
     // 免登录复制
     $(".hljs-button").removeClass("signin");
     $(".hljs-button").addClass("copy-button");
-    $(".hljs-button").attr("onclick", "hljs.copyCode(event)");
+    $(".hljs-button").attr("onclick", "window.copyCodeGreen(event)");
     $(".hljs-button").attr("data-title", "免登录复制");
-    setInterval(function () {
-      $(".hljs-button").attr("data-title", "免登录复制");
-      $(".passport-login-container").remove();
-    }, 1000 / 60);
+    var renderButton = function renderButton() {
+      if (copySuccess) {
+        $(".hljs-button").attr("data-title", "复制成功");
+      } else {
+        $(".hljs-button").attr("data-title", "免登录复制");
+      }
+      window.requestAnimationFrame(renderButton);
+    };
+    window.requestAnimationFrame(renderButton);
   };
 };
 /* harmony default export */ const ui = (UI);
