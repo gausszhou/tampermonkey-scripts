@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Novel Reader
-// @version      0.0.18
+// @version      0.0.19
 // @description  小说阅读器，特点是仿起点风格的网站样式，支持UU看书，笔趣阁，书趣阁，81中文网等
 // @author       gausszhou@qq.com
 // @namespace    gausszhou
@@ -80,7 +80,7 @@ var ___CSS_LOADER_EXPORT___ = _node_modules_pnpm_css_loader_6_8_1_webpack_5_88_2
 var ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_pnpm_css_loader_6_8_1_webpack_5_88_2_node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_0___);
 var ___CSS_LOADER_URL_REPLACEMENT_1___ = _node_modules_pnpm_css_loader_6_8_1_webpack_5_88_2_node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_1___);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, `body{display:none}body.novel-reader-body iframe,body.novel-reader-body .weizhi,body.novel-reader-body .weizhi+div,body.novel-reader-body .at-share-btn,body.novel-reader-body .sao_mobile_box,body.novel-reader-body .addthis-animated,body.novel-reader-body .addthis-smartlayers,body.novel-reader-body .addthis-smartlayers-desktop{display:none !important}body.novel-reader-body{background:url(${___CSS_LOADER_URL_REPLACEMENT_0___}) repeat !important;font-size:18px;font-family:"Microsoft YaHei",PingFangSC-Regular,HelveticaNeue-Light,"Helvetica Neue Light",sans-serif}body.novel-reader-body .novel-reader-bread{box-sizing:border-box;width:800px;margin:0 auto;padding:1em 0;display:flex;align-items:center;font:12px/22px PingFangSC-Regular,"-apple-system",Simsun}body.novel-reader-body .novel-reader-bread .novel-reader-bread-separate{color:rgba(0,0,0,.4)}body.novel-reader-body .novel-reader-bread a{margin:0 .5em !important;padding:0 !important;background-color:rgba(0,0,0,0) !important}body.novel-reader-body .novel-reader-bread a,body.novel-reader-body .novel-reader-bread b{padding:0;font-weight:400;font-size:12px;color:#1a1a1a !important}body.novel-reader-body .novel-reader-content{box-sizing:border-box;background:url(${___CSS_LOADER_URL_REPLACEMENT_1___}) repeat;width:800px;margin:0 auto 1em;padding:2em;color:#262626;font-weight:500;text-indent:2em;text-align:left;border:1px solid #d8d8d8;position:relative}body.novel-reader-body .novel-reader-content .novel-reader-book-mark{position:absolute;top:0px;right:48px;width:24px;height:40px;background-repeat:no-repeat;background-position:-228px -143.5px;background-size:340px}body.novel-reader-body .novel-reader-content br{content:"";margin:.5em 0;display:block;font-size:150%}body.novel-reader-body .novel-reader-content p{word-wrap:wrap;word-break:break-all;margin-top:.5em;line-height:1.8;text-align:justify}body.novel-reader-body .novel-reader-content .novel-reader-content-title{display:flex;align-items:center;text-indent:0;padding:0 0 .5em;margin:0 0 .5em;font:24px/32px PingFangSC-Regular,HelveticaNeue-Light,"Helvetica Neue Light","Microsoft YaHei",sans-serif}body.novel-reader-body .novel-reader-content .novel-reader-content-title span{font-size:12px;padding:0 1em;margin:0}body.novel-reader-body .novel-reader-bottom-nav{box-sizing:border-box;background:url(${___CSS_LOADER_URL_REPLACEMENT_1___}) repeat;width:800px;margin:1em auto 1em;height:70px;display:flex;align-items:center;border:1px solid #d8d8d8;white-space:nowrap}body.novel-reader-body .novel-reader-bottom-nav a,body.novel-reader-body .novel-reader-bottom-nav span{flex:1;height:100%;display:flex;align-items:center;justify-content:center;text-decoration:none;color:#333 !important;font:18px/70px PingFangSC-Regular,HelveticaNeue-Light,"Helvetica Neue Light","Microsoft YaHei",sans-serif}body.novel-reader-body .novel-reader-bottom-nav span{color:#ccc !important}body.novel-reader-body .novel-reader-bottom-nav .novel-reader-bottom-separate{width:1px;height:32px;border-right:1px solid #d8d8d8}body.novel-reader-body .novel-reader-bottom-nav a:hover{background:rgba(0,0,0,.03)}`, ""]);
+___CSS_LOADER_EXPORT___.push([module.id, `body{display:none}body.novel-reader-body iframe,body.novel-reader-body .weizhi,body.novel-reader-body .weizhi+div,body.novel-reader-body .at-share-btn,body.novel-reader-body .sao_mobile_box,body.novel-reader-body .addthis-animated,body.novel-reader-body .addthis-smartlayers,body.novel-reader-body .addthis-smartlayers-desktop{display:none !important}body.novel-reader-body{background:url(${___CSS_LOADER_URL_REPLACEMENT_0___}) repeat !important;font-size:18px;font-family:"Microsoft YaHei",PingFangSC-Regular,HelveticaNeue-Light,"Helvetica Neue Light",sans-serif;margin:0 auto;width:800px}body.novel-reader-body .novel-reader-book-mark{cursor:pointer;position:absolute;top:0px;right:48px;width:24px;height:40px;background-repeat:no-repeat;background-position:-228px -143.5px;background-size:340px;border-radius:0 0 12px 12px;text-indent:0;display:flex;justify-content:center;align-items:center}body.novel-reader-body.left{margin:0 auto 0 1em}body.novel-reader-body.left .novel-reader-book-mark{background-color:#67c23a}body.novel-reader-body.center{margin:0 auto}body.novel-reader-body.center .novel-reader-book-mark{background-color:#f56c6c}body.novel-reader-body.right{margin:0 1em 0 auto}body.novel-reader-body.right .novel-reader-book-mark{background-color:#409eff}body.novel-reader-body .novel-reader-bread{box-sizing:border-box;padding:1em 0;display:flex;align-items:center;font:12px/22px PingFangSC-Regular,"-apple-system",Simsun}body.novel-reader-body .novel-reader-bread .novel-reader-bread-separate{color:rgba(0,0,0,.4)}body.novel-reader-body .novel-reader-bread a{margin:0 .5em !important;padding:0 !important;background-color:rgba(0,0,0,0) !important}body.novel-reader-body .novel-reader-bread a,body.novel-reader-body .novel-reader-bread b{padding:0;font-weight:400;font-size:12px;color:#1a1a1a !important}body.novel-reader-body .novel-reader-content{box-sizing:border-box;background:url(${___CSS_LOADER_URL_REPLACEMENT_1___}) repeat;padding:2em;color:#262626;font-weight:500;text-indent:2em;text-align:left;border:1px solid #d8d8d8;position:relative}body.novel-reader-body .novel-reader-content br{content:"";margin:.5em 0;display:block;font-size:150%}body.novel-reader-body .novel-reader-content p{word-wrap:wrap;word-break:break-all;margin-top:.5em;line-height:1.8;text-align:justify}body.novel-reader-body .novel-reader-content .novel-reader-content-title{display:flex;align-items:center;text-indent:0;padding:0 0 .5em;margin:0 0 .5em;font:24px/32px PingFangSC-Regular,HelveticaNeue-Light,"Helvetica Neue Light","Microsoft YaHei",sans-serif}body.novel-reader-body .novel-reader-content .novel-reader-content-title span{font-size:12px;padding:0 1em;margin:0}body.novel-reader-body .novel-reader-bottom-nav{box-sizing:border-box;background:url(${___CSS_LOADER_URL_REPLACEMENT_1___}) repeat;margin-top:1em;margin-bottom:1em;height:70px;display:flex;align-items:center;border:1px solid #d8d8d8;white-space:nowrap}body.novel-reader-body .novel-reader-bottom-nav a,body.novel-reader-body .novel-reader-bottom-nav span{flex:1;height:100%;display:flex;align-items:center;justify-content:center;text-decoration:none;color:#333 !important;font:18px/70px PingFangSC-Regular,HelveticaNeue-Light,"Helvetica Neue Light","Microsoft YaHei",sans-serif}body.novel-reader-body .novel-reader-bottom-nav span{color:#ccc !important}body.novel-reader-body .novel-reader-bottom-nav .novel-reader-bottom-separate{width:1px;height:32px;border-right:1px solid #d8d8d8}body.novel-reader-body .novel-reader-bottom-nav a:hover{background:rgba(0,0,0,.03)}`, ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -773,6 +773,7 @@ Reader.prototype.judge = function () {
     }
     if (reader_dq('#a_main > div.bdtop')) {
       this.asxs();
+      return false;
     }
     this.biquge();
   } catch (error) {
@@ -998,11 +999,32 @@ Reader.prototype.processReadBread = function () {
     });
   }
 };
+function nextPosition(position) {
+  var list = ['left', 'center', 'right'];
+  var index = list.findIndex(function (item) {
+    return item === position;
+  });
+  var nextIndex = 0;
+  if (index > -1) {
+    nextIndex = (index + 1) % list.length;
+  }
+  return list[nextIndex];
+}
+function getPositonLabel(position) {
+  var list = ['left', 'center', 'right'];
+  var index = list.findIndex(function (item) {
+    return item === position;
+  });
+  return ['<', '-', '>'][index];
+}
 
 // 处理正文
 
 Reader.prototype.processReadContent = function () {
-  var _this$$titleOld, _this$$contentNew$que, _this$$contentNew$que2;
+  var _this$$titleOld,
+    _this$$contentNew$que,
+    _this$$contentNew$que2,
+    _this2 = this;
   this.$titleNew.innerHTML = (_this$$titleOld = this.$titleOld) === null || _this$$titleOld === void 0 ? void 0 : _this$$titleOld.innerHTML;
   var txt = this.$titleNew.outerHTML + this.$contentOld.innerHTML;
   var txtWithAds = removeTextADS(txt);
@@ -1013,8 +1035,18 @@ Reader.prototype.processReadContent = function () {
   Array.from(this.$contentNew.querySelectorAll("a")).forEach(function (el) {
     return el.remove();
   });
-  //
   var $mark = document.createElement("div");
+  var position = localStorage.getItem('novel-reader-position') || 'center';
+  this.body.classList.add(position);
+  $mark.innerHTML = getPositonLabel(position);
+  $mark.addEventListener('click', function () {
+    var position = localStorage.getItem('novel-reader-position') || 'center';
+    _this2.body.classList.remove(position);
+    var next = nextPosition(position);
+    _this2.body.classList.add(next);
+    $mark.innerHTML = getPositonLabel(next);
+    localStorage.setItem('novel-reader-position', next);
+  });
   $mark.classList.add(CLASSNAME_BOOK_MARK);
   this.$contentNew.appendChild($mark);
 };
