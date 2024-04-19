@@ -85,8 +85,8 @@ Reader.prototype.judge = function () {
       return false;
     }
 
-    if (dq('.fiction-content')) {
-      this.crxs();
+    if (dq('#a_main > div.bdtop')) {
+      this.asxs()
       return false;
     }
 
@@ -245,6 +245,24 @@ Reader.prototype.mc93 = function () {
   this.$space2 = null;
 
   this.ads = ["#read > div.novel-reader-content > .gadBlock", "#read > div.novel-reader-content > .gadBlock"];
+  this.process();
+};
+
+
+Reader.prototype.asxs = function () {
+  this.body.classList.add("asxs");
+  this.$breadOld = dq("#amain > dl > dt");
+  this.$titleOld = dq("#amain > dl > dd:nth-child(2) > h1"); // title
+
+  this.$contentOld = dq("#contents");
+
+  this.$prev = dq("#footlink > a:nth-child(1)");
+  this.$menu = dq("#footlink > a:nth-child(2)");
+  this.$next = dq("#footlink > a:nth-child(3)");
+  this.$space1 = null;
+  this.$space2 = null;
+
+  this.ads = [];
   this.process();
 };
 

@@ -49,6 +49,7 @@
 // @match      *://www.lwxs.com/*/*/*.html
 // @match      *://www.biquxs.com/book/*/*.html
 // @match      *://www.piaotia.com/html/*/*/*.html
-
+// @match      *://www.fqxs123.com/book/*/*.html
+// @match      *://www.asxs.com/view/*/*.html
 
 // ==/UserScript==

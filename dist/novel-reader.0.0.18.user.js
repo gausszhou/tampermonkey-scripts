@@ -49,7 +49,8 @@
 // @match      *://www.lwxs.com/*/*/*.html
 // @match      *://www.biquxs.com/book/*/*.html
 // @match      *://www.piaotia.com/html/*/*/*.html
-
+// @match      *://www.fqxs123.com/book/*/*.html
+// @match      *://www.asxs.com/view/*/*.html
 
 // ==/UserScript==
 
@@ -770,9 +771,8 @@ Reader.prototype.judge = function () {
       this.mc93();
       return false;
     }
-    if (reader_dq('.fiction-content')) {
-      this.crxs();
-      return false;
+    if (reader_dq('#a_main > div.bdtop')) {
+      this.asxs();
     }
     this.biquge();
   } catch (error) {
@@ -906,6 +906,20 @@ Reader.prototype.mc93 = function () {
   this.$space1 = null;
   this.$space2 = null;
   this.ads = ["#read > div.novel-reader-content > .gadBlock", "#read > div.novel-reader-content > .gadBlock"];
+  this.process();
+};
+Reader.prototype.asxs = function () {
+  this.body.classList.add("asxs");
+  this.$breadOld = reader_dq("#amain > dl > dt");
+  this.$titleOld = reader_dq("#amain > dl > dd:nth-child(2) > h1"); // title
+
+  this.$contentOld = reader_dq("#contents");
+  this.$prev = reader_dq("#footlink > a:nth-child(1)");
+  this.$menu = reader_dq("#footlink > a:nth-child(2)");
+  this.$next = reader_dq("#footlink > a:nth-child(3)");
+  this.$space1 = null;
+  this.$space2 = null;
+  this.ads = [];
   this.process();
 };
 Reader.prototype.biquge = function () {
