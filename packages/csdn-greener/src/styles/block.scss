@@ -1,0 +1,36 @@
+.csdn.menu {
+  .csdn-side-toolbar,
+  .user-spm-list,
+  .user-influence-list,
+  .user-achievement,
+  #asideProfile,
+  #asideNewComments {
+    display: none !important;
+  }
+}
+
+// 屏蔽文章页面的广告
+.csdn.article {
+  #asideProfile,
+  #asideCategory,
+  #asideNewComments,
+  #asideNewNps,
+  #asideArchive,
+  #asideHotArticle,
+  #asideSearchArticle,
+  #asideCustom,
+  #btnMoreComment,
+  #footerRightAds,
+  #asideWriteGuide,
+  #asideSearchArticle,
+  #blogHuaweiyunAdvert,
+  #blogColumnPayAdvert,
+  .programmer1Box,
+  .adsbygoogle iframe,
+  .kind_person,
+  .recommend-box,
+  .recommend-right_aside .toolbar-advert {
+    display: none !important;
+  }
+}
+

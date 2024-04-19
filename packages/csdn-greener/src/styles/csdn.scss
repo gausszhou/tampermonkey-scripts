@@ -17,7 +17,7 @@
     display: none !important;
   }
 
-  .blog-footer-bottom
+  // .blog-footer-bottom
   .passport-login-tip-container {
     display: none !important;
   }
@@ -36,48 +36,10 @@
   }
 }
 
-.csdn.menu {
-  .csdn-side-toolbar,
-  .user-spm-list,
-  .user-influence-list,
-  .user-achievement,
-  #asideProfile,
-  #asideNewComments {
-    display: none !important;
-  }
-}
-
-// 屏蔽文章页面的广告
-.csdn.article {
-  #asideProfile,
-  #asideCategory,
-  #asideNewComments,
-  #asideNewNps,
-  #asideArchive,
-  #asideHotArticle,
-  #asideSearchArticle,
-  #asideCustom,
-  #btnMoreComment,
-  #footerRightAds,
-  #asideWriteGuide,
-  #asideSearchArticle,
-  #blogHuaweiyunAdvert,
-  #blogColumnPayAdvert,
-  .programmer1Box,
-  .adsbygoogle iframe,
-  .kind_person,
-  .recommend-box,
-  .recommend-right_aside .toolbar-advert {
-    display: none !important;
-  }
-}
-
 
 /**
  * 响应式布局
  */
-
-
 .csdn.article {
   min-width: 900px;
   .main_father.clearfix.d-flex.justify-content-center {
@@ -114,6 +76,9 @@
 
 .csdn.article {
   
+  .hljs-ln {
+    width: auto !important;
+  }
   .template-box {
     margin-bottom: 1em;
   }
@@ -143,7 +108,4 @@
     background-color: #f4f4f4 !important;
     color: #1b1b1b !important;
   }
-}
-.hljs-ln.hundred {
-  width: 800px !important;
 }
