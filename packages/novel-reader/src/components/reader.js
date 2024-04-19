@@ -346,6 +346,21 @@ Reader.prototype.processReadBread = function () {
   }
 };
 
+function nextPosition(position) {
+  const list = ['left', 'center', 'right'];
+  const index = list.findIndex(item=> item === position);
+  let nextIndex = 0;
+  if (index > -1) {
+    nextIndex = (index  + 1) % list.length
+  }
+  return list[nextIndex]
+}
+function getPositonLabel(position) {
+  const list = ['left', 'center', 'right'];
+  const index = list.findIndex(item=> item === position);
+  return ['<', '-', '>'][index]
+}
+
 // 处理正文
 
 Reader.prototype.processReadContent = function () {
@@ -357,8 +372,19 @@ Reader.prototype.processReadContent = function () {
   this.$contentNew.querySelector("h1")?.remove();
   this.$contentNew.querySelector("table")?.remove();
   Array.from(this.$contentNew.querySelectorAll("a")).forEach((el) => el.remove());
-  //
+  
   const $mark = document.createElement("div");
+  const position = localStorage.getItem('novel-reader-position') || 'center';
+  this.body.classList.add(position)
+  $mark.innerHTML = getPositonLabel(position)
+  $mark.addEventListener('click', () => {
+    const position = localStorage.getItem('novel-reader-position') || 'center';
+    this.body.classList.remove(position)
+    const next = nextPosition(position);
+    this.body.classList.add(next)
+    $mark.innerHTML = getPositonLabel(next)
+    localStorage.setItem('novel-reader-position', next)
+  })
   $mark.classList.add(CLASSNAME_BOOK_MARK);
   this.$contentNew.appendChild($mark);
 };
