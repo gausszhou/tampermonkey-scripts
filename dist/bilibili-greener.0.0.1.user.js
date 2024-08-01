@@ -14,20 +14,20 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 667:
+/***/ 47:
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   Z: () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _node_modules_pnpm_css_loader_6_8_1_webpack_5_88_2_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(885);
-/* harmony import */ var _node_modules_pnpm_css_loader_6_8_1_webpack_5_88_2_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_pnpm_css_loader_6_8_1_webpack_5_88_2_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _node_modules_pnpm_css_loader_6_8_1_webpack_5_88_2_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(118);
-/* harmony import */ var _node_modules_pnpm_css_loader_6_8_1_webpack_5_88_2_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_pnpm_css_loader_6_8_1_webpack_5_88_2_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _node_modules_pnpm_css_loader_6_11_0_webpack_5_93_0_webpack_cli_4_10_0_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(179);
+/* harmony import */ var _node_modules_pnpm_css_loader_6_11_0_webpack_5_93_0_webpack_cli_4_10_0_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_pnpm_css_loader_6_11_0_webpack_5_93_0_webpack_cli_4_10_0_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_pnpm_css_loader_6_11_0_webpack_5_93_0_webpack_cli_4_10_0_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(140);
+/* harmony import */ var _node_modules_pnpm_css_loader_6_11_0_webpack_5_93_0_webpack_cli_4_10_0_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_pnpm_css_loader_6_11_0_webpack_5_93_0_webpack_cli_4_10_0_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
 // Imports
 
 
-var ___CSS_LOADER_EXPORT___ = _node_modules_pnpm_css_loader_6_8_1_webpack_5_88_2_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_pnpm_css_loader_6_8_1_webpack_5_88_2_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
+var ___CSS_LOADER_EXPORT___ = _node_modules_pnpm_css_loader_6_11_0_webpack_5_93_0_webpack_cli_4_10_0_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_pnpm_css_loader_6_11_0_webpack_5_93_0_webpack_cli_4_10_0_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, `body.bilibili #activity_vote,body.bilibili .ad-report.ad-floor-exp,body.bilibili #live_recommand_report,body.bilibili .left-entry .v-popover-wrap:nth-child(n+2),body.bilibili .video-page-special-card-small,body.bilibili .video-page-special-card{display:none !important}body.bilibili .cur-list,body.bilibili .multi-page .cur-list .list-box,body.bilibili .base-video-sections-v1 .video-sections-content-list,body.bilibili .base-video-sections .video-sections-content-list{height:calc(40vw - 200px) !important;min-height:300px;max-height:40vw}`, ""]);
 // Exports
@@ -36,7 +36,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `body.bilibili #activity_vote,body.bili
 
 /***/ }),
 
-/***/ 118:
+/***/ 140:
 /***/ ((module) => {
 
 
@@ -127,7 +127,7 @@ module.exports = function (cssWithMappingToString) {
 
 /***/ }),
 
-/***/ 885:
+/***/ 179:
 /***/ ((module) => {
 
 
@@ -138,7 +138,7 @@ module.exports = function (i) {
 
 /***/ }),
 
-/***/ 886:
+/***/ 98:
 /***/ ((module) => {
 
 
@@ -228,7 +228,7 @@ module.exports = function (list, options) {
 
 /***/ }),
 
-/***/ 122:
+/***/ 753:
 /***/ ((module) => {
 
 
@@ -268,7 +268,7 @@ module.exports = insertBySelector;
 
 /***/ }),
 
-/***/ 611:
+/***/ 734:
 /***/ ((module) => {
 
 
@@ -284,7 +284,7 @@ module.exports = insertStyleElement;
 
 /***/ }),
 
-/***/ 791:
+/***/ 554:
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 
@@ -300,7 +300,7 @@ module.exports = setAttributesWithoutAttributes;
 
 /***/ }),
 
-/***/ 788:
+/***/ 523:
 /***/ ((module) => {
 
 
@@ -367,7 +367,7 @@ module.exports = domAPI;
 
 /***/ }),
 
-/***/ 671:
+/***/ 75:
 /***/ ((module) => {
 
 
@@ -450,29 +450,27 @@ module.exports = styleTagTransform;
 /******/ 	
 /************************************************************************/
 var __webpack_exports__ = {};
-// This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
-(() => {
 
-// EXTERNAL MODULE: ../../node_modules/.pnpm/style-loader@3.3.3_webpack@5.88.2/node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js
-var injectStylesIntoStyleTag = __webpack_require__(886);
+// EXTERNAL MODULE: ../../node_modules/.pnpm/style-loader@3.3.4_webpack@5.93.0_webpack-cli@4.10.0_/node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js
+var injectStylesIntoStyleTag = __webpack_require__(98);
 var injectStylesIntoStyleTag_default = /*#__PURE__*/__webpack_require__.n(injectStylesIntoStyleTag);
-// EXTERNAL MODULE: ../../node_modules/.pnpm/style-loader@3.3.3_webpack@5.88.2/node_modules/style-loader/dist/runtime/styleDomAPI.js
-var styleDomAPI = __webpack_require__(788);
+// EXTERNAL MODULE: ../../node_modules/.pnpm/style-loader@3.3.4_webpack@5.93.0_webpack-cli@4.10.0_/node_modules/style-loader/dist/runtime/styleDomAPI.js
+var styleDomAPI = __webpack_require__(523);
 var styleDomAPI_default = /*#__PURE__*/__webpack_require__.n(styleDomAPI);
-// EXTERNAL MODULE: ../../node_modules/.pnpm/style-loader@3.3.3_webpack@5.88.2/node_modules/style-loader/dist/runtime/insertBySelector.js
-var insertBySelector = __webpack_require__(122);
+// EXTERNAL MODULE: ../../node_modules/.pnpm/style-loader@3.3.4_webpack@5.93.0_webpack-cli@4.10.0_/node_modules/style-loader/dist/runtime/insertBySelector.js
+var insertBySelector = __webpack_require__(753);
 var insertBySelector_default = /*#__PURE__*/__webpack_require__.n(insertBySelector);
-// EXTERNAL MODULE: ../../node_modules/.pnpm/style-loader@3.3.3_webpack@5.88.2/node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js
-var setAttributesWithoutAttributes = __webpack_require__(791);
+// EXTERNAL MODULE: ../../node_modules/.pnpm/style-loader@3.3.4_webpack@5.93.0_webpack-cli@4.10.0_/node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js
+var setAttributesWithoutAttributes = __webpack_require__(554);
 var setAttributesWithoutAttributes_default = /*#__PURE__*/__webpack_require__.n(setAttributesWithoutAttributes);
-// EXTERNAL MODULE: ../../node_modules/.pnpm/style-loader@3.3.3_webpack@5.88.2/node_modules/style-loader/dist/runtime/insertStyleElement.js
-var insertStyleElement = __webpack_require__(611);
+// EXTERNAL MODULE: ../../node_modules/.pnpm/style-loader@3.3.4_webpack@5.93.0_webpack-cli@4.10.0_/node_modules/style-loader/dist/runtime/insertStyleElement.js
+var insertStyleElement = __webpack_require__(734);
 var insertStyleElement_default = /*#__PURE__*/__webpack_require__.n(insertStyleElement);
-// EXTERNAL MODULE: ../../node_modules/.pnpm/style-loader@3.3.3_webpack@5.88.2/node_modules/style-loader/dist/runtime/styleTagTransform.js
-var styleTagTransform = __webpack_require__(671);
+// EXTERNAL MODULE: ../../node_modules/.pnpm/style-loader@3.3.4_webpack@5.93.0_webpack-cli@4.10.0_/node_modules/style-loader/dist/runtime/styleTagTransform.js
+var styleTagTransform = __webpack_require__(75);
 var styleTagTransform_default = /*#__PURE__*/__webpack_require__.n(styleTagTransform);
-// EXTERNAL MODULE: ../../node_modules/.pnpm/css-loader@6.8.1_webpack@5.88.2/node_modules/css-loader/dist/cjs.js!../../node_modules/.pnpm/sass-loader@12.6.0_sass@1.69.3+webpack@5.88.2/node_modules/sass-loader/dist/cjs.js!./src/styles/index.scss
-var styles = __webpack_require__(667);
+// EXTERNAL MODULE: ../../node_modules/.pnpm/css-loader@6.11.0_webpack@5.93.0_webpack-cli@4.10.0_/node_modules/css-loader/dist/cjs.js!../../node_modules/.pnpm/sass-loader@12.6.0_sass@1.77.8_webpack@5.93.0_webpack-cli@4.10.0_/node_modules/sass-loader/dist/cjs.js!./src/styles/index.scss
+var styles = __webpack_require__(47);
 ;// CONCATENATED MODULE: ./src/styles/index.scss
 
       
@@ -495,12 +493,12 @@ options.setAttributes = (setAttributesWithoutAttributes_default());
 options.domAPI = (styleDomAPI_default());
 options.insertStyleElement = (insertStyleElement_default());
 
-var update = injectStylesIntoStyleTag_default()(styles/* default */.Z, options);
+var update = injectStylesIntoStyleTag_default()(styles/* default */.A, options);
 
 
 
 
-       /* harmony default export */ const src_styles = (styles/* default */.Z && styles/* default */.Z.locals ? styles/* default */.Z.locals : undefined);
+       /* harmony default export */ const src_styles = (styles/* default */.A && styles/* default */.A.locals ? styles/* default */.A.locals : undefined);
 
 ;// CONCATENATED MODULE: ./src/components/ui.js
 let dq = document.querySelector.bind(document);
@@ -547,8 +545,6 @@ function init(){
   main_ui.bilibili();
   console.log("[info] Finshed");
 }
-
-})();
 
 /******/ })()
 ;

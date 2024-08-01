@@ -1,11 +1,16 @@
 @import "./variables.scss";
 
+html {
+  background: $bg-body repeat !important;
+}
+
 body.novel-reader-body {
   background: $bg-body repeat !important;
   font-size: 18px;
   font-family: "Microsoft YaHei", PingFangSC-Regular, HelveticaNeue-Light, "Helvetica Neue Light",
     sans-serif;
   margin: 0 auto;
+  min-width: 800px;
   width: 800px;
   .novel-reader-book-mark {
     cursor: pointer;
@@ -22,20 +27,22 @@ body.novel-reader-body {
     display: flex;
     justify-content: center;
     align-items: center;
+    color: #ffffff;
+    font-size: 12px;
   }
 }
 
 body.novel-reader-body.left {
   margin: 0 auto 0 1em;
   .novel-reader-book-mark {
-    background-color: #67C23A;
+    background-color: #F56C6C;
   }
 }
 
 body.novel-reader-body.center {
   margin: 0 auto;
   .novel-reader-book-mark {
-    background-color: #F56C6C;
+    background-color: #67C23A;
   }
 }
 
@@ -82,18 +89,19 @@ body.novel-reader-body .novel-reader-content {
   text-align: left;
   border: 1px solid #d8d8d8;
   position: relative;
-  
+  line-height: 1.5;
+
   br {
     content: "";
     margin: 0.5em 0;
     display: block;
     font-size: 150%;
   }
+
   p {
     word-wrap: wrap;
     word-break: break-all;
     margin-top: 0.5em;
-    line-height: 1.8;
     text-align: justify;
   }
 }

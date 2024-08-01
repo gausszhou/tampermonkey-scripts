@@ -11,6 +11,7 @@
 // @match      *://book.qidian.com/info/*
 
 // @match      *://www.ibiquges.com/*/*/*.html
+// @match      *://www.xbiqugu.net/*/*/*.html
 
 // @match      *://www.uukanshu.com/*.html
 // @match      *://www.uukanshu.net/*/*/*.html
@@ -51,5 +52,9 @@
 // @match      *://www.piaotia.com/html/*/*/*.html
 // @match      *://www.fqxs123.com/book/*/*.html
 // @match      *://www.asxs.com/view/*/*.html
+
+// @match      *://www.zhaoshuyuan.net/read/*/*.html
+// @match      *://www.uuks.org/b/*/*.html
+// @match      *://www.52wx.com/*/*.html
 
 // ==/UserScript==

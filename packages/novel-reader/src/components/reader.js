@@ -1,6 +1,11 @@
 import { simplify } from "./translate";
 const dq = document.querySelector.bind(document);
-const dqs = document.querySelectorAll.bind(document);
+const dqs = (selector) => {
+  const list = Array.from(document.querySelectorAll(selector))
+  if (list.length) {
+    return list;
+  }
+}
 
 const CLASSNAME_BODY = "novel-reader-body";
 const CLASSNAME_BREAD = "novel-reader-bread";
@@ -48,10 +53,10 @@ Reader.prototype.judge = function () {
       return false;
     }
 
-    // if (dq("#tbox")) {
-    //   this.ddxs();
-    //   return false;
-    // }
+    if (dq("#tbox")) {
+      this.ddxs();
+      return false;
+    }
 
     if (dq(".page_chapter")) {
       this.shuquge();
@@ -90,6 +95,16 @@ Reader.prototype.judge = function () {
       return false;
     }
 
+    if (dq('#readSet')) {
+      this.zhaoshuyuan()
+      return false;
+    }
+
+    if (dq('#container > div > div > div.reader-main')) {
+      this.a52wx()
+      return false;
+    }
+
     this.biquge();
   } catch (error) {
     console.error("[Novel Reader] error:", error);
@@ -99,150 +114,132 @@ Reader.prototype.judge = function () {
 // 各个网站的策略
 
 Reader.prototype.kehuanNet = function () {
+  console.log('[Novel Reader] kehuanNet')
+
   this.body.classList.add("kehuan");
   this.$breadOld = dq("#container .topnav h2") || document.createElement('div');
   this.$titleOld = dq("#container > h1") || document.createElement('div');
   this.$contentOld = dq("#container .text") || document.createElement('div');
-  this.$prev = dq(".next a:nth-child(1)");
-  this.$menu = dq(".next a:nth-child(2)");
-  this.$next = dq(".next a:nth-child(3)");
-  this.nav_space = "";
+  this.$menus = dqs(".next a");
+
   this.ads = [".ad_content"];
   this.process();
 };
 
 Reader.prototype.ddxs = function () {
+  console.log('[Novel Reader] ddxs')
+
   this.body.classList.add("ddxs");
   this.$breadOld = dq("#amain dl dt");
   this.$titleOld = dq("#amain dl dd h1");
   this.$contentOld = dq("#contents");
-  this.$prev = dq("#footlink a:nth-child(1)");
-  this.$menu = dq("#footlink a:nth-child(2)");
-  this.$next = dq("#footlink a:nth-child(3)");
-  this.nav_space = "";
+  this.$menus = dqs("#footlink a");
+
   this.ads = [".ad_content"];
   this.process();
 };
 
 Reader.prototype.uukanshu = function () {
+  console.log('[Novel Reader] uukanshu')
+
   this.body.classList.add("uukanshu");
   this.$breadOld = dq(".srcbox");
   this.$titleOld = dq(".h1title #timu");
   this.$contentOld = dq("#contentbox");
-  this.$prev = dq(".fanye #prev");
-  this.$menu = dq(".fanye #htmlmulu");
-  this.$next = dq(".fanye #next");
-  this.nav_space = "";
+  this.$menus = [dq(".fanye #prev"), dq(".fanye #htmlmulu"), dq(".fanye #next")];
+
   this.ads = [".ad_content"];
   this.process();
 };
 
 Reader.prototype.shuquge = function () {
+  console.log('[Novel Reader] shuquge')
+
   this.body.classList.add("shuquge");
   this.$breadOld = dq(".wrap .path .p");
   this.$titleOld = dq(".content h1"); // title
   this.$contentOld = dq("#content");
 
-  this.$prev = dq(".page_chapter li:nth-child(1) a");
-  this.$menu = dq(".page_chapter li:nth-child(2) a");
-  this.$next = dq(".page_chapter li:nth-child(3) a");
-  this.nav_space = dq(".page_chapter li:nth-child(4) a");
+  this.$menus = dqs(".page_chapter li a");
 
   this.ads = [".header", "div.box_con > div.bookname div.lm", ".info > .link", ".footer"];
   this.process();
 };
 
 Reader.prototype.shuba = function () {
+  console.log('[Novel Reader] shuba')
+
   this.body.classList.add("shuba");
   this.$breadOld = dq(".bread");
   this.$titleOld = dq("h1.hide720"); // title
   this.$contentOld = dq(".txtnav");
 
-  this.$prev = dq(".page1 a:nth-child(1)");
-  this.$menu = dq(".page1 a:nth-child(3)");
-  this.$next = dq(".page1 a:nth-child(4)");
-  this.$space1 = dq(".page1 a:nth-child(5)");
+  this.$menus = dqs(".page1 a");
 
   this.ads = [".hide720"];
   this.process();
 };
 
 Reader.prototype.ptwxz = function () {
+  console.log('[Novel Reader] ptwxz')
+
   this.body.classList.add("ptwxz");
-  this.$breadOld = null;
+  this.$breadOld = dq("#content > h1");
   this.$titleOld = dq("#main #content h1"); // title
   this.$contentOld = dq("#main #content");
-
-  this.$prev = dq(".toplink a:nth-child(1)");
-  this.$menu = dq(".toplink a:nth-child(2)");
-  this.$next = dq(".toplink a:nth-child(3)");
-  this.$space1 = dq(".toplink a:nth-child(4)");
-  this.$space2 = dq(".toplink a:nth-child(5)");
+  this.$menus = dqs(".toplink a");
 
   this.ads = ["#footer", ".header", "#listtj", ".box_con + script + div"];
   this.process();
 };
 
 Reader.prototype.e86book = function () {
+  console.log('[Novel Reader] e86book')
+
   this.body.classList.add("e86book");
   this.$breadOld = dq(".layout-tit");
   this.$titleOld = dq(".reader-main .title"); // title
   this.$contentOld = dq(".reader-main #content");
-
-  this.$prev = dq(".section-opt a:nth-child(1)");
-  this.$menu = dq(".section-opt a:nth-child(2)");
-  this.$next = dq(".section-opt a:nth-child(3)");
-  this.$space1 = dq(".section-opt a:nth-child(4)");
-  this.$space2 = dq(".section-opt a:nth-child(5)");
+  this.$menus = dqs(".section-opt a");
 
   this.ads = ["#footer", ".header", "#listtj", ".box_con + script + div"];
   this.process();
 };
 
 Reader.prototype.taccx = function () {
+  console.log('[Novel Reader] taccx')
+
   this.body.classList.add("taccx");
   this.$breadOld = dq("#read > div.book.reader > div.path.wap_none");
   this.$titleOld = dq("#read > div.book.reader > div.content > h1"); // title
   this.$contentOld = dq("#chaptercontent");
-
-  this.$prev = dq("#pb_prev");
-  this.$menu = dq("#pb_mulu");
-  this.$next = dq("#pb_next");
-  this.$space1 = null;
-  this.$space2 = null;
+  this.$menus = [dq("#pb_prev"), dq("#pb_mulu"), dq("#pb_next")];
 
   this.ads = [];
   this.process();
 };
 
 Reader.prototype.novel543 = function () {
+  console.log('[Novel Reader] novel543')
+
   this.body.classList.add("novel543");
   this.$breadOld = dq("#chapterWarp > nav > ul");
   this.$titleOld = dq("#chapterWarp > div > h1"); // title
   this.$contentOld = dq("#chapterWarp > div > div");
-
-  this.$prev = dq("#read > div > div.warp.my-3.foot-nav > a:nth-child(1)");
-  this.$menu = dq("#read > div > div.warp.my-3.foot-nav > a:nth-child(3)");
-  this.$next = dq("#read > div > div.warp.my-3.foot-nav > a:nth-child(5)");
-  this.$space1 = null;
-  this.$space2 = null;
+  this.$menus = dqs("#read > div > div.warp.my-3.foot-nav > a");
 
   this.ads = ["#read > div.novel-reader-content > .gadBlock", "#read > div.novel-reader-content > .gadBlock"];
   this.process();
 };
 
 Reader.prototype.mc93 = function () {
+  console.log('[Novel Reader] mc93')
+
   this.body.classList.add("93mc");
   this.$breadOld = dq("body > div.container.body-content.read-container > ol");
   this.$titleOld = dq("#content > div.page-header.text-center > h1"); // title
-
   this.$contentOld = dq("#htmlContent");
-
-  this.$prev = dq("#linkPrev");
-  this.$menu = dq("#linkIndex");
-  this.$next = dq("#linkNext");
-  this.$space1 = null;
-  this.$space2 = null;
+  this.$menus = [dq("#linkPrev"), dq("#linkIndex"), dq("#linkNext")];
 
   this.ads = ["#read > div.novel-reader-content > .gadBlock", "#read > div.novel-reader-content > .gadBlock"];
   this.process();
@@ -250,42 +247,65 @@ Reader.prototype.mc93 = function () {
 
 
 Reader.prototype.asxs = function () {
+  console.log('[Novel Reader] asxs')
+
   this.body.classList.add("asxs");
   this.$breadOld = dq("#amain > dl > dt");
   this.$titleOld = dq("#amain > dl > dd:nth-child(2) > h1"); // title
-
   this.$contentOld = dq("#contents");
-
-  this.$prev = dq("#footlink > a:nth-child(1)");
-  this.$menu = dq("#footlink > a:nth-child(2)");
-  this.$next = dq("#footlink > a:nth-child(3)");
-  this.$space1 = null;
-  this.$space2 = null;
+  this.$menus = dqs("#footlink > a");
 
   this.ads = [];
   this.process();
 };
 
+Reader.prototype.zhaoshuyuan = function () {
+  console.log('[Novel Reader] zhaoshuyuan')
 
-Reader.prototype.biquge = function () {
-  this.body.classList.add("biquge");
-  this.$breadOld = dq(".con_top") || document.createElement('div');
-  this.$titleOld = dq(".content_read .bookname h1")  ||  dq(".content_read .zhangjieming h1") || document.createElement('div');
-  this.$contentOld = dq(".content_read #content") || document.createElement('div');
-
-  this.$prev = dq(".bottem2 a:nth-child(1)") || dq("#content > div > a:nth-child(2)");
-  this.$menu = dq(".bottem2 a:nth-child(2)") || dq("#content > div > a:nth-child(3)");
-  this.$next = dq(".bottem2 a:nth-child(3)") || dq("#content > div > a:nth-child(4)");
-  this.$space1 = null;
-  this.$space2 = null;
+  this.body.classList.add("zhaoshuyuan");
+  this.$breadOld = dq("#wrapper > div.breadcrumb > div > ol") || document.createElement('div');
+  this.$titleOld = dq("#wrapper > div.article > div > div > div.booktitle > h1") || document.createElement('div');
+  this.$contentOld = dq("#chaptercontent") || document.createElement('div');
+  this.$menus = [dq("#prev_url"), dq("#info_url"), dq("#next_url")]
 
   this.ads = ["#footer", ".header", "#listtj", ".box_con + script + div"];
   this.process();
 };
 
+
+Reader.prototype.a52wx = function () {
+  console.log('[Novel Reader] a52wx')
+
+  this.body.classList.add("a52wx");
+  this.$breadOld = dq("#container > div > div > div.layout-tit.xs-hidden") || document.createElement('div');
+  this.$titleOld = dq("#container > div > div > div.reader-main > h1") || document.createElement('div');
+  this.$contentOld = dq("#content") || document.createElement('div');
+  this.$menus = dqs("#container > div > div > div.reader-main > div.section-opt.m-bottom-opt > a")
+
+  this.ads = ["#footer", ".header", "#listtj", ".box_con + script + div"];
+  this.process();
+};
+
+
+// 笔趣阁作为兜底
+Reader.prototype.biquge = function () {
+  console.log('[Novel Reader] biquge')
+
+  this.body.classList.add("biquge");
+  this.$breadOld = dq(".con_top") || document.createElement('div');
+  this.$titleOld = dq(".content_read .bookname h1")  ||  dq(".content_read .zhangjieming h1") || document.createElement('div');
+  this.$contentOld = dq(".content_read #content") || document.createElement('div');
+  this.$menus = dqs(".bottem2 a") || dqs("#content > div > a");
+
+  this.ads = ["#footer", ".header", "#listtj", ".box_con + script + div"];
+  this.process();
+};
+
+// ==============================
+
 // 开始处理 入口
 Reader.prototype.process = function () {
-  if (this.$contentOld) {
+  if (this.$contentOld && this.$contentOld.textContent.length > 1000) {
     console.log("[Novel Reader]", "获取内容成功");
     this.processRead();
     this.body.classList.add(CLASSNAME_BODY);
@@ -346,6 +366,7 @@ Reader.prototype.processReadBread = function () {
   }
 };
 
+// 切换位置
 function nextPosition(position) {
   const list = ['left', 'center', 'right'];
   const index = list.findIndex(item=> item === position);
@@ -355,10 +376,11 @@ function nextPosition(position) {
   }
   return list[nextIndex]
 }
+
 function getPositonLabel(position) {
   const list = ['left', 'center', 'right'];
   const index = list.findIndex(item=> item === position);
-  return ['<', '-', '>'][index]
+  return ['左', '中', '右'][index]
 }
 
 // 处理正文
@@ -411,34 +433,13 @@ function removeTextADS(txt) {
 
 // 处理底部导航
 Reader.prototype.processReadNav = function () {
-  if (this.$prev) {
-    this.$navNew.appendChild(this.$prev);
-  } else {
-    this.$navNew.innerHTML += "<span>上一张</span>";
-  }
-
-  this.processReadNavSeparate();
-
-  if (this.$menu) {
-    this.$navNew.appendChild(this.$menu);
-  } else {
-    this.$navNew.innerHTML += "<span>目录</span>";
-  }
-  this.$navNew.textContent 
-  this.processReadNavSeparate();
-  if (this.$next) {
-    this.$navNew.appendChild(this.$next);
-  } else {
-    this.$navNew.innerHTML += "<span>下一章</span>";
-  }
-  this.processReadNavSeparate();
-
-  if (this.$space1) {
-    this.$navNew.appendChild(this.$space1);
-  }
-
-  if (this.$space2) {
-    this.$navNew.appendChild(this.$space2);
+  if (this.$menus && this.$menus.length) {
+    this.$menus.forEach(nav => {
+      if(nav instanceof HTMLElement) {
+        this.$navNew.appendChild(nav);
+        this.processReadNavSeparate();
+      }
+    })
   }
 };
 
