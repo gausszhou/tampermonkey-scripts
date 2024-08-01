@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Novel Reader
-// @version      0.0.19
+// @version      0.0.20
 // @description  小说阅读器，特点是仿起点风格的网站样式，支持UU看书，笔趣阁，书趣阁，81中文网等
 // @author       gausszhou@qq.com
 // @namespace    gausszhou
@@ -11,6 +11,7 @@
 // @match      *://book.qidian.com/info/*
 
 // @match      *://www.ibiquges.com/*/*/*.html
+// @match      *://www.xbiqugu.net/*/*/*.html
 
 // @match      *://www.uukanshu.com/*.html
 // @match      *://www.uukanshu.net/*/*/*.html
@@ -54,6 +55,7 @@
 
 // @match      *://www.zhaoshuyuan.net/read/*/*.html
 // @match      *://www.uuks.org/b/*/*.html
+// @match      *://www.52wx.com/*/*.html
 
 // ==/UserScript==
 
@@ -83,7 +85,7 @@ var ___CSS_LOADER_EXPORT___ = _node_modules_pnpm_css_loader_6_11_0_webpack_5_93_
 var ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_pnpm_css_loader_6_11_0_webpack_5_93_0_webpack_cli_4_10_0_node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_0___);
 var ___CSS_LOADER_URL_REPLACEMENT_1___ = _node_modules_pnpm_css_loader_6_11_0_webpack_5_93_0_webpack_cli_4_10_0_node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_1___);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, `body{display:none}body.novel-reader-body iframe,body.novel-reader-body .weizhi,body.novel-reader-body .weizhi+div,body.novel-reader-body .at-share-btn,body.novel-reader-body .sao_mobile_box,body.novel-reader-body .addthis-animated,body.novel-reader-body .addthis-smartlayers,body.novel-reader-body .addthis-smartlayers-desktop{display:none !important}html{background:url(${___CSS_LOADER_URL_REPLACEMENT_0___}) repeat !important}body.novel-reader-body{background:url(${___CSS_LOADER_URL_REPLACEMENT_0___}) repeat !important;font-size:18px;font-family:"Microsoft YaHei",PingFangSC-Regular,HelveticaNeue-Light,"Helvetica Neue Light",sans-serif;margin:0 auto;width:800px}body.novel-reader-body .novel-reader-book-mark{cursor:pointer;position:absolute;top:0px;right:48px;width:24px;height:40px;background-repeat:no-repeat;background-position:-228px -143.5px;background-size:340px;border-radius:0 0 12px 12px;text-indent:0;display:flex;justify-content:center;align-items:center;color:#fff;font-size:12px}body.novel-reader-body.left{margin:0 auto 0 1em}body.novel-reader-body.left .novel-reader-book-mark{background-color:#f56c6c}body.novel-reader-body.center{margin:0 auto}body.novel-reader-body.center .novel-reader-book-mark{background-color:#67c23a}body.novel-reader-body.right{margin:0 1em 0 auto}body.novel-reader-body.right .novel-reader-book-mark{background-color:#409eff}body.novel-reader-body .novel-reader-bread{box-sizing:border-box;padding:1em 0;display:flex;align-items:center;font:12px/22px PingFangSC-Regular,"-apple-system",Simsun}body.novel-reader-body .novel-reader-bread .novel-reader-bread-separate{color:rgba(0,0,0,.4)}body.novel-reader-body .novel-reader-bread a{margin:0 .5em !important;padding:0 !important;background-color:rgba(0,0,0,0) !important}body.novel-reader-body .novel-reader-bread a,body.novel-reader-body .novel-reader-bread b{padding:0;font-weight:400;font-size:12px;color:#1a1a1a !important}body.novel-reader-body .novel-reader-content{box-sizing:border-box;background:url(${___CSS_LOADER_URL_REPLACEMENT_1___}) repeat;padding:2em;color:#262626;font-weight:500;text-indent:2em;text-align:left;border:1px solid #d8d8d8;position:relative}body.novel-reader-body .novel-reader-content br{content:"";margin:.5em 0;display:block;font-size:150%}body.novel-reader-body .novel-reader-content p{word-wrap:wrap;word-break:break-all;margin-top:.5em;line-height:1.8;text-align:justify}body.novel-reader-body .novel-reader-content .novel-reader-content-title{display:flex;align-items:center;text-indent:0;padding:0 0 .5em;margin:0 0 .5em;font:24px/32px PingFangSC-Regular,HelveticaNeue-Light,"Helvetica Neue Light","Microsoft YaHei",sans-serif}body.novel-reader-body .novel-reader-content .novel-reader-content-title span{font-size:12px;padding:0 1em;margin:0}body.novel-reader-body .novel-reader-bottom-nav{box-sizing:border-box;background:url(${___CSS_LOADER_URL_REPLACEMENT_1___}) repeat;margin-top:1em;margin-bottom:1em;height:70px;display:flex;align-items:center;border:1px solid #d8d8d8;white-space:nowrap}body.novel-reader-body .novel-reader-bottom-nav a,body.novel-reader-body .novel-reader-bottom-nav span{flex:1;height:100%;display:flex;align-items:center;justify-content:center;text-decoration:none;color:#333 !important;font:18px/70px PingFangSC-Regular,HelveticaNeue-Light,"Helvetica Neue Light","Microsoft YaHei",sans-serif}body.novel-reader-body .novel-reader-bottom-nav span{color:#ccc !important}body.novel-reader-body .novel-reader-bottom-nav .novel-reader-bottom-separate{width:1px;height:32px;border-right:1px solid #d8d8d8}body.novel-reader-body .novel-reader-bottom-nav a:hover{background:rgba(0,0,0,.03)}`, ""]);
+___CSS_LOADER_EXPORT___.push([module.id, `body{display:none}body.novel-reader-body iframe,body.novel-reader-body .weizhi,body.novel-reader-body .weizhi+div,body.novel-reader-body .at-share-btn,body.novel-reader-body .sao_mobile_box,body.novel-reader-body .addthis-animated,body.novel-reader-body .addthis-smartlayers,body.novel-reader-body .addthis-smartlayers-desktop{display:none !important}html{background:url(${___CSS_LOADER_URL_REPLACEMENT_0___}) repeat !important}body.novel-reader-body{background:url(${___CSS_LOADER_URL_REPLACEMENT_0___}) repeat !important;font-size:18px;font-family:"Microsoft YaHei",PingFangSC-Regular,HelveticaNeue-Light,"Helvetica Neue Light",sans-serif;margin:0 auto;min-width:800px;width:800px}body.novel-reader-body .novel-reader-book-mark{cursor:pointer;position:absolute;top:0px;right:48px;width:24px;height:40px;background-repeat:no-repeat;background-position:-228px -143.5px;background-size:340px;border-radius:0 0 12px 12px;text-indent:0;display:flex;justify-content:center;align-items:center;color:#fff;font-size:12px}body.novel-reader-body.left{margin:0 auto 0 1em}body.novel-reader-body.left .novel-reader-book-mark{background-color:#f56c6c}body.novel-reader-body.center{margin:0 auto}body.novel-reader-body.center .novel-reader-book-mark{background-color:#67c23a}body.novel-reader-body.right{margin:0 1em 0 auto}body.novel-reader-body.right .novel-reader-book-mark{background-color:#409eff}body.novel-reader-body .novel-reader-bread{box-sizing:border-box;padding:1em 0;display:flex;align-items:center;font:12px/22px PingFangSC-Regular,"-apple-system",Simsun}body.novel-reader-body .novel-reader-bread .novel-reader-bread-separate{color:rgba(0,0,0,.4)}body.novel-reader-body .novel-reader-bread a{margin:0 .5em !important;padding:0 !important;background-color:rgba(0,0,0,0) !important}body.novel-reader-body .novel-reader-bread a,body.novel-reader-body .novel-reader-bread b{padding:0;font-weight:400;font-size:12px;color:#1a1a1a !important}body.novel-reader-body .novel-reader-content{box-sizing:border-box;background:url(${___CSS_LOADER_URL_REPLACEMENT_1___}) repeat;padding:2em;color:#262626;font-weight:500;text-indent:2em;text-align:left;border:1px solid #d8d8d8;position:relative;line-height:1.5}body.novel-reader-body .novel-reader-content br{content:"";margin:.5em 0;display:block;font-size:150%}body.novel-reader-body .novel-reader-content p{word-wrap:wrap;word-break:break-all;margin-top:.5em;text-align:justify}body.novel-reader-body .novel-reader-content .novel-reader-content-title{display:flex;align-items:center;text-indent:0;padding:0 0 .5em;margin:0 0 .5em;font:24px/32px PingFangSC-Regular,HelveticaNeue-Light,"Helvetica Neue Light","Microsoft YaHei",sans-serif}body.novel-reader-body .novel-reader-content .novel-reader-content-title span{font-size:12px;padding:0 1em;margin:0}body.novel-reader-body .novel-reader-bottom-nav{box-sizing:border-box;background:url(${___CSS_LOADER_URL_REPLACEMENT_1___}) repeat;margin-top:1em;margin-bottom:1em;height:70px;display:flex;align-items:center;border:1px solid #d8d8d8;white-space:nowrap}body.novel-reader-body .novel-reader-bottom-nav a,body.novel-reader-body .novel-reader-bottom-nav span{flex:1;height:100%;display:flex;align-items:center;justify-content:center;text-decoration:none;color:#333 !important;font:18px/70px PingFangSC-Regular,HelveticaNeue-Light,"Helvetica Neue Light","Microsoft YaHei",sans-serif}body.novel-reader-body .novel-reader-bottom-nav span{color:#ccc !important}body.novel-reader-body .novel-reader-bottom-nav .novel-reader-bottom-separate{width:1px;height:32px;border-right:1px solid #d8d8d8}body.novel-reader-body .novel-reader-bottom-nav a:hover{background:rgba(0,0,0,.03)}`, ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -698,7 +700,12 @@ function simplify(cc) {
 ;// CONCATENATED MODULE: ./src/components/reader.js
 
 var reader_dq = document.querySelector.bind(document);
-var dqs = document.querySelectorAll.bind(document);
+var dqs = function dqs(selector) {
+  var list = Array.from(document.querySelectorAll(selector));
+  if (list.length) {
+    return list;
+  }
+};
 var CLASSNAME_BODY = "novel-reader-body";
 var CLASSNAME_BREAD = "novel-reader-bread";
 var CLASSNAME_BREAD_SEPARATE = "novel-reader-bread-separate";
@@ -738,12 +745,10 @@ Reader.prototype.judge = function () {
       this.uukanshu();
       return false;
     }
-
-    // if (dq("#tbox")) {
-    //   this.ddxs();
-    //   return false;
-    // }
-
+    if (reader_dq("#tbox")) {
+      this.ddxs();
+      return false;
+    }
     if (reader_dq(".page_chapter")) {
       this.shuquge();
       return false;
@@ -780,6 +785,10 @@ Reader.prototype.judge = function () {
       this.zhaoshuyuan();
       return false;
     }
+    if (reader_dq('#container > div > div > div.reader-main')) {
+      this.a52wx();
+      return false;
+    }
     this.biquge();
   } catch (error) {
     console.error("[Novel Reader] error:", error);
@@ -789,170 +798,144 @@ Reader.prototype.judge = function () {
 // 各个网站的策略
 
 Reader.prototype.kehuanNet = function () {
+  console.log('[Novel Reader] kehuanNet');
   this.body.classList.add("kehuan");
   this.$breadOld = reader_dq("#container .topnav h2") || document.createElement('div');
   this.$titleOld = reader_dq("#container > h1") || document.createElement('div');
   this.$contentOld = reader_dq("#container .text") || document.createElement('div');
-  this.$prev = reader_dq(".next a:nth-child(1)");
-  this.$menu = reader_dq(".next a:nth-child(2)");
-  this.$next = reader_dq(".next a:nth-child(3)");
-  this.nav_space = "";
+  this.$menus = dqs(".next a");
   this.ads = [".ad_content"];
   this.process();
 };
 Reader.prototype.ddxs = function () {
+  console.log('[Novel Reader] ddxs');
   this.body.classList.add("ddxs");
   this.$breadOld = reader_dq("#amain dl dt");
   this.$titleOld = reader_dq("#amain dl dd h1");
   this.$contentOld = reader_dq("#contents");
-  this.$prev = reader_dq("#footlink a:nth-child(1)");
-  this.$menu = reader_dq("#footlink a:nth-child(2)");
-  this.$next = reader_dq("#footlink a:nth-child(3)");
-  this.nav_space = "";
+  this.$menus = dqs("#footlink a");
   this.ads = [".ad_content"];
   this.process();
 };
 Reader.prototype.uukanshu = function () {
+  console.log('[Novel Reader] uukanshu');
   this.body.classList.add("uukanshu");
   this.$breadOld = reader_dq(".srcbox");
   this.$titleOld = reader_dq(".h1title #timu");
   this.$contentOld = reader_dq("#contentbox");
-  this.$prev = reader_dq(".fanye #prev");
-  this.$menu = reader_dq(".fanye #htmlmulu");
-  this.$next = reader_dq(".fanye #next");
-  this.nav_space = "";
+  this.$menus = [reader_dq(".fanye #prev"), reader_dq(".fanye #htmlmulu"), reader_dq(".fanye #next")];
   this.ads = [".ad_content"];
   this.process();
 };
 Reader.prototype.shuquge = function () {
+  console.log('[Novel Reader] shuquge');
   this.body.classList.add("shuquge");
   this.$breadOld = reader_dq(".wrap .path .p");
   this.$titleOld = reader_dq(".content h1"); // title
   this.$contentOld = reader_dq("#content");
-  this.$prev = reader_dq(".page_chapter li:nth-child(1) a");
-  this.$menu = reader_dq(".page_chapter li:nth-child(2) a");
-  this.$next = reader_dq(".page_chapter li:nth-child(3) a");
-  this.nav_space = reader_dq(".page_chapter li:nth-child(4) a");
+  this.$menus = dqs(".page_chapter li a");
   this.ads = [".header", "div.box_con > div.bookname div.lm", ".info > .link", ".footer"];
   this.process();
 };
 Reader.prototype.shuba = function () {
+  console.log('[Novel Reader] shuba');
   this.body.classList.add("shuba");
   this.$breadOld = reader_dq(".bread");
   this.$titleOld = reader_dq("h1.hide720"); // title
   this.$contentOld = reader_dq(".txtnav");
-  this.$prev = reader_dq(".page1 a:nth-child(1)");
-  this.$menu = reader_dq(".page1 a:nth-child(3)");
-  this.$next = reader_dq(".page1 a:nth-child(4)");
-  this.$space1 = reader_dq(".page1 a:nth-child(5)");
+  this.$menus = dqs(".page1 a");
   this.ads = [".hide720"];
   this.process();
 };
 Reader.prototype.ptwxz = function () {
+  console.log('[Novel Reader] ptwxz');
   this.body.classList.add("ptwxz");
-  this.$breadOld = null;
+  this.$breadOld = reader_dq("#content > h1");
   this.$titleOld = reader_dq("#main #content h1"); // title
   this.$contentOld = reader_dq("#main #content");
-  this.$prev = reader_dq(".toplink a:nth-child(1)");
-  this.$menu = reader_dq(".toplink a:nth-child(2)");
-  this.$next = reader_dq(".toplink a:nth-child(3)");
-  this.$space1 = reader_dq(".toplink a:nth-child(4)");
-  this.$space2 = reader_dq(".toplink a:nth-child(5)");
+  this.$menus = dqs(".toplink a");
   this.ads = ["#footer", ".header", "#listtj", ".box_con + script + div"];
   this.process();
 };
 Reader.prototype.e86book = function () {
+  console.log('[Novel Reader] e86book');
   this.body.classList.add("e86book");
   this.$breadOld = reader_dq(".layout-tit");
   this.$titleOld = reader_dq(".reader-main .title"); // title
   this.$contentOld = reader_dq(".reader-main #content");
-  this.$prev = reader_dq(".section-opt a:nth-child(1)");
-  this.$menu = reader_dq(".section-opt a:nth-child(2)");
-  this.$next = reader_dq(".section-opt a:nth-child(3)");
-  this.$space1 = reader_dq(".section-opt a:nth-child(4)");
-  this.$space2 = reader_dq(".section-opt a:nth-child(5)");
+  this.$menus = dqs(".section-opt a");
   this.ads = ["#footer", ".header", "#listtj", ".box_con + script + div"];
   this.process();
 };
 Reader.prototype.taccx = function () {
+  console.log('[Novel Reader] taccx');
   this.body.classList.add("taccx");
   this.$breadOld = reader_dq("#read > div.book.reader > div.path.wap_none");
   this.$titleOld = reader_dq("#read > div.book.reader > div.content > h1"); // title
   this.$contentOld = reader_dq("#chaptercontent");
-  this.$prev = reader_dq("#pb_prev");
-  this.$menu = reader_dq("#pb_mulu");
-  this.$next = reader_dq("#pb_next");
-  this.$space1 = null;
-  this.$space2 = null;
+  this.$menus = [reader_dq("#pb_prev"), reader_dq("#pb_mulu"), reader_dq("#pb_next")];
   this.ads = [];
   this.process();
 };
 Reader.prototype.novel543 = function () {
+  console.log('[Novel Reader] novel543');
   this.body.classList.add("novel543");
   this.$breadOld = reader_dq("#chapterWarp > nav > ul");
   this.$titleOld = reader_dq("#chapterWarp > div > h1"); // title
   this.$contentOld = reader_dq("#chapterWarp > div > div");
-  this.$prev = reader_dq("#read > div > div.warp.my-3.foot-nav > a:nth-child(1)");
-  this.$menu = reader_dq("#read > div > div.warp.my-3.foot-nav > a:nth-child(3)");
-  this.$next = reader_dq("#read > div > div.warp.my-3.foot-nav > a:nth-child(5)");
-  this.$space1 = null;
-  this.$space2 = null;
+  this.$menus = dqs("#read > div > div.warp.my-3.foot-nav > a");
   this.ads = ["#read > div.novel-reader-content > .gadBlock", "#read > div.novel-reader-content > .gadBlock"];
   this.process();
 };
 Reader.prototype.mc93 = function () {
+  console.log('[Novel Reader] mc93');
   this.body.classList.add("93mc");
   this.$breadOld = reader_dq("body > div.container.body-content.read-container > ol");
   this.$titleOld = reader_dq("#content > div.page-header.text-center > h1"); // title
-
   this.$contentOld = reader_dq("#htmlContent");
-  this.$prev = reader_dq("#linkPrev");
-  this.$menu = reader_dq("#linkIndex");
-  this.$next = reader_dq("#linkNext");
-  this.$space1 = null;
-  this.$space2 = null;
+  this.$menus = [reader_dq("#linkPrev"), reader_dq("#linkIndex"), reader_dq("#linkNext")];
   this.ads = ["#read > div.novel-reader-content > .gadBlock", "#read > div.novel-reader-content > .gadBlock"];
   this.process();
 };
 Reader.prototype.asxs = function () {
+  console.log('[Novel Reader] asxs');
   this.body.classList.add("asxs");
   this.$breadOld = reader_dq("#amain > dl > dt");
   this.$titleOld = reader_dq("#amain > dl > dd:nth-child(2) > h1"); // title
-
   this.$contentOld = reader_dq("#contents");
-  this.$prev = reader_dq("#footlink > a:nth-child(1)");
-  this.$menu = reader_dq("#footlink > a:nth-child(2)");
-  this.$next = reader_dq("#footlink > a:nth-child(3)");
-  this.$space1 = null;
-  this.$space2 = null;
+  this.$menus = dqs("#footlink > a");
   this.ads = [];
   this.process();
 };
 Reader.prototype.zhaoshuyuan = function () {
+  console.log('[Novel Reader] zhaoshuyuan');
   this.body.classList.add("zhaoshuyuan");
   this.$breadOld = reader_dq("#wrapper > div.breadcrumb > div > ol") || document.createElement('div');
   this.$titleOld = reader_dq("#wrapper > div.article > div > div > div.booktitle > h1") || document.createElement('div');
   this.$contentOld = reader_dq("#chaptercontent") || document.createElement('div');
-  this.$prev = reader_dq(".bottem2 a:nth-child(1)") || reader_dq("#content > div > a:nth-child(2)");
-  this.$menu = reader_dq(".bottem2 a:nth-child(2)") || reader_dq("#content > div > a:nth-child(3)");
-  this.$next = reader_dq(".bottem2 a:nth-child(3)") || reader_dq("#content > div > a:nth-child(4)");
-  this.$space1 = null;
-  this.$space2 = null;
+  this.$menus = [reader_dq("#prev_url"), reader_dq("#info_url"), reader_dq("#next_url")];
+  this.ads = ["#footer", ".header", "#listtj", ".box_con + script + div"];
+  this.process();
+};
+Reader.prototype.a52wx = function () {
+  console.log('[Novel Reader] a52wx');
+  this.body.classList.add("a52wx");
+  this.$breadOld = reader_dq("#container > div > div > div.layout-tit.xs-hidden") || document.createElement('div');
+  this.$titleOld = reader_dq("#container > div > div > div.reader-main > h1") || document.createElement('div');
+  this.$contentOld = reader_dq("#content") || document.createElement('div');
+  this.$menus = dqs("#container > div > div > div.reader-main > div.section-opt.m-bottom-opt > a");
   this.ads = ["#footer", ".header", "#listtj", ".box_con + script + div"];
   this.process();
 };
 
 // 笔趣阁作为兜底
 Reader.prototype.biquge = function () {
+  console.log('[Novel Reader] biquge');
   this.body.classList.add("biquge");
   this.$breadOld = reader_dq(".con_top") || document.createElement('div');
   this.$titleOld = reader_dq(".content_read .bookname h1") || reader_dq(".content_read .zhangjieming h1") || document.createElement('div');
   this.$contentOld = reader_dq(".content_read #content") || document.createElement('div');
-  this.$prev = reader_dq(".bottem2 a:nth-child(1)") || reader_dq("#content > div > a:nth-child(2)");
-  this.$menu = reader_dq(".bottem2 a:nth-child(2)") || reader_dq("#content > div > a:nth-child(3)");
-  this.$next = reader_dq(".bottem2 a:nth-child(3)") || reader_dq("#content > div > a:nth-child(4)");
-  this.$space1 = null;
-  this.$space2 = null;
+  this.$menus = dqs(".bottem2 a") || dqs("#content > div > a");
   this.ads = ["#footer", ".header", "#listtj", ".box_con + script + div"];
   this.process();
 };
@@ -1086,30 +1069,14 @@ function removeTextADS(txt) {
 
 // 处理底部导航
 Reader.prototype.processReadNav = function () {
-  if (this.$prev) {
-    this.$navNew.appendChild(this.$prev);
-  } else {
-    this.$navNew.innerHTML += "<span>上一张</span>";
-  }
-  this.processReadNavSeparate();
-  if (this.$menu) {
-    this.$navNew.appendChild(this.$menu);
-  } else {
-    this.$navNew.innerHTML += "<span>目录</span>";
-  }
-  this.$navNew.textContent;
-  this.processReadNavSeparate();
-  if (this.$next) {
-    this.$navNew.appendChild(this.$next);
-  } else {
-    this.$navNew.innerHTML += "<span>下一章</span>";
-  }
-  this.processReadNavSeparate();
-  if (this.$space1) {
-    this.$navNew.appendChild(this.$space1);
-  }
-  if (this.$space2) {
-    this.$navNew.appendChild(this.$space2);
+  var _this3 = this;
+  if (this.$menus && this.$menus.length) {
+    this.$menus.forEach(function (nav) {
+      if (nav instanceof HTMLElement) {
+        _this3.$navNew.appendChild(nav);
+        _this3.processReadNavSeparate();
+      }
+    });
   }
 };
 
