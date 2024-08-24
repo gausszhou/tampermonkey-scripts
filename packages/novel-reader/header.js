@@ -57,4 +57,8 @@
 // @match      *://www.uuks.org/b/*/*.html
 // @match      *://www.52wx.com/*/*.html
 
+// @match      *://www.27k.net/read/*/*.html
+// @match      *://xszj.org/b/*/c/*
+// @match      *://chuangshi.qq.com/read/*/*
+
 // ==/UserScript==

@@ -105,6 +105,11 @@ Reader.prototype.judge = function () {
       return false;
     }
 
+    if (dq('.chuangshi')) {
+      this.chuangshi()
+      return false;
+    }
+
     this.biquge();
   } catch (error) {
     console.error("[Novel Reader] error:", error);
@@ -286,6 +291,18 @@ Reader.prototype.a52wx = function () {
   this.process();
 };
 
+Reader.prototype.chuangshi = function () {
+  console.log('[Novel Reader] chuangshi')
+
+  this.body.classList.add("chuangshi");
+  this.$breadOld =  document.createElement('div');
+  this.$titleOld = dq(".chapter-title") || document.createElement('div');
+  this.$contentOld = dq("#article") || document.createElement('div');
+  this.$menus = dqs("#bookRead > div > div.read-pagination.page-bottom a")
+
+  this.ads = [];
+  this.process();
+};
 
 // 笔趣阁作为兜底
 Reader.prototype.biquge = function () {
