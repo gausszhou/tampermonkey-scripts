@@ -1,0 +1,19 @@
+body.douyu {
+  .layout-Player-toolbar {
+    height: 0px !important;
+    width: 0px !important;
+    overflow: hidden !important;
+  }
+}
+
+body.douyu.is-fullScreenPage {
+  .layout-Player-video {
+    bottom: 0px !important;
+  }
+}
+
+
+.layout-Player-rank,
+#js-room-activity {
+    display: none;
+}
