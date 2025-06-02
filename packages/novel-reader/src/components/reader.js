@@ -72,11 +72,17 @@ Reader.prototype.judge = function () {
       this.ptwxz();
       return false;
     }
+
+    if (dq("#wrapper > article > div.con_top")) {
+      this.zws83();
+      return false;
+    }
+
     if (dq("#center_tip")) {
       this.e86book();
       return false;
     }
-
+    
     if (dq(".header_wap.pc_none")) {
       this.taccx();
       return false;
@@ -210,6 +216,21 @@ Reader.prototype.e86book = function () {
   this.ads = ["#footer", ".header", "#listtj", ".box_con + script + div"];
   this.process();
 };
+
+Reader.prototype.zws83 = function () {
+  console.log('[Novel Reader] zws83')
+
+  this.body.classList.add("zws83");
+  this.$breadOld = dq("#wrapper > article > div.con_top");
+  this.$titleOld = dq("#wrapper > article > h1"); // title
+  this.$contentOld = dq("#content");
+  this.$menus = dqs(".bottem2 a");
+
+  this.ads = ["#footer", ".header", "#listtj", ".box_con + script + div"];
+  this.process();
+};
+
+
 
 Reader.prototype.taccx = function () {
   console.log('[Novel Reader] taccx')

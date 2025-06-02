@@ -61,4 +61,8 @@
 // @match      *://xszj.org/b/*/c/*
 // @match      *://chuangshi.qq.com/read/*/*
 
+// @match      *://www.dxmwx.org/read/*.html
+// @match      *://www.bqg5.com/*/*.html
+// @match      *://www.83zws.com/book/*/*/*.html
+
 // ==/UserScript==
