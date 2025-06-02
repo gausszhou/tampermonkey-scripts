@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Novel Reader
-// @version      0.0.21
+// @version      0.0.22
 // @description  小说阅读器，特点是仿起点风格的网站样式，支持UU看书，笔趣阁，书趣阁，81中文网等
 // @author       gausszhou@qq.com
 // @namespace    gausszhou
@@ -61,42 +61,16 @@
 // @match      *://xszj.org/b/*/c/*
 // @match      *://chuangshi.qq.com/read/*/*
 
-// ==/UserScript==
+// @match      *://www.dxmwx.org/read/*.html
+// @match      *://www.bqg5.com/*/*.html
+// @match      *://www.83zws.com/book/*/*/*.html
 
+// ==/UserScript==
 /******/ (() => { // webpackBootstrap
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 415:
-/***/ ((module, __webpack_exports__, __webpack_require__) => {
-
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _node_modules_pnpm_css_loader_6_11_0_webpack_5_94_0_webpack_cli_4_10_0_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(54);
-/* harmony import */ var _node_modules_pnpm_css_loader_6_11_0_webpack_5_94_0_webpack_cli_4_10_0_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_pnpm_css_loader_6_11_0_webpack_5_94_0_webpack_cli_4_10_0_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _node_modules_pnpm_css_loader_6_11_0_webpack_5_94_0_webpack_cli_4_10_0_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(239);
-/* harmony import */ var _node_modules_pnpm_css_loader_6_11_0_webpack_5_94_0_webpack_cli_4_10_0_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_pnpm_css_loader_6_11_0_webpack_5_94_0_webpack_cli_4_10_0_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _node_modules_pnpm_css_loader_6_11_0_webpack_5_94_0_webpack_cli_4_10_0_node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(398);
-/* harmony import */ var _node_modules_pnpm_css_loader_6_11_0_webpack_5_94_0_webpack_cli_4_10_0_node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_node_modules_pnpm_css_loader_6_11_0_webpack_5_94_0_webpack_cli_4_10_0_node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2__);
-// Imports
-
-
-
-var ___CSS_LOADER_URL_IMPORT_0___ = new URL(/* asset import */ __webpack_require__(975), __webpack_require__.b);
-var ___CSS_LOADER_URL_IMPORT_1___ = new URL(/* asset import */ __webpack_require__(90), __webpack_require__.b);
-var ___CSS_LOADER_EXPORT___ = _node_modules_pnpm_css_loader_6_11_0_webpack_5_94_0_webpack_cli_4_10_0_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_pnpm_css_loader_6_11_0_webpack_5_94_0_webpack_cli_4_10_0_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
-var ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_pnpm_css_loader_6_11_0_webpack_5_94_0_webpack_cli_4_10_0_node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_0___);
-var ___CSS_LOADER_URL_REPLACEMENT_1___ = _node_modules_pnpm_css_loader_6_11_0_webpack_5_94_0_webpack_cli_4_10_0_node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_1___);
-// Module
-___CSS_LOADER_EXPORT___.push([module.id, `body{display:none}body.novel-reader-body iframe,body.novel-reader-body .weizhi,body.novel-reader-body .weizhi+div,body.novel-reader-body .at-share-btn,body.novel-reader-body .sao_mobile_box,body.novel-reader-body .addthis-animated,body.novel-reader-body .addthis-smartlayers,body.novel-reader-body .addthis-smartlayers-desktop{display:none !important}html{background:url(${___CSS_LOADER_URL_REPLACEMENT_0___}) repeat !important}body.novel-reader-body{background:url(${___CSS_LOADER_URL_REPLACEMENT_0___}) repeat !important;font-size:18px;font-family:"Microsoft YaHei",PingFangSC-Regular,HelveticaNeue-Light,"Helvetica Neue Light",sans-serif;margin:0 auto;min-width:800px;width:800px}body.novel-reader-body .novel-reader-book-mark{cursor:pointer;position:absolute;top:0px;right:48px;width:24px;height:40px;background-repeat:no-repeat;background-position:-228px -143.5px;background-size:340px;border-radius:0 0 12px 12px;text-indent:0;display:flex;justify-content:center;align-items:center;color:#fff;font-size:12px}body.novel-reader-body.left{margin:0 auto 0 1em}body.novel-reader-body.left .novel-reader-book-mark{background-color:#f56c6c}body.novel-reader-body.center{margin:0 auto}body.novel-reader-body.center .novel-reader-book-mark{background-color:#67c23a}body.novel-reader-body.right{margin:0 1em 0 auto}body.novel-reader-body.right .novel-reader-book-mark{background-color:#409eff}body.novel-reader-body .novel-reader-bread{box-sizing:border-box;padding:1em 0;display:flex;align-items:center;font:12px/22px PingFangSC-Regular,"-apple-system",Simsun}body.novel-reader-body .novel-reader-bread .novel-reader-bread-separate{color:rgba(0,0,0,.4)}body.novel-reader-body .novel-reader-bread a{margin:0 .5em !important;padding:0 !important;background-color:rgba(0,0,0,0) !important}body.novel-reader-body .novel-reader-bread a,body.novel-reader-body .novel-reader-bread b{padding:0;font-weight:400;font-size:12px;color:#1a1a1a !important}body.novel-reader-body .novel-reader-content{box-sizing:border-box;background:url(${___CSS_LOADER_URL_REPLACEMENT_1___}) repeat;padding:2em;color:#262626;font-weight:500;text-indent:2em;text-align:left;border:1px solid #d8d8d8;position:relative;line-height:1.5}body.novel-reader-body .novel-reader-content br{content:"";margin:.5em 0;display:block;font-size:150%}body.novel-reader-body .novel-reader-content p{word-wrap:wrap;word-break:break-all;margin-top:.5em;text-align:justify}body.novel-reader-body .novel-reader-content .novel-reader-content-title{display:flex;align-items:center;text-indent:0;padding:0 0 .5em;margin:0 0 .5em;font:24px/32px PingFangSC-Regular,HelveticaNeue-Light,"Helvetica Neue Light","Microsoft YaHei",sans-serif}body.novel-reader-body .novel-reader-content .novel-reader-content-title span{font-size:12px;padding:0 1em;margin:0}body.novel-reader-body .novel-reader-bottom-nav{box-sizing:border-box;background:url(${___CSS_LOADER_URL_REPLACEMENT_1___}) repeat;margin-top:1em;margin-bottom:1em;height:70px;display:flex;align-items:center;border:1px solid #d8d8d8;white-space:nowrap}body.novel-reader-body .novel-reader-bottom-nav a,body.novel-reader-body .novel-reader-bottom-nav span{flex:1;height:100%;display:flex;align-items:center;justify-content:center;text-decoration:none;color:#333 !important;font:18px/70px PingFangSC-Regular,HelveticaNeue-Light,"Helvetica Neue Light","Microsoft YaHei",sans-serif}body.novel-reader-body .novel-reader-bottom-nav span{color:#ccc !important}body.novel-reader-body .novel-reader-bottom-nav .novel-reader-bottom-separate{width:1px;height:32px;border-right:1px solid #d8d8d8}body.novel-reader-body .novel-reader-bottom-nav a:hover{background:rgba(0,0,0,.03)}`, ""]);
-// Exports
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
-
-
-/***/ }),
-
-/***/ 239:
+/***/ 24:
 /***/ ((module) => {
 
 
@@ -187,50 +161,79 @@ module.exports = function (cssWithMappingToString) {
 
 /***/ }),
 
-/***/ 398:
+/***/ 79:
 /***/ ((module) => {
 
 
 
-module.exports = function (url, options) {
-  if (!options) {
-    options = {};
+/* istanbul ignore next  */
+function styleTagTransform(css, styleElement) {
+  if (styleElement.styleSheet) {
+    styleElement.styleSheet.cssText = css;
+  } else {
+    while (styleElement.firstChild) {
+      styleElement.removeChild(styleElement.firstChild);
+    }
+    styleElement.appendChild(document.createTextNode(css));
   }
-  if (!url) {
-    return url;
-  }
-  url = String(url.__esModule ? url.default : url);
-
-  // If url is already wrapped in quotes, remove them
-  if (/^['"].*['"]$/.test(url)) {
-    url = url.slice(1, -1);
-  }
-  if (options.hash) {
-    url += options.hash;
-  }
-
-  // Should url be wrapped?
-  // See https://drafts.csswg.org/css-values-3/#urls
-  if (/["'() \t\n]|(%20)/.test(url) || options.needQuotes) {
-    return "\"".concat(url.replace(/"/g, '\\"').replace(/\n/g, "\\n"), "\"");
-  }
-  return url;
-};
+}
+module.exports = styleTagTransform;
 
 /***/ }),
 
-/***/ 54:
+/***/ 90:
 /***/ ((module) => {
 
-
-
-module.exports = function (i) {
-  return i[1];
-};
+module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyAgMAAABjUWAiAAAACVBMVEX28ef48+n69esoK7jYAAAB4UlEQVQozw2OsW4bQQxEhwLXkDrysGdEqRRgVShfQQq8wOr2jD0jSpXCLvwXbtKfADlFqgSwC/9ljqweZgYzQFnb/QGepYhA9jzmTc1WaSEtQpbFgjWATI00ZZtIckXx8q2Oe5yEByBy+RHOTcM+VVTadULsvxvRC/q8WTwgcWGD+Mnaqa0oy2gw2pKFzK+PzEsus5hP9AHojKslVynLlioVTBEN8cjDNnZoR1uMGTiZAAN47HxMtEkGUE9b8HWzkqNX5Lpk0yVziAJOs46rK1pG/xNuXLjz95fSDoJE5IqG23MAYPtWoeWPvfVtIV/Ng9oH3W0gGMPIOqd4MK4QZ55dV61gOb8Zxp7I9qayaGxp6Q91cmC0ZRdBwEQVHWzSAanlZwVWc9yljeTCeaHjBVvlPSLeyeBUT2rPdJegQI103jVS3uYkyIx1il6mslMDedZuOkwzolsagvPuQAfp7cYg7k9V1NOxfq64PNSvMdwONV4VYEmqlbpZy5OAakRKkjPnL4CBv5/OZRgoWHBmNbxB0LgB1I4vXFj93UoF2/0TPEsWwV9EhbIiTPqYoTHYoMn3enTDjmrFeDTIzaL1bUC/PBIMuF+vSSYSaxoVt90EO3Gu1zrMuMRGUk7Ffv3L+A931Gsb/yBoIgAAAABJRU5ErkJggg==";
 
 /***/ }),
 
-/***/ 967:
+/***/ 151:
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_pnpm_css_loader_6_11_0_webpack_5_99_9_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(919);
+/* harmony import */ var _node_modules_pnpm_css_loader_6_11_0_webpack_5_99_9_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_pnpm_css_loader_6_11_0_webpack_5_99_9_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_pnpm_css_loader_6_11_0_webpack_5_99_9_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(24);
+/* harmony import */ var _node_modules_pnpm_css_loader_6_11_0_webpack_5_99_9_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_pnpm_css_loader_6_11_0_webpack_5_99_9_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _node_modules_pnpm_css_loader_6_11_0_webpack_5_99_9_node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(691);
+/* harmony import */ var _node_modules_pnpm_css_loader_6_11_0_webpack_5_99_9_node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_node_modules_pnpm_css_loader_6_11_0_webpack_5_99_9_node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2__);
+// Imports
+
+
+
+var ___CSS_LOADER_URL_IMPORT_0___ = new URL(/* asset import */ __webpack_require__(975), __webpack_require__.b);
+var ___CSS_LOADER_URL_IMPORT_1___ = new URL(/* asset import */ __webpack_require__(90), __webpack_require__.b);
+var ___CSS_LOADER_EXPORT___ = _node_modules_pnpm_css_loader_6_11_0_webpack_5_99_9_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_pnpm_css_loader_6_11_0_webpack_5_99_9_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
+var ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_pnpm_css_loader_6_11_0_webpack_5_99_9_node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_0___);
+var ___CSS_LOADER_URL_REPLACEMENT_1___ = _node_modules_pnpm_css_loader_6_11_0_webpack_5_99_9_node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_1___);
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, `body{display:none}body.novel-reader-body iframe,body.novel-reader-body .weizhi,body.novel-reader-body .weizhi+div,body.novel-reader-body .at-share-btn,body.novel-reader-body .sao_mobile_box,body.novel-reader-body .addthis-animated,body.novel-reader-body .addthis-smartlayers,body.novel-reader-body .addthis-smartlayers-desktop{display:none !important}html{background:url(${___CSS_LOADER_URL_REPLACEMENT_0___}) repeat !important}body.novel-reader-body{background:url(${___CSS_LOADER_URL_REPLACEMENT_0___}) repeat !important;font-size:18px;font-family:"Microsoft YaHei",PingFangSC-Regular,HelveticaNeue-Light,"Helvetica Neue Light",sans-serif;margin:0 auto;min-width:800px;width:800px}body.novel-reader-body .novel-reader-book-mark{cursor:pointer;position:absolute;top:0px;right:48px;width:24px;height:40px;background-repeat:no-repeat;background-position:-228px -143.5px;background-size:340px;border-radius:0 0 12px 12px;text-indent:0;display:flex;justify-content:center;align-items:center;color:#fff;font-size:12px}body.novel-reader-body.left{margin:0 auto 0 1em}body.novel-reader-body.left .novel-reader-book-mark{background-color:#f56c6c}body.novel-reader-body.center{margin:0 auto}body.novel-reader-body.center .novel-reader-book-mark{background-color:#67c23a}body.novel-reader-body.right{margin:0 1em 0 auto}body.novel-reader-body.right .novel-reader-book-mark{background-color:#409eff}body.novel-reader-body .novel-reader-bread{box-sizing:border-box;padding:1em 0;display:flex;align-items:center;font:12px/22px PingFangSC-Regular,"-apple-system",Simsun}body.novel-reader-body .novel-reader-bread .novel-reader-bread-separate{color:rgba(0,0,0,.4)}body.novel-reader-body .novel-reader-bread a{margin:0 .5em !important;padding:0 !important;background-color:rgba(0,0,0,0) !important}body.novel-reader-body .novel-reader-bread a,body.novel-reader-body .novel-reader-bread b{padding:0;font-weight:400;font-size:12px;color:#1a1a1a !important}body.novel-reader-body .novel-reader-content{box-sizing:border-box;background:url(${___CSS_LOADER_URL_REPLACEMENT_1___}) repeat;padding:2em;color:#262626;font-weight:500;text-indent:2em;text-align:left;border:1px solid #d8d8d8;position:relative;line-height:1.5}body.novel-reader-body .novel-reader-content br{content:"";margin:.5em 0;display:block;font-size:150%}body.novel-reader-body .novel-reader-content p{word-wrap:wrap;word-break:break-all;margin-top:.5em;text-align:justify}body.novel-reader-body .novel-reader-content .novel-reader-content-title{display:flex;align-items:center;text-indent:0;padding:0 0 .5em;margin:0 0 .5em;font:24px/32px PingFangSC-Regular,HelveticaNeue-Light,"Helvetica Neue Light","Microsoft YaHei",sans-serif}body.novel-reader-body .novel-reader-content .novel-reader-content-title span{font-size:12px;padding:0 1em;margin:0}body.novel-reader-body .novel-reader-bottom-nav{box-sizing:border-box;background:url(${___CSS_LOADER_URL_REPLACEMENT_1___}) repeat;margin-top:1em;margin-bottom:1em;height:70px;display:flex;align-items:center;border:1px solid #d8d8d8;white-space:nowrap}body.novel-reader-body .novel-reader-bottom-nav a,body.novel-reader-body .novel-reader-bottom-nav span{flex:1;height:100%;display:flex;align-items:center;justify-content:center;text-decoration:none;color:#333 !important;font:18px/70px PingFangSC-Regular,HelveticaNeue-Light,"Helvetica Neue Light","Microsoft YaHei",sans-serif}body.novel-reader-body .novel-reader-bottom-nav span{color:#ccc !important}body.novel-reader-body .novel-reader-bottom-nav .novel-reader-bottom-separate{width:1px;height:32px;border-right:1px solid #d8d8d8}body.novel-reader-body .novel-reader-bottom-nav a:hover{background:rgba(0,0,0,.03)}`, ""]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
+/***/ 318:
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+
+
+/* istanbul ignore next  */
+function setAttributesWithoutAttributes(styleElement) {
+  var nonce =  true ? __webpack_require__.nc : 0;
+  if (nonce) {
+    styleElement.setAttribute("nonce", nonce);
+  }
+}
+module.exports = setAttributesWithoutAttributes;
+
+/***/ }),
+
+/***/ 342:
 /***/ ((module) => {
 
 
@@ -320,7 +323,7 @@ module.exports = function (list, options) {
 
 /***/ }),
 
-/***/ 872:
+/***/ 437:
 /***/ ((module) => {
 
 
@@ -360,7 +363,39 @@ module.exports = insertBySelector;
 
 /***/ }),
 
-/***/ 907:
+/***/ 691:
+/***/ ((module) => {
+
+
+
+module.exports = function (url, options) {
+  if (!options) {
+    options = {};
+  }
+  if (!url) {
+    return url;
+  }
+  url = String(url.__esModule ? url.default : url);
+
+  // If url is already wrapped in quotes, remove them
+  if (/^['"].*['"]$/.test(url)) {
+    url = url.slice(1, -1);
+  }
+  if (options.hash) {
+    url += options.hash;
+  }
+
+  // Should url be wrapped?
+  // See https://drafts.csswg.org/css-values-3/#urls
+  if (/["'() \t\n]|(%20)/.test(url) || options.needQuotes) {
+    return "\"".concat(url.replace(/"/g, '\\"').replace(/\n/g, "\\n"), "\"");
+  }
+  return url;
+};
+
+/***/ }),
+
+/***/ 906:
 /***/ ((module) => {
 
 
@@ -376,23 +411,18 @@ module.exports = insertStyleElement;
 
 /***/ }),
 
-/***/ 247:
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+/***/ 919:
+/***/ ((module) => {
 
 
 
-/* istanbul ignore next  */
-function setAttributesWithoutAttributes(styleElement) {
-  var nonce =  true ? __webpack_require__.nc : 0;
-  if (nonce) {
-    styleElement.setAttribute("nonce", nonce);
-  }
-}
-module.exports = setAttributesWithoutAttributes;
+module.exports = function (i) {
+  return i[1];
+};
 
 /***/ }),
 
-/***/ 60:
+/***/ 935:
 /***/ ((module) => {
 
 
@@ -456,33 +486,6 @@ function domAPI(options) {
   };
 }
 module.exports = domAPI;
-
-/***/ }),
-
-/***/ 512:
-/***/ ((module) => {
-
-
-
-/* istanbul ignore next  */
-function styleTagTransform(css, styleElement) {
-  if (styleElement.styleSheet) {
-    styleElement.styleSheet.cssText = css;
-  } else {
-    while (styleElement.firstChild) {
-      styleElement.removeChild(styleElement.firstChild);
-    }
-    styleElement.appendChild(document.createTextNode(css));
-  }
-}
-module.exports = styleTagTransform;
-
-/***/ }),
-
-/***/ 90:
-/***/ ((module) => {
-
-module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyAgMAAABjUWAiAAAACVBMVEX28ef48+n69esoK7jYAAAB4UlEQVQozw2OsW4bQQxEhwLXkDrysGdEqRRgVShfQQq8wOr2jD0jSpXCLvwXbtKfADlFqgSwC/9ljqweZgYzQFnb/QGepYhA9jzmTc1WaSEtQpbFgjWATI00ZZtIckXx8q2Oe5yEByBy+RHOTcM+VVTadULsvxvRC/q8WTwgcWGD+Mnaqa0oy2gw2pKFzK+PzEsus5hP9AHojKslVynLlioVTBEN8cjDNnZoR1uMGTiZAAN47HxMtEkGUE9b8HWzkqNX5Lpk0yVziAJOs46rK1pG/xNuXLjz95fSDoJE5IqG23MAYPtWoeWPvfVtIV/Ng9oH3W0gGMPIOqd4MK4QZ55dV61gOb8Zxp7I9qayaGxp6Q91cmC0ZRdBwEQVHWzSAanlZwVWc9yljeTCeaHjBVvlPSLeyeBUT2rPdJegQI103jVS3uYkyIx1il6mslMDedZuOkwzolsagvPuQAfp7cYg7k9V1NOxfq64PNSvMdwONV4VYEmqlbpZy5OAakRKkjPnL4CBv5/OZRgoWHBmNbxB0LgB1I4vXFj93UoF2/0TPEsWwV9EhbIiTPqYoTHYoMn3enTDjmrFeDTIzaL1bUC/PBIMuF+vSSYSaxoVt90EO3Gu1zrMuMRGUk7Ffv3L+A931Gsb/yBoIgAAAABJRU5ErkJggg==";
 
 /***/ }),
 
@@ -586,27 +589,27 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyAgMAAABj
 /************************************************************************/
 var __webpack_exports__ = {};
 
-// EXTERNAL MODULE: ../../node_modules/.pnpm/style-loader@3.3.4_webpack@5.94.0_webpack-cli@4.10.0_/node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js
-var injectStylesIntoStyleTag = __webpack_require__(967);
+// EXTERNAL MODULE: ../../node_modules/.pnpm/style-loader@3.3.4_webpack@5.99.9/node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js
+var injectStylesIntoStyleTag = __webpack_require__(342);
 var injectStylesIntoStyleTag_default = /*#__PURE__*/__webpack_require__.n(injectStylesIntoStyleTag);
-// EXTERNAL MODULE: ../../node_modules/.pnpm/style-loader@3.3.4_webpack@5.94.0_webpack-cli@4.10.0_/node_modules/style-loader/dist/runtime/styleDomAPI.js
-var styleDomAPI = __webpack_require__(60);
+// EXTERNAL MODULE: ../../node_modules/.pnpm/style-loader@3.3.4_webpack@5.99.9/node_modules/style-loader/dist/runtime/styleDomAPI.js
+var styleDomAPI = __webpack_require__(935);
 var styleDomAPI_default = /*#__PURE__*/__webpack_require__.n(styleDomAPI);
-// EXTERNAL MODULE: ../../node_modules/.pnpm/style-loader@3.3.4_webpack@5.94.0_webpack-cli@4.10.0_/node_modules/style-loader/dist/runtime/insertBySelector.js
-var insertBySelector = __webpack_require__(872);
+// EXTERNAL MODULE: ../../node_modules/.pnpm/style-loader@3.3.4_webpack@5.99.9/node_modules/style-loader/dist/runtime/insertBySelector.js
+var insertBySelector = __webpack_require__(437);
 var insertBySelector_default = /*#__PURE__*/__webpack_require__.n(insertBySelector);
-// EXTERNAL MODULE: ../../node_modules/.pnpm/style-loader@3.3.4_webpack@5.94.0_webpack-cli@4.10.0_/node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js
-var setAttributesWithoutAttributes = __webpack_require__(247);
+// EXTERNAL MODULE: ../../node_modules/.pnpm/style-loader@3.3.4_webpack@5.99.9/node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js
+var setAttributesWithoutAttributes = __webpack_require__(318);
 var setAttributesWithoutAttributes_default = /*#__PURE__*/__webpack_require__.n(setAttributesWithoutAttributes);
-// EXTERNAL MODULE: ../../node_modules/.pnpm/style-loader@3.3.4_webpack@5.94.0_webpack-cli@4.10.0_/node_modules/style-loader/dist/runtime/insertStyleElement.js
-var insertStyleElement = __webpack_require__(907);
+// EXTERNAL MODULE: ../../node_modules/.pnpm/style-loader@3.3.4_webpack@5.99.9/node_modules/style-loader/dist/runtime/insertStyleElement.js
+var insertStyleElement = __webpack_require__(906);
 var insertStyleElement_default = /*#__PURE__*/__webpack_require__.n(insertStyleElement);
-// EXTERNAL MODULE: ../../node_modules/.pnpm/style-loader@3.3.4_webpack@5.94.0_webpack-cli@4.10.0_/node_modules/style-loader/dist/runtime/styleTagTransform.js
-var styleTagTransform = __webpack_require__(512);
+// EXTERNAL MODULE: ../../node_modules/.pnpm/style-loader@3.3.4_webpack@5.99.9/node_modules/style-loader/dist/runtime/styleTagTransform.js
+var styleTagTransform = __webpack_require__(79);
 var styleTagTransform_default = /*#__PURE__*/__webpack_require__.n(styleTagTransform);
-// EXTERNAL MODULE: ../../node_modules/.pnpm/css-loader@6.11.0_webpack@5.94.0_webpack-cli@4.10.0_/node_modules/css-loader/dist/cjs.js!../../node_modules/.pnpm/sass-loader@12.6.0_sass@1.77.8_webpack@5.94.0_webpack-cli@4.10.0_/node_modules/sass-loader/dist/cjs.js!./src/assets/styles/index.scss
-var styles = __webpack_require__(415);
-;// CONCATENATED MODULE: ./src/assets/styles/index.scss
+// EXTERNAL MODULE: ../../node_modules/.pnpm/css-loader@6.11.0_webpack@5.99.9/node_modules/css-loader/dist/cjs.js!../../node_modules/.pnpm/sass-loader@12.6.0_sass@1.89.1_webpack@5.99.9/node_modules/sass-loader/dist/cjs.js!./src/assets/styles/index.scss
+var styles = __webpack_require__(151);
+;// ./src/assets/styles/index.scss
 
       
       
@@ -635,7 +638,7 @@ var update = injectStylesIntoStyleTag_default()(styles/* default */.A, options);
 
        /* harmony default export */ const assets_styles = (styles/* default */.A && styles/* default */.A.locals ? styles/* default */.A.locals : undefined);
 
-;// CONCATENATED MODULE: ./src/components/qidian.js
+;// ./src/components/qidian.js
 var dq = document.querySelector.bind(document);
 function QiDian() {
   this.body = null;
@@ -673,7 +676,7 @@ QiDian.prototype.processButton = function () {
   });
 };
 /* harmony default export */ const components_qidian = (QiDian);
-;// CONCATENATED MODULE: ./src/components/translate.js
+;// ./src/components/translate.js
 // https://zhuanlan.zhihu.com/p/366616854
 
 function charPYStr() {
@@ -701,7 +704,7 @@ function simplify(cc) {
   }
   return str;
 }
-;// CONCATENATED MODULE: ./src/components/reader.js
+;// ./src/components/reader.js
 
 var reader_dq = document.querySelector.bind(document);
 var dqs = function dqs(selector) {
@@ -763,6 +766,10 @@ Reader.prototype.judge = function () {
     }
     if (reader_dq("#content.fonts_mesne")) {
       this.ptwxz();
+      return false;
+    }
+    if (reader_dq("#wrapper > article > div.con_top")) {
+      this.zws83();
       return false;
     }
     if (reader_dq("#center_tip")) {
@@ -872,6 +879,16 @@ Reader.prototype.e86book = function () {
   this.$titleOld = reader_dq(".reader-main .title"); // title
   this.$contentOld = reader_dq(".reader-main #content");
   this.$menus = dqs(".section-opt a");
+  this.ads = ["#footer", ".header", "#listtj", ".box_con + script + div"];
+  this.process();
+};
+Reader.prototype.zws83 = function () {
+  console.log('[Novel Reader] zws83');
+  this.body.classList.add("zws83");
+  this.$breadOld = reader_dq("#wrapper > article > div.con_top");
+  this.$titleOld = reader_dq("#wrapper > article > h1"); // title
+  this.$contentOld = reader_dq("#content");
+  this.$menus = dqs(".bottem2 a");
   this.ads = ["#footer", ".header", "#listtj", ".box_con + script + div"];
   this.process();
 };
@@ -1105,7 +1122,7 @@ Reader.prototype.processReadNavSeparate = function () {
   this.$navNew.appendChild(separate);
 };
 /* harmony default export */ const components_reader = (Reader);
-;// CONCATENATED MODULE: ./src/main.js
+;// ./src/main.js
 
 
 

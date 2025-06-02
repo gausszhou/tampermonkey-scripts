@@ -1,14 +1,14 @@
 // ==UserScript==
-// @name         Bilibili Greener
+// @name         Douyu Greener
 // @version      0.0.1
-// @description  感觉 B站 的广告也多起来了，而对于广告我一直是拒绝的
+// @description  斗鱼绿化
 // @author       gausszhou@qq.com
 // @namespace    gausszhou
 // @grant        none
-// @run-at       document-start
+// @run-at       document-end
 // @license      MIT
 // @icon         https://www.gausszhou.top/favicon.ico
-// @match      *://www.bilibili.com/video/*
+// @match        https://www.douyu.com/*/*
 // ==/UserScript==
 /******/ (() => { // webpackBootstrap
 /******/ 	"use strict";
@@ -286,7 +286,7 @@ module.exports = insertBySelector;
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_pnpm_css_loader_6_11_0_webpack_5_99_9_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_pnpm_css_loader_6_11_0_webpack_5_99_9_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, `body.bilibili #activity_vote,body.bilibili .ad-report.ad-floor-exp,body.bilibili #live_recommand_report,body.bilibili .left-entry .v-popover-wrap:nth-child(n+2),body.bilibili .video-page-special-card-small,body.bilibili .video-page-special-card{display:none !important}body.bilibili .cur-list,body.bilibili .multi-page .cur-list .list-box,body.bilibili .base-video-sections-v1 .video-sections-content-list,body.bilibili .base-video-sections .video-sections-content-list{height:calc(40vw - 200px) !important;min-height:300px;max-height:40vw}`, ""]);
+___CSS_LOADER_EXPORT___.push([module.id, `body.douyu .layout-Player-toolbar{height:0px !important;width:0px !important;overflow:hidden !important}body.douyu.is-fullScreenPage .layout-Player-video{bottom:0px !important}.layout-Player-rank,#js-room-activity{display:none}`, ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -501,23 +501,20 @@ var update = injectStylesIntoStyleTag_default()(styles/* default */.A, options);
        /* harmony default export */ const src_styles = (styles/* default */.A && styles/* default */.A.locals ? styles/* default */.A.locals : undefined);
 
 ;// ./src/components/ui.js
-let dq = document.querySelector.bind(document);
-let dqa = document.querySelectorAll.bind(document);
-
 function UI() {
   this.init();
 }
 
 UI.prototype.init = function () {
-  console.log("[info] 欢迎使用 [Bilibili 绿化] 插件");
+  console.log("[info] 欢迎使用 [斗鱼绿化] 插件");
 };
 
 UI.prototype.mounted = function () {
   this.body = document.body;
 };
 
-UI.prototype.bilibili = function () {
-  this.body.classList.add("bilibili");
+UI.prototype.process = function () {
+  this.body.classList.add("douyu");
 };
 
 /* harmony default export */ const ui = (UI);
@@ -542,7 +539,7 @@ function init(){
   if(isInit) return
   isInit = true
   main_ui.mounted();
-  main_ui.bilibili();
+  main_ui.process();
   console.log("[info] Finshed");
 }
 
