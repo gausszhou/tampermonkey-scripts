@@ -1,31 +1,22 @@
-import "./assets/styles/index.scss"
-import QiDian from "./components/qidian"
-import Reader from "./components/reader"
+import "./assets/styles/index.scss";
+import QiDian from "./components/qidian";
+import Reader from "./components/reader";
 
-let isInit = false
+window.addEventListener("load", () => {
+  init();
+});
 
-;(function () {
-  // window.addEventListener("DOMContentLoaded", () => {
-  //   init()
-  // })
-  window.addEventListener("load", () => {
-    init()
-  })
-  setTimeout(() => {
-    init()
-  }, 2000)
-})()
-
+let isInit = false;
 function init() {
-  if (isInit) return
-  isInit = true
+  if (isInit) return;
+  isInit = true;
   if (location.hostname === "book.qidian.com") {
-    let qidian = new QiDian()
-    qidian.mounted()
+    const qidian = new QiDian();
+    qidian.mounted();
   } else {
-    let reader = new Reader()
-    reader.mounted()
-    reader.judge()
+    const reader = new Reader();
+    reader.mounted();
+    reader.judge();
   }
-  document.body.style.display = "block"
+  document.body.style.display = "block";
 }
