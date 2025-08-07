@@ -10,7 +10,7 @@ module.exports = merge(common, {
   devServer: {
     https: false,
     port: 8080,
-    static: path.join(__dirname, "dist"),
+    static: path.resolve(process.cwd(), "dist"),
     hot: true // hot reload
   },
   plugins: [
@@ -18,7 +18,7 @@ module.exports = merge(common, {
       title: "Test Page"
     }),
     new webpack.DefinePlugin({
-      env: JSON.stringify("dev")
+      "env": JSON.stringify("dev")
     })
   ]
 });

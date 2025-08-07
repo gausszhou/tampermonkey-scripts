@@ -1,6 +1,3 @@
-let dq = document.querySelector.bind(document);
-let dqa = document.querySelectorAll.bind(document);
-
 function UI() {
   this.init();
 }

@@ -3,17 +3,13 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 // console.log(path.resolve(__dirname, 'src'))
 module.exports = {
   entry: {
-    app: "@/main.js"
-  },
-  resolve: {
-    // 设置别名
-    alias: {
-      "@": path.resolve(__dirname, "../src") // 这样配置后 @ 可以指向 src 目录
-    }
+    app: "./src/main.js"
+
   },
   output: {
     filename: "app.bundle.js",
     path: path.resolve(__dirname, "dist")
+
   },
   module: {
     rules: [

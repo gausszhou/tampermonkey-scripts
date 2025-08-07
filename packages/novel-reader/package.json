@@ -6,8 +6,8 @@
   "private": false,
   "license": "MIT",
   "scripts": {
-    "dev": "webpack-dev-server --config build/webpack.dev.js",
-    "build": "webpack --config build/webpack.prod.js && node build/webpack.extra.js"
+    "dev": "webpack-dev-server --config node_modules/webpack-build/webpack.dev.js",
+    "build": "webpack --config node_modules/webpack-build/webpack.prod.js && node node_modules/webpack-build/webpack.extra.js"
   },
   "devDependencies": {
     "@babel/core": "^7.18.13",
@@ -21,8 +21,9 @@
     "sass-loader": "^12.3.0",
     "style-loader": "^3.3.1",
     "webpack": "^5.64.4",
-    "webpack-cli": "^4.9.1",
+    "webpack-cli": "^4.9.2",
     "webpack-dev-server": "^4.6.0",
-    "webpack-merge": "^5.8.0"
+    "webpack-merge": "^5.8.0",
+    "webpack-build": "workspace:^1.0.0"
   }
 }
