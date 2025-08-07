@@ -501,9 +501,6 @@ var update = injectStylesIntoStyleTag_default()(styles/* default */.A, options);
        /* harmony default export */ const src_styles = (styles/* default */.A && styles/* default */.A.locals ? styles/* default */.A.locals : undefined);
 
 ;// ./src/components/ui.js
-let dq = document.querySelector.bind(document);
-let dqa = document.querySelectorAll.bind(document);
-
 function UI() {
   this.init();
 }
