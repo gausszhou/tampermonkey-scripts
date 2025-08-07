@@ -1126,21 +1126,7 @@ Reader.prototype.processReadNavSeparate = function () {
 
 
 
-var isInit = false;
-(function () {
-  // window.addEventListener("DOMContentLoaded", () => {
-  //   init()
-  // })
-  window.addEventListener("load", function () {
-    init();
-  });
-  setTimeout(function () {
-    init();
-  }, 2000);
-})();
-function init() {
-  if (isInit) return;
-  isInit = true;
+function onLoad() {
   if (location.hostname === "book.qidian.com") {
     var qidian = new components_qidian();
     qidian.mounted();
@@ -1151,5 +1137,11 @@ function init() {
   }
   document.body.style.display = "block";
 }
+if (document.readyState === "complete") {
+  onLoad();
+}
+window.addEventListener("load", function () {
+  onLoad();
+});
 /******/ })()
 ;

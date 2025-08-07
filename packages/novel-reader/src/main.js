@@ -2,14 +2,7 @@ import "./assets/styles/index.scss";
 import QiDian from "./components/qidian";
 import Reader from "./components/reader";
 
-window.addEventListener("load", () => {
-  init();
-});
-
-let isInit = false;
-function init() {
-  if (isInit) return;
-  isInit = true;
+function onLoad() {
   if (location.hostname === "book.qidian.com") {
     const qidian = new QiDian();
     qidian.mounted();
@@ -20,3 +13,10 @@ function init() {
   }
   document.body.style.display = "block";
 }
+
+if (document.readyState === "complete") {
+  onLoad();
+}
+window.addEventListener("load", () => {
+  onLoad();
+});
